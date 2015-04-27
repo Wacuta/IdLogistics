@@ -1,0 +1,149 @@
+
+
+/* 
+    navnbar style
+      bcg color par defaut: 0D47A1
+      bcg color selectionné:
+      text color par defaut: fafafa
+      text color selectionne: f5f5f5
+
+    color de ID: 
+      bleu: 00457e;
+    
+*/
+
+@font-face{
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Medium.ttf");
+}
+
+header{
+  background-color: #fff;
+  height:300px;
+}
+
+a{
+  color:#fff;
+}
+
+#logo{
+  width: 100%;
+  max-width: 263px;
+  height: auto;
+}
+
+#titreSite {
+  color: #00457e;
+  font-family: 'Roboto';
+  font-size: 100px;
+}
+
+#itemLogo{
+  max-width: 50px;
+}
+
+.navbar-default {
+  background-color: #212121;
+  border-color: #0D47A1;
+}
+.navbar-default .navbar-brand {
+  color: #fafafa;
+}
+.navbar-default .navbar-brand:hover, 
+.navbar-default .navbar-brand:focus {
+  color: #f5f5f5;
+}
+.navbar-default .navbar-text {
+  color: #fafafa;
+}
+.navbar-default .navbar-nav > li > a{
+  color: #fafafa;
+}
+
+
+#ItemHome:hover,
+#ItemHome:focus{
+    color:#fff;
+    background-color: #693885;
+}
+
+
+#ItemWord:hover,
+#ItemWord:focus{
+    color:#fff;
+    background-color: #0D47A1;
+}
+
+
+#ItemExcel:hover,
+#ItemExcel:focus{
+    color:#fff;
+    background-color: #43A047;
+}
+
+
+#ItemPowerPoint:hover,
+#ItemPowerPoint:focus{
+    color:#fff;
+    background-color: #E65100;
+}
+
+
+#ItemOracle:hover,
+#ItemOracle:focus{
+    color:#fff;
+    background-color: #d02023;
+}
+
+.navbar-default .navbar-nav > li > a:hover, 
+.navbar-default .navbar-nav > li > a:focus {
+  color: #fafafa;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #f5f5f5;
+  background-color: #c0392b;
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #f5f5f5;
+  background-color: #c0392b;
+}
+.navbar-default .navbar-toggle {
+  border-color: #c0392b;
+}
+.navbar-default .navbar-toggle:hover, 
+.navbar-default .navbar-toggle:focus {
+  background-color: #EDD611;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fafafa;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #fafafa;
+}
+.navbar-default .navbar-link {
+  color: #fafafa;
+}
+.navbar-default .navbar-link:hover {
+  color: #f5f5f5;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #fafafa;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, 
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #f5f5f5;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, 
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, 
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #f5f5f5;
+    background-color: #c0392b;
+  }
+}
