@@ -12,15 +12,17 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
         ));
 
 
+/* inclure la connextion a la bd */
+include("admin/requet.php");
 
 
 // page d'acceuil
 $app->get('/', function() use ($app){
 
-	$data = 5;
+	$data = listerCours();
 
 	return $app['twig']->render('layout.twig', array(
-				'albums' => $data
+				'cours' => $data
 			));
 });
 
