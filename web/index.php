@@ -19,10 +19,25 @@ include("admin/requet.php");
 // page d'acceuil
 $app->get('/', function() use ($app){
 
-	$data = listerCours();
+	$cWord = coursWord();
+	$cExcel = coursExcel();
+	$cPp = coursPowerpoint();
+	$cOracle = coursOracle();
+
+	$eWord = exerciceWord();
+	$eExcel = exerciceExcel();
+	$ePp = exercicePowerpoint();
+	$eOracle = exerciceOracle();
 
 	return $app['twig']->render('layout.twig', array(
-				'cours' => $data
+				'cWord' => $cWord,
+				'cExcel' => $cExcel,
+				'cPp' => $cPp,
+				'cOracle' => $cOracle,
+				'eWord' => $eWord,
+				'eExcel' => $eExcel,
+				'ePp' => $ePp,
+				'eOracle' => $eOracle
 			));
 });
 
