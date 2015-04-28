@@ -10,8 +10,8 @@
       <!-- Bootstrap Core CSS -->
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="css/style.css" rel="stylesheet" >
-       
-        
+      
+      
     </head>
 
 
@@ -95,22 +95,67 @@
 
        {% block contenue %}
         <div class="container">
-            <div id="sectionWord">
-              <h1> Titre de la section Word</h1>
-            </div>
-            
-            <div id="sectionExcel">
-              <h1> Titre de la section Excel</h1>
-            </div>
-              
-            <div id="sectionPowerPoint">
-              <h1> Titre de la section PowerPoint</h1>
-            </div>
 
-            <div id="sectionOracle">
-              <h1> Titre de la section Oracle</h1>
-            </div>
+          <!-- PARTIE COURS -->
+          <h1> Cours</h1>
+          <div id="coursWord">
+            <h2> Titre de la section Word</h2>
+            {% for c in cWord %}
+              <h3> {{c.nomC}} <small>{{c.contenueC}}</small> </h3>
+            {% endfor %}
           </div>
+          
+          <div id="coursExcel">
+            <h2> Titre de la section Excel</h2>
+            {% for c in cExcel %}
+              <h3> {{c.nomC}} <small>{{c.contenueC}}</small> </h3>
+            {% endfor %}
+          </div>
+            
+          <div id="coursPowerPoint">
+            <h2> Titre de la section PowerPoint</h2>
+            {% for c in cPp %}
+              <h3> {{c.nomC}} <small>{{c.contenueC}}</small> </h3>
+            {% endfor %}
+          </div>
+        
+          <div id="coursOracle">
+            <h2> Titre de la section Oracle</h2>
+            {% for c in cOracle %}
+              <h3> {{c.nomC}} <small>{{c.contenueC}}</small> </h3>
+            {% endfor %}
+          </div>
+        
+          <!-- PARTIE EXERCICE -->
+          <h1>Exercice</h1>
+          <div id="exerciceWord">
+            <h2> Titre de la section Word</h2>
+            {% for c in eWord %}
+              <h3>{{c.nomE}}<small>{{c.contenueE}}</small> </h3>
+            {% endfor %}
+          </div>
+          
+          <div id="exerciceExcel">
+            <h2> Titre de la section Excel</h2>
+            {% for c in eExcel %}
+              <h3>{{c.nomE}}<small>{{c.contenueE}}</small> </h3>
+            {% endfor %}
+          </div>
+            
+          <div id="exercicePowerPoint">
+            <h2> Titre de la section PowerPoint</h2>
+            {% for c in ePp %}
+              <h3>{{c.nomE}}<small>{{c.contenueE}}</small> </h3>
+            {% endfor %}
+          </div>
+        
+          <div id="exerciceOracle">
+            <h2> Titre de la section Oracle</h2>
+            {% for c in eOracle %}
+              <h3>{{c.nomE}}<small>{{c.contenueE}}</small> </h3>
+            {% endfor %}
+          </div>
+        </div>
        {% endblock %}
 
 

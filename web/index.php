@@ -12,15 +12,32 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
         ));
 
 
+/* inclure la connextion a la bd */
+include("admin/requet.php");
 
 
 // page d'acceuil
 $app->get('/', function() use ($app){
 
-	$data = 5;
+	$cWord = coursWord();
+	$cExcel = coursExcel();
+	$cPp = coursPowerpoint();
+	$cOracle = coursOracle();
+
+	$eWord = exerciceWord();
+	$eExcel = exerciceExcel();
+	$ePp = exercicePowerpoint();
+	$eOracle = exerciceOracle();
 
 	return $app['twig']->render('layout.twig', array(
-				'albums' => $data
+				'cWord' => $cWord,
+				'cExcel' => $cExcel,
+				'cPp' => $cPp,
+				'cOracle' => $cOracle,
+				'eWord' => $eWord,
+				'eExcel' => $eExcel,
+				'ePp' => $ePp,
+				'eOracle' => $eOracle
 			));
 });
 
