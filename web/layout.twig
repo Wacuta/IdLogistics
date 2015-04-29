@@ -9,8 +9,8 @@
 
       <!-- Bootstrap Core CSS -->
       <link href="css/bootstrap.min.css" rel="stylesheet">
-      <link href="css/style.css" rel="stylesheet" >
       
+      <link href="css/style.css" rel="stylesheet" >
       
     </head>
 
@@ -22,7 +22,7 @@
         
      
 
-    <body>
+    <body data-spy="scroll" data-target="#myScrollspy">
         
         {% block header %}
                 
@@ -39,51 +39,44 @@
           </div>
 
 
-          <nav class="navbar navbar-default " id="nav">
+          <nav class="navbar navbar-default ">
              <div class="container">
                 <div class="navbar-header">
-                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                      <span class="glyphicon glyphicon-th-list"></span>
-                   </button>
+                  <button type="button" class="navbar-toggle oracle" data-toggle="collapse" >
+                    <div><img class="itemLogo" src="images/Logo_Oracle.png"></div>
+                  </button>
+                  <button type="button" class="navbar-toggle powerpoint" data-toggle="collapse" >
+                    <div><img class="itemLogo" src="images/Logo_PowerPoint.png"></div>
+                  </button>
+                  <button type="button" class="navbar-toggle excel" data-toggle="collapse" >
+                    <div><img class="itemLogo" src="images/Logo_Excel.png"></div>
+                  </button>
+                  <button type="button" class="navbar-toggle word" data-toggle="collapse" >
+                    <div><img class="itemLogo" src="images/Logo_Word.png"></div>
+                  </button>
+                  <button type="button" class="navbar-toggle home" data-toggle="collapse" >
+                    <div><img class="itemLogo" src="images/Logo_Home.png"></div>
+                  </button>
                 </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
                    <ul class="nav nav-justified">
-
                       <li><a href="#" id="ItemHome">
-                        <div>
-                          <img id="itemLogo" src="images/Logo_Home.png">
-                        </div>
-                        Home
+                        <div><img class="itemLogo" src="images/Logo_Home.png"></div> Home
                       </a></li>
-
                       <li><a href="#sectionWord" id="ItemWord">
-                        <div>
-                          <img id="itemLogo" src="images/Logo_Word.png">
-                        </div>
-                        Word
+                        <div><img class="itemLogo" src="images/Logo_Word.png"></div> Word
                       </a></li>
-
                       <li><a href="#sectionExcel" id="ItemExcel">
-                        <div>
-                          <img id="itemLogo" src="images/Logo_Excel.png">
-                        </div>
-                        Excel
+                        <div><img class="itemLogo" src="images/Logo_Excel.png"></div> Excel
                       </a></li>
-
                       <li><a href="#sectionPowerPoint" id="ItemPowerPoint">
-                        <div>
-                          <img id="itemLogo" src="images/Logo_PowerPoint.png">
-                        </div>
-                        PowerPoint
+                        <div><img class="itemLogo" src="images/Logo_PowerPoint.png"></div> PowerPoint
                       </a></li>
-
                       <li><a href="#sectionOracle" id="ItemOracle">
-                        <div>
-                          <img id="itemLogo" src="images/Logo_Oracle.png">
-                        </div>
-                        SQL
+                        <div><img class="itemLogo" src="images/Logo_Oracle.png"></div> SQL
                       </a></li>
-                      
                    </ul>
+                  </div>
              </div>
           </nav>
             
@@ -94,68 +87,126 @@
 
 
        {% block contenue %}
-        <div class="container">
 
-          <!-- PARTIE COURS -->
-          <h1> Cours</h1>
-          <div id="coursWord">
-            <h2> Titre de la section Word</h2>
-            {% for c in cWord %}
-              <h3> {{c.nomC}} <small>{{c.contenueC}}</small> </h3>
-            {% endfor %}
-          </div>
-          
-          <div id="coursExcel">
-            <h2> Titre de la section Excel</h2>
-            {% for c in cExcel %}
-              <h3> {{c.nomC}} <small>{{c.contenueC}}</small> </h3>
-            {% endfor %}
-          </div>
+       <div class="row" id="nav">
+        <div class="col-xs-3" id="myScrollspy">
+            <ul class="nav list-group affix-top" data-spy="affix" data-offset-top="300">
+                <li class="list-group-item"><a href="#" class="">Accueil</a></li>
+                <li class="list-group-item"><a href="#prepa" class="">Présentation</a></li>
+                <li class="list-group-item"><a href="#cours" class="">Cours</a>
+                    <ul class="nav submenu">
+                        <li class="list-group-item hide"><a href="#coursWord" class="">Word</a></li>
+                        <li class="list-group-item hide"><a href="#coursExcel" class="">Excel</a></li>
+                        <li class="list-group-item hide"><a href="#coursPowerPoint" class="">PowerPoint</a></li>
+                        <li class="list-group-item hide"><a href="#coursOracle" class="">Oracle</a></li>
+                    </ul>
+                </li>
+                <li class="list-group-item"><a href="#exercice" class="">Exercice</a>
+                    <ul class="nav submenu">
+                        <li class="list-group-item hide"><a href="#exerciceWord" class="">Word</a></li>
+                        <li class="list-group-item hide"><a href="#exerciceExcel" class="">Excel</a></li>
+                        <li class="list-group-item hide"><a href="#exercicePowerPoint" class="">PowerPoint</a></li>
+                        <li class="list-group-item hide"><a href="#exerciceOracle" class="">Oracle</a></li>
+                    </ul>
+                </li>
+                <li class="list-group-item"><a href="#contact" class="">Contact</a></li>
+            </ul>
+        </div>
+        
+
+        <!-- PARTIE COURS -->
+        <div class="col-xs-6">
+          <div class="part" id="cours">
+            <h1 class="part-heading text-center"> Cours</h1>
+            <div class="item-list" id="coursWord">
+              <h2> Titre de la section Word</h2>
+              {% for c in cWord %}
+                <a href="#">
+                  <h3> {{c.nomC}} </h3>
+                  <p><small>{{c.contenueC}}</small></p>
+                </a>
+              {% endfor %}
+            </div>
             
-          <div id="coursPowerPoint">
-            <h2> Titre de la section PowerPoint</h2>
-            {% for c in cPp %}
-              <h3> {{c.nomC}} <small>{{c.contenueC}}</small> </h3>
-            {% endfor %}
-          </div>
-        
-          <div id="coursOracle">
-            <h2> Titre de la section Oracle</h2>
-            {% for c in cOracle %}
-              <h3> {{c.nomC}} <small>{{c.contenueC}}</small> </h3>
-            {% endfor %}
-          </div>
-        
-          <!-- PARTIE EXERCICE -->
-          <h1>Exercice</h1>
-          <div id="exerciceWord">
-            <h2> Titre de la section Word</h2>
-            {% for c in eWord %}
-              <h3>{{c.nomE}}<small>{{c.contenueE}}</small> </h3>
-            {% endfor %}
-          </div>
+            <div id="coursExcel">
+              <h2> Titre de la section Excel</h2>
+              {% for c in cExcel %}
+                <a href="#">
+                  <h3> {{c.nomC}} </h3>
+                  <p><small>{{c.contenueC}}</small></p>
+                </a>
+              {% endfor %}
+            </div>
+              
+            <div id="coursPowerPoint">
+              <h2> Titre de la section PowerPoint</h2>
+              {% for c in cPp %}
+                <a href="#">
+                  <h3> {{c.nomC}} </h3>
+                  <p><small>{{c.contenueC}}</small></p>
+                </a>
+              {% endfor %}
+            </div>
           
-          <div id="exerciceExcel">
-            <h2> Titre de la section Excel</h2>
-            {% for c in eExcel %}
-              <h3>{{c.nomE}}<small>{{c.contenueE}}</small> </h3>
-            {% endfor %}
-          </div>
-            
-          <div id="exercicePowerPoint">
-            <h2> Titre de la section PowerPoint</h2>
-            {% for c in ePp %}
-              <h3>{{c.nomE}}<small>{{c.contenueE}}</small> </h3>
-            {% endfor %}
-          </div>
+            <div id="coursOracle">
+              <h2> Titre de la section Oracle</h2>
+              {% for c in cOracle %}
+                <a href="#">
+                  <h3> {{c.nomC}} </h3>
+                  <p><small>{{c.contenueC}}</small></p>
+                </a>
+              {% endfor %}
+            </div>
         
-          <div id="exerciceOracle">
-            <h2> Titre de la section Oracle</h2>
-            {% for c in eOracle %}
-              <h3>{{c.nomE}}<small>{{c.contenueE}}</small> </h3>
-            {% endfor %}
+          </div>
+
+          <div class="separator"></div>
+        <!-- PARTIE EXERCICE -->
+        
+          <div class="part" id="exercice">
+            <h1 class="part-heading text-center">Exercice</h1>
+            <div id="exerciceWord">
+              <h2> Titre de la section Word</h2>
+              {% for c in eWord %}
+                <a href="#">
+                  <h3> {{c.nomE}} </h3>
+                  <p><small>{{c.contenueE}}</small></p>
+                </a>
+              {% endfor %}
+            </div>
+            
+            <div id="exerciceExcel">
+              <h2> Titre de la section Excel</h2>
+              {% for c in eExcel %}
+                <a href="#">
+                  <h3> {{c.nomE}} </h3>
+                  <p><small>{{c.contenueE}}</small></p>
+                </a>
+              {% endfor %}
+            </div>
+              
+            <div id="exercicePowerPoint">
+              <h2> Titre de la section PowerPoint</h2>
+              {% for c in ePp %}
+                <a href="#">
+                  <h3> {{c.nomE}} </h3>
+                  <p><small>{{c.contenueE}}</small></p>
+                </a>
+              {% endfor %}
+            </div>
+          
+            <div id="exerciceOracle">
+              <h2> Titre de la section Oracle</h2>
+              {% for c in eOracle %}
+                <a href="#">
+                  <h3> {{c.nomE}} </h3>
+                  <p><small>{{c.contenueE}}</small></p>
+                </a>
+              {% endfor %}
+            </div>
           </div>
         </div>
+
        {% endblock %}
 
 
@@ -181,5 +232,7 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
+    <!-- JS perso -->
+    <script src="js/script.js"></script>
     
 </html>
