@@ -1,6 +1,14 @@
 
 
 /* 
+  ============= INDEX DE COLOR =============
+
+    home: 693884
+    word: 0D47A1
+    excel: 43A047
+    powerpoint: E65100
+    oracle: d02023
+
     navnbar style
       bcg color par defaut: 0D47A1
       bcg color selectionné:
@@ -12,9 +20,16 @@
     
 */
 
+/* ============= NEW FONT-FAMILY ============= */
+
 @font-face{
   font-family: "Roboto";
   src: url("../fonts/Roboto-Medium.ttf");
+}
+
+@font-face{
+  font-family: "Proxima Nova";
+  src: url("../fonts/Proxima Nova Alt Regular.otf");
 }
 
 header{
@@ -22,44 +37,42 @@ header{
   height:300px;
 }
 
-a{
-  color:#fff;
-}
+/* ============= BANNIERE ============= */
 
+/* Logo de ID Logistics */
 #logo{
   width: 100%;
   max-width: 263px;
   height: auto;
 }
 
+/* Titre principal du site */
 #titreSite {
   color: #00457e;
   font-family: 'Roboto';
   font-size: 100px;
 }
 
-#itemLogo{
+
+/* ============= NAV-BAR =============*/
+
+.itemLogo{
   max-width: 50px;
 }
 
 .navbar-default {
   background-color: #212121;
-  border-color: #0D47A1;
-}
-.navbar-default .navbar-brand {
-  color: #fafafa;
-}
-.navbar-default .navbar-brand:hover, 
-.navbar-default .navbar-brand:focus {
-  color: #f5f5f5;
-}
-.navbar-default .navbar-text {
-  color: #fafafa;
-}
-.navbar-default .navbar-nav > li > a{
-  color: #fafafa;
+  border-color: #212121;
 }
 
+/* style des item du menu nav*/
+#ItemHome,
+#ItemWord,
+#ItemExcel,
+#ItemPowerPoint,
+#ItemOracle{
+  color: #fff;
+}
 
 #ItemHome:hover,
 #ItemHome:focus{
@@ -95,55 +108,134 @@ a{
     background-color: #d02023;
 }
 
-.navbar-default .navbar-nav > li > a:hover, 
-.navbar-default .navbar-nav > li > a:focus {
-  color: #fafafa;
+
+.home{
+  background-color: #693885;
 }
-.navbar-default .navbar-nav > .active > a, 
-.navbar-default .navbar-nav > .active > a:hover, 
-.navbar-default .navbar-nav > .active > a:focus {
-  color: #f5f5f5;
-  background-color: #c0392b;
+.navbar-default .home:hover,
+.navbar-default .home:focus{
+  background-color: #693885;
 }
-.navbar-default .navbar-nav > .open > a, 
-.navbar-default .navbar-nav > .open > a:hover, 
-.navbar-default .navbar-nav > .open > a:focus {
-  color: #f5f5f5;
-  background-color: #c0392b;
+
+.word{
+  background-color: #0D47A1;
 }
+.navbar-default .word:hover,
+.navbar-default .word:focus{
+  background-color: #0D47A1;
+}
+
+.excel{
+  background-color: #43A047;
+}
+.navbar-default .excel:hover,
+.navbar-default .excel:focus{
+  background-color: #43A047;
+}
+
+.powerpoint{
+  background-color: #E65100;
+}
+.navbar-default .powerpoint:hover,
+.navbar-default .powerpoint:focus{
+  background-color: #E65100;
+}
+
+.oracle{
+  background-color: #d02023;
+}
+.navbar-default .oracle:hover,
+.navbar-default .oracle:focus{
+  background-color: #d02023;
+}
+
+/* les bouttons nav quand la page est petite*/
 .navbar-default .navbar-toggle {
-  border-color: #c0392b;
+  border-color: #212121;
 }
 .navbar-default .navbar-toggle:hover, 
 .navbar-default .navbar-toggle:focus {
-  background-color: #EDD611;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #fafafa;
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
   border-color: #fafafa;
 }
-.navbar-default .navbar-link {
-  color: #fafafa;
-}
-.navbar-default .navbar-link:hover {
-  color: #f5f5f5;
+
+
+.part{
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
-@media (max-width: 767px) {
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #fafafa;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, 
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #f5f5f5;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, 
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, 
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #f5f5f5;
-    background-color: #c0392b;
-  }
+.part-heading{
+  padding-bottom: 50px;
+  font-family: "Proxima Nova";
+}
+
+.separator {
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: #BDB4B4;
+}
+
+
+/* ============= NAV-TABS ============= */
+
+li.list-group-item {
+  border: none;  
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin-top:0px;
+  margin-bottom:0px;
+  padding-top: 0px;
+  padding-bottom:0px;
+}
+
+
+li.list-group-item:hover > a:hover{
+  border-width:thin;
+  border-left-style:solid;
+  border-left-color: #B20000;
+  color: #B20000;      
+  font-weight:500;
+  border-width:1px;
+  background-color:#fff;
+  
+}
+
+
+
+li.list-group-item.active > a,
+li.list-group-item.active > a:hover,
+li.list-group-item.active > a:focus { 
+  border-width:2px;
+  border-left-style:solid;
+  border-left-color: #B20000;  
+  color: #B20000;  
+  font-weight: bold;
+  padding: 3px 8px;
+}
+ 
+
+.nav >li>a{
+  padding:3px 10px;
+}
+
+.list-group-item,
+.list-group-item.active,
+.list-group-item.active:focus,
+.list-group-item.active:hover{
+  background: none;
+}
+
+
+
+
+/* TEST */
+
+ul.list-group {
+  margin-top: 150px;
+}
+
+ul.list-group.affix {
+  top: 20px; /* Set the top position of pinned element */
 }
