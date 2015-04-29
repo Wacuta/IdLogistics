@@ -27,13 +27,14 @@
         {% block header %}
                 
           <div class="container">
-            <div class="row">
-              <div class="col-md-3">
+            <div class="banniere">
+              <div>
                 <img src="images/IDlogistics_Logo.jpg" id="logo">
               </div>
-              <div class="col-md-9">
+              <div class="ligne_vertical"></div>
+              <div>
                 <h1 id="titreSite">Guide</h1>
-                <h1><small>Guide aux applications du pack Office et Oracle</small></h1>
+                <h1 id="descSite"><small>Guide au application Office et Oracle</small></h1>
               </div>
             </div>
           </div>
@@ -114,8 +115,17 @@
         </div>
         
 
-        <!-- PARTIE COURS -->
         <div class="col-xs-6">
+
+          <!-- PARTIE PRESENTATION -->
+          <div class="part" id="prepa">
+            <h1 class="part-heading text-center"> Présentation</h1>
+          </div>
+
+
+          <div class="separator"></div>
+          
+          <!-- PARTIE COURS -->
           <div class="part" id="cours">
             <h1 class="part-heading text-center"> Cours</h1>
             <div class="item-list" id="coursWord">
@@ -161,7 +171,9 @@
           </div>
 
           <div class="separator"></div>
-        <!-- PARTIE EXERCICE -->
+
+
+          <!-- PARTIE EXERCICE -->
         
           <div class="part" id="exercice">
             <h1 class="part-heading text-center">Exercice</h1>

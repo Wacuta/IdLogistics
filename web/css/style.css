@@ -39,11 +39,26 @@ header{
 
 /* ============= BANNIERE ============= */
 
+.banniere{
+  /*width: 220px;*/
+  /*height: 300px;*/
+  display: flex;
+  align-items: center;
+}
+
 /* Logo de ID Logistics */
 #logo{
   width: 100%;
   max-width: 263px;
   height: auto;
+}
+
+/* Separateur */
+.ligne_vertical{
+  height: 120px;
+  margin-right: 30px;
+  margin-left: 20px;
+  border-right: 2px solid #BDB4B4;
 }
 
 /* Titre principal du site */
@@ -227,15 +242,57 @@ li.list-group-item.active > a:focus {
   background: none;
 }
 
-
-
-
-/* TEST */
-
 ul.list-group {
   margin-top: 150px;
 }
 
 ul.list-group.affix {
   top: 20px; /* Set the top position of pinned element */
+}
+
+
+
+/* ============= POUR LES PETITS ECRANecran ============= */
+@media screen and (max-width: 768px) {
+
+
+
+  /* ============= BANNIERE ============= */
+
+  /* Logo de ID Logistics */
+  #logo{
+    width: 100%;
+    max-width: 150px;
+    min-width: 150px;
+    height: auto;
+  }
+
+  .ligne_vertical{
+    height: 100px;
+    margin-right: 30px;
+    margin-left: 20px;
+    border-right: 2px solid #BDB4B4;
+  }
+
+  /* Titre principal du site */
+  #titreSite {
+    color: #00457e;
+    font-family: 'Roboto';
+    font-size: 30px;
+  }
+
+  #descSite{
+    font-size: 25px;
+  }
+
+
+  /* ============= NAV-TABS ============= */
+  ul.list-group {
+    margin-top: 100px;
+  }
+
+  ul.list-group.affix {
+    top: -50px;
+  }
+
 }
