@@ -22,29 +22,18 @@
 
 /* ============= NEW FONT-FAMILY ============= */
 
-@font-face{
-  font-family: "Roboto";
-  src: url("../fonts/Roboto-Medium.ttf");
-}
+@import url('fonts.css');
 
-@font-face{
-  font-family: "Proxima Nova";
-  src: url("../fonts/Proxima Nova Alt Regular.otf");
-}
 
-header{
-  background-color: #fff;
-  height:300px;
-}
 
 /* ============= BANNIERE ============= */
 
 .banniere{
-  /*width: 220px;*/
-  /*height: 300px;*/
   display: flex;
   align-items: center;
-}
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: #BDB4B4;}
 
 /* Logo de ID Logistics */
 #logo{
@@ -68,109 +57,20 @@ header{
   font-size: 100px;
 }
 
-
-/* ============= NAV-BAR =============*/
-
-.itemLogo{
-  max-width: 50px;
-}
-
-.navbar-default {
-  background-color: #212121;
-  border-color: #212121;
-}
-
-/* style des item du menu nav*/
-#ItemHome,
-#ItemWord,
-#ItemExcel,
-#ItemPowerPoint,
-#ItemOracle{
-  color: #fff;
-}
-
-#ItemHome:hover,
-#ItemHome:focus{
-    color:#fff;
-    background-color: #693885;
-}
-
-
-#ItemWord:hover,
-#ItemWord:focus{
-    color:#fff;
-    background-color: #0D47A1;
-}
-
-
-#ItemExcel:hover,
-#ItemExcel:focus{
-    color:#fff;
-    background-color: #43A047;
-}
-
-
-#ItemPowerPoint:hover,
-#ItemPowerPoint:focus{
-    color:#fff;
-    background-color: #E65100;
-}
-
-
-#ItemOracle:hover,
-#ItemOracle:focus{
-    color:#fff;
-    background-color: #d02023;
-}
-
-
-.home{
-  background-color: #693885;
-}
-.navbar-default .home:hover,
-.navbar-default .home:focus{
-  background-color: #693885;
-}
-
 .word{
-  background-color: #0D47A1;
-}
-.navbar-default .word:hover,
-.navbar-default .word:focus{
   background-color: #0D47A1;
 }
 
 .excel{
   background-color: #43A047;
 }
-.navbar-default .excel:hover,
-.navbar-default .excel:focus{
-  background-color: #43A047;
-}
 
 .powerpoint{
-  background-color: #E65100;
-}
-.navbar-default .powerpoint:hover,
-.navbar-default .powerpoint:focus{
   background-color: #E65100;
 }
 
 .oracle{
   background-color: #d02023;
-}
-.navbar-default .oracle:hover,
-.navbar-default .oracle:focus{
-  background-color: #d02023;
-}
-
-/* les bouttons nav quand la page est petite*/
-.navbar-default .navbar-toggle {
-  border-color: #212121;
-}
-.navbar-default .navbar-toggle:hover, 
-.navbar-default .navbar-toggle:focus {
-  border-color: #fafafa;
 }
 
 
@@ -197,14 +97,19 @@ header{
 /* ============= NAV-TABS ============= */
 
 li.list-group-item {
-  border: none;  
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  border: none;
+  font-size: 15px; 
+  font-family: 'Proxima Nova', Helvetica, Arial, sans-serif;
   margin-top:0px;
   margin-bottom:0px;
   padding-top: 0px;
   padding-bottom:0px;
 }
 
+li.list-group-item a{
+    color:#212121;
+
+}
 
 li.list-group-item:hover > a:hover{
   border-width:thin;
@@ -252,7 +157,28 @@ ul.list-group.affix {
 
 
 
-/* ============= POUR LES PETITS ECRANecran ============= */
+/* ============= CONTENUE ACCUEIL ============= */
+
+body{
+  font-family: "Proxima Nova";
+}
+
+.case-cours{
+  padding-left: 20px;
+  border-width: 1px;
+  border-top: solid;
+} 
+
+.case-cours:focus,
+.case-cours:hover{
+  /* border-width:1px; */
+  border-left-style:solid;
+  border-left-color: #B20000;
+}
+
+
+
+/* ============= POUR LES PETITS ECRAN ============= */
 @media screen and (max-width: 768px) {
 
 
