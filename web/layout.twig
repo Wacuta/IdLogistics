@@ -9,9 +9,21 @@
 
       <!-- Bootstrap Core CSS -->
       <link href="css/bootstrap.min.css" rel="stylesheet">
+        
+      <!-- Icon de l'onglet -->
+      <link rel="icon" type="image/png" href="images/Logo_ID.png" />
+
+      <!-- Fonts -->
+      <link rel="stylesheet" type="text/css" href="css/fonts.css">
+
+      <!-- JS et CSS pour les vignette -->
+      <link rel="stylesheet" type="text/css" href="css/vignette/style.css" />
+      <link rel="stylesheet" type="text/css" href="css/vignette/common.css" />
       
+      <!-- CSS Perso -->
       <link href="css/style.css" rel="stylesheet" >
-      
+
+
     </head>
 
 
@@ -29,58 +41,15 @@
           <div class="container">
             <div class="banniere">
               <div>
-                <img src="images/IDlogistics_Logo.jpg" id="logo">
+                <img src="images/Logo_ID.png" id="logo">
               </div>
               <div class="ligne_vertical"></div>
               <div>
-                <h1 id="titreSite">Guide</h1>
+                <h1 id="titreSite">GuideOffice</h1>
                 <h1 id="descSite"><small>Guide au application Office et Oracle</small></h1>
               </div>
             </div>
-          </div>
-
-
-          <nav class="navbar navbar-default ">
-             <div class="container">
-                <div class="navbar-header">
-                  <button type="button" class="navbar-toggle oracle" data-toggle="collapse" >
-                    <div><img class="itemLogo" src="images/Logo_Oracle.png"></div>
-                  </button>
-                  <button type="button" class="navbar-toggle powerpoint" data-toggle="collapse" >
-                    <div><img class="itemLogo" src="images/Logo_PowerPoint.png"></div>
-                  </button>
-                  <button type="button" class="navbar-toggle excel" data-toggle="collapse" >
-                    <div><img class="itemLogo" src="images/Logo_Excel.png"></div>
-                  </button>
-                  <button type="button" class="navbar-toggle word" data-toggle="collapse" >
-                    <div><img class="itemLogo" src="images/Logo_Word.png"></div>
-                  </button>
-                  <button type="button" class="navbar-toggle home" data-toggle="collapse" >
-                    <div><img class="itemLogo" src="images/Logo_Home.png"></div>
-                  </button>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                   <ul class="nav nav-justified">
-                      <li><a href="#" id="ItemHome">
-                        <div><img class="itemLogo" src="images/Logo_Home.png"></div> Home
-                      </a></li>
-                      <li><a href="#sectionWord" id="ItemWord">
-                        <div><img class="itemLogo" src="images/Logo_Word.png"></div> Word
-                      </a></li>
-                      <li><a href="#sectionExcel" id="ItemExcel">
-                        <div><img class="itemLogo" src="images/Logo_Excel.png"></div> Excel
-                      </a></li>
-                      <li><a href="#sectionPowerPoint" id="ItemPowerPoint">
-                        <div><img class="itemLogo" src="images/Logo_PowerPoint.png"></div> PowerPoint
-                      </a></li>
-                      <li><a href="#sectionOracle" id="ItemOracle">
-                        <div><img class="itemLogo" src="images/Logo_Oracle.png"></div> SQL
-                      </a></li>
-                   </ul>
-                  </div>
-             </div>
-          </nav>
-            
+          </div>            
             
         {% endblock %}
 
@@ -92,8 +61,9 @@
        <div class="row" id="nav">
         <div class="col-xs-3" id="myScrollspy">
             <ul class="nav list-group affix-top" data-spy="affix" data-offset-top="300">
-                <li class="list-group-item"><a href="#" class="">Accueil</a></li>
+                <li class="list-group-item"><a href="#logo" class="">Accueil</a></li>
                 <li class="list-group-item"><a href="#prepa" class="">Présentation</a></li>
+                <li class="list-group-item"><a href="#modules" class="">Modules</a></li>
                 <li class="list-group-item"><a href="#cours" class="">Cours</a>
                     <ul class="nav submenu">
                         <li class="list-group-item hide"><a href="#coursWord" class="">Word</a></li>
@@ -120,10 +90,72 @@
           <!-- PARTIE PRESENTATION -->
           <div class="part" id="prepa">
             <h1 class="part-heading text-center"> Présentation</h1>
+            <div class="text-center"> Cette application a pour but de vous aider à progresser dans l’utilisation des logiciels du pack office de Microsoft, Word, Excel, PowerPoint ainsi qu’au langage informatique SQL pours les bases de données de Oracle.
+            L’application est divisée en ces quatre modules composés de cours et d’exercice, où vous pourrez à la fois approfondir vos connaissances mais aussi les mettre à l’épreuve.
+            </div>
           </div>
 
 
           <div class="separator"></div>
+
+          <!-- PARTIE DES MODULES -->
+          
+          <div class="part" id="modules">
+            <h1 class="part-heading text-center"> Modules</h1>
+            <ul class="ch-grid">
+
+              <li>
+                <div class="ch-item ch-img-1 word" 
+                    style="background-image: url(images/Logo_Word.png);">
+                  <div class="ch-info" >
+                    <h3>Word</h3>
+                    <p><a href="#">Cours</a></p>
+                    <p><a href="#">Exercices</a></p>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="ch-item ch-img-1 excel" 
+                    style="background-image: url(images/Logo_Excel.png);">
+                  <div class="ch-info" >
+                    <h3>Excel</h3>
+                    <p><a href="#">Cours</a></p>
+                    <p><a href="#">Exercices</a></p>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="ch-item ch-img-1 powerpoint" 
+                    style="background-image: url(images/Logo_PowerPoint.png);">
+                  <div class="ch-info" >
+                    <h3>PowerPoint</h3>
+                    <p><a href="#">Cours</a></p>
+                    <p><a href="#">Exercices</a></p>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="ch-item ch-img-1 vignette oracle" 
+                    style="background-image: url(images/Logo_Oracle.png);">
+                  <div class="ch-info" >
+                    <h3>Oracle</h3>
+                    <p><a href="#">Cours</a></p>
+                    <p><a href="#">Exercices</a></p>
+                  </div>
+                </div>
+              </li>
+
+
+            </ul>
+          </div>           
+
+
+
+          <div class="separator"></div>
+
           
           <!-- PARTIE COURS -->
           <div class="part" id="cours">
@@ -131,20 +163,20 @@
             <div class="item-list" id="coursWord">
               <h2> Titre de la section Word</h2>
               {% for c in cWord %}
-                <a href="#">
+                <div class="case-cours">
                   <h3> {{c.nomC}} </h3>
                   <p><small>{{c.contenueC}}</small></p>
-                </a>
+                </div>
               {% endfor %}
             </div>
             
             <div id="coursExcel">
               <h2> Titre de la section Excel</h2>
               {% for c in cExcel %}
-                <a href="#">
-                  <h3> {{c.nomC}} </h3>
-                  <p><small>{{c.contenueC}}</small></p>
-                </a>
+                  <a href="#">
+                    <h3> {{c.nomC}} </h3>
+                    <p><small>{{c.contenueC}}</small></p>
+                  </a>
               {% endfor %}
             </div>
               
@@ -217,8 +249,17 @@
               {% endfor %}
             </div>
           </div>
-        </div>
 
+          <div class="separator"></div>
+
+          <!-- PARTIE PRESENTATION -->
+          <div class="part" id="contact">
+            <h1 class="part-heading text-center"> Aide</h1>
+            <div class="text-center"> En cas de besoin n'hesitez pas à remplire le formulaire ci-dessous.</div>
+            <br/>
+            <iframe src="https://docs.google.com/forms/d/17T3nBDiLyp7IgzqdNGVTF-ifasEn5Szq9aU-2m1tFkE/viewform?embedded=true" width="700" height="1000">Chargement en cours...</iframe>
+          </div>
+        </div>
        {% endblock %}
 
 
@@ -246,5 +287,6 @@
 
     <!-- JS perso -->
     <script src="js/script.js"></script>
-    
+
+
 </html>

@@ -1,0 +1,11 @@
+/* ============= NEW FONT-FAMILY ============= */
+
+@font-face{
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Medium.ttf");
+}
+
+@font-face{
+  font-family: "Proxima Nova";
+  src: url("../fonts/Proxima Nova Alt Regular.otf");
+}
