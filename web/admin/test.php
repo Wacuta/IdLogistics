@@ -25,7 +25,7 @@
 					('13', 'Oracle', 'Cours 2', 'cours2.php', 'detail de ouf'),
 					('14', 'Oracle', 'Cours 3', 'cours3.php', 'detail de ouf'),
 					('15', 'Oracle', 'Cours 4', 'cours4.php', 'detail de ouf')";
-		echo $sql;
+		//echo $sql;
 		$connexion->exec($sql);
 
 		$sql = "INSERT INTO Exercice (idE, idC, nomE, typeE, contenueE, detailE)
@@ -46,7 +46,7 @@
 					('13', '0', 'Exercice 2', 'Oracle', 'exercice2.php', 'detail de ouf'),
 					('14', '2', 'Exercice 3', 'Oracle', 'exercice3.php', 'detail de ouf'),
 					('15', '3', 'Exercice 4', 'Oracle', 'exercice4.php', 'detail de ouf')";
-		echo "<br/>" . $sql;
+		//echo "<br/>" . $sql;
 		$connexion->exec($sql);
 		
 	} catch (Exception $e) {
@@ -54,16 +54,16 @@
 	}
 
 
-	$reponse = coursWord(); //$connexion->query("SELECT * FROM Cours");
+	include("connexionBd.php");
 
-	while($d = $reponse->fetch()){
-		echo "<p>" . $d['nomC'] . "</p>";
-	}
+	global $connexion;
+	$sth = $connexion->prepare("SELECT * from Exercice where typeE = 'Word'");
+	$sth->execute();
 
-	$reponse = exerciceExcel();
+	$result = $sth->fetchAll();
+	print_r(json_encode($result));
 
-	while($d = $reponse->fetch()){
-		echo "<p>" . $d['contenueE'] . "</p>";
-	}
+
+
 ?>
 </html>

@@ -28,59 +28,67 @@
 	/* lister les cours  d'un module */
 	function coursWord(){
 		global $connexion;
-		$result = $connexion->prepare("SELECT * from Cours where typeC = 'Word'");
-		$result->execute();
-    	return $result;
+		$rqt = $connexion->prepare("SELECT * from Cours where typeC = 'Word'");
+		$rqt->execute();
+		$result = $rqt->fetchAll();
+		return json_encode($result);
 	}
 
 	function coursExcel(){
 		global $connexion;
-		$result = $connexion->prepare("SELECT * from Cours where typeC = 'Excel'");
-		$result->execute();
-    	return $result;
+		$rqt = $connexion->prepare("SELECT * from Cours where typeC = 'Excel'");
+		$rqt->execute();
+		$result = $rqt->fetchAll();
+		return json_encode($result);
 	}
 
 	function coursPowerpoint(){
 		global $connexion;
-		$result = $connexion->prepare("SELECT * from Cours where typeC = 'PP'");
-		$result->execute();
-    	return $result;
+		$rqt = $connexion->prepare("SELECT * from Cours where typeC = 'PP'");
+		$rqt->execute();
+		$result = $rqt->fetchAll();
+		return json_encode($result);
 	}
 
 	function coursOracle(){
 		global $connexion;
-		$result = $connexion->prepare("SELECT * from Cours where typeC = 'Oracle'");
-		$result->execute();
-    	return $result;
+		$rqt = $connexion->prepare("SELECT * from Cours where typeC = 'Oracle'");
+		$rqt->execute();
+		$result = $rqt->fetchAll();
+		return json_encode($result);
 	}
 
 	/* lister les exercice d'un module */
 	function exerciceWord(){
 		global $connexion;
-		$result = $connexion->prepare("SELECT * from Exercice where typeE = 'Word'");
-		$result->execute();
-    	return $result;
+		$rqt = $connexion->prepare("SELECT * from Exercice where typeE = 'Word'");
+		$rqt->execute();
+		$result = $rqt->fetchAll();
+    	return json_encode($result);
 	}
 
 	function exerciceExcel(){
 		global $connexion;
-		$result = $connexion->prepare("SELECT * from Exercice where typeE = 'Excel'");
-		$result->execute();
-    	return $result;
+		$rqt = $connexion->prepare("SELECT * from Exercice where typeE = 'Excel'");
+		$rqt->execute();
+		$result = $rqt->fetchAll();
+    	return json_encode($result);
 	}
 
 	function exercicePowerpoint(){
 		global $connexion;
-		$result = $connexion->prepare("SELECT * from Exercice where typeE = 'PP'");
-		$result->execute();
-    	return $result;
+		$rqt = $connexion->prepare("SELECT * from Exercice where typeE = 'PP'");
+		$rqt->execute();
+		$result = $rqt->fetchAll();
+    	return json_encode($result);
 	}
 
 	function exerciceOracle(){
 		global $connexion;
-		$result = $connexion->prepare("SELECT * from Exercice where typeE = 'Oracle'");
-		$result->execute();
-    	return $result;
+		$rqt = $connexion->prepare("SELECT * from Exercice where typeE = 'Oracle'");
+		$rqt->execute();
+		$result = $rqt->fetchAll();
+    	return json_encode($result);
 	}
   
 ?>

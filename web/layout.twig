@@ -7,6 +7,9 @@
       <meta charset="utf-8">
       <title>GuideOffice</title>
 
+      <!-- jQuery & Ajax -->
+      <script src="js/jquery.js"></script>
+
       <!-- Bootstrap Core CSS -->
       <link href="css/bootstrap.min.css" rel="stylesheet">
         
@@ -16,12 +19,17 @@
       <!-- Fonts -->
       <link rel="stylesheet" type="text/css" href="css/fonts.css">
 
-      <!-- JS et CSS pour les vignette -->
+      <!-- CSS pour les vignette -->
       <link rel="stylesheet" type="text/css" href="css/vignette/style.css" />
       <link rel="stylesheet" type="text/css" href="css/vignette/common.css" />
       
-      <!-- CSS Perso -->
+      <!-- CSS & JS Perso -->
       <link href="css/style.css" rel="stylesheet" >
+      <script src="js/script.js"></script>
+
+      <!-- test -->
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">
+ 
 
 
     </head>
@@ -65,20 +73,20 @@
                 <li class="list-group-item"><a href="#prepa" class="">Présentation</a></li>
                 <li class="list-group-item"><a href="#modules" class="">Modules</a></li>
                 <li class="list-group-item"><a href="#cours" class="">Cours</a>
-                    <ul class="nav submenu">
+                    <!-- <ul class="nav submenu">
                         <li class="list-group-item hide"><a href="#coursWord" class="">Word</a></li>
                         <li class="list-group-item hide"><a href="#coursExcel" class="">Excel</a></li>
                         <li class="list-group-item hide"><a href="#coursPowerPoint" class="">PowerPoint</a></li>
                         <li class="list-group-item hide"><a href="#coursOracle" class="">Oracle</a></li>
-                    </ul>
+                    </ul> -->
                 </li>
                 <li class="list-group-item"><a href="#exercice" class="">Exercice</a>
-                    <ul class="nav submenu">
+                    <!-- <ul class="nav submenu">
                         <li class="list-group-item hide"><a href="#exerciceWord" class="">Word</a></li>
                         <li class="list-group-item hide"><a href="#exerciceExcel" class="">Excel</a></li>
                         <li class="list-group-item hide"><a href="#exercicePowerPoint" class="">PowerPoint</a></li>
                         <li class="list-group-item hide"><a href="#exerciceOracle" class="">Oracle</a></li>
-                    </ul>
+                    </ul> -->
                 </li>
                 <li class="list-group-item"><a href="#contact" class="">Contact</a></li>
             </ul>
@@ -106,44 +114,40 @@
 
               <li>
                 <div class="ch-item ch-img-1 word" 
-                    style="background-image: url(images/Logo_Word.png);">
+                    style="background-image: url(images/Logo_Word.png);" 
+                    onclick="module({{cWord | json_encode}}, {{eWord | json_encode}})">
                   <div class="ch-info" >
                     <h3>Word</h3>
-                    <p><a href="#">Cours</a></p>
-                    <p><a href="#">Exercices</a></p>
                   </div>
                 </div>
               </li>
 
               <li>
                 <div class="ch-item ch-img-1 excel" 
-                    style="background-image: url(images/Logo_Excel.png);">
+                    style="background-image: url(images/Logo_Excel.png);"
+                    onclick="module({{cExcel | json_encode}}, {{eExcel | json_encode}})">
                   <div class="ch-info" >
                     <h3>Excel</h3>
-                    <p><a href="#">Cours</a></p>
-                    <p><a href="#">Exercices</a></p>
                   </div>
                 </div>
               </li>
 
               <li>
                 <div class="ch-item ch-img-1 powerpoint" 
-                    style="background-image: url(images/Logo_PowerPoint.png);">
+                    style="background-image: url(images/Logo_PowerPoint.png);"
+                    onclick="module({{cPp | json_encode}}, {{ePp | json_encode}})">
                   <div class="ch-info" >
                     <h3>PowerPoint</h3>
-                    <p><a href="#">Cours</a></p>
-                    <p><a href="#">Exercices</a></p>
                   </div>
                 </div>
               </li>
 
               <li>
                 <div class="ch-item ch-img-1 vignette oracle" 
-                    style="background-image: url(images/Logo_Oracle.png);">
+                    style="background-image: url(images/Logo_Oracle.png);"
+                    onclick="module({{cOracle | json_encode}}, {{eOracle | json_encode}})">
                   <div class="ch-info" >
                     <h3>Oracle</h3>
-                    <p><a href="#">Cours</a></p>
-                    <p><a href="#">Exercices</a></p>
                   </div>
                 </div>
               </li>
@@ -160,45 +164,15 @@
           <!-- PARTIE COURS -->
           <div class="part" id="cours">
             <h1 class="part-heading text-center"> Cours</h1>
-            <div class="item-list" id="coursWord">
-              <h2> Titre de la section Word</h2>
-              {% for c in cWord %}
-                <div class="case-cours">
-                  <h3> {{c.nomC}} </h3>
-                  <p><small>{{c.contenueC}}</small></p>
-                </div>
-              {% endfor %}
-            </div>
-            
-            <div id="coursExcel">
-              <h2> Titre de la section Excel</h2>
-              {% for c in cExcel %}
-                  <a href="#">
-                    <h3> {{c.nomC}} </h3>
-                    <p><small>{{c.contenueC}}</small></p>
-                  </a>
-              {% endfor %}
-            </div>
-              
-            <div id="coursPowerPoint">
-              <h2> Titre de la section PowerPoint</h2>
-              {% for c in cPp %}
-                <a href="#">
-                  <h3> {{c.nomC}} </h3>
-                  <p><small>{{c.contenueC}}</small></p>
-                </a>
-              {% endfor %}
-            </div>
-          
-            <div id="coursOracle">
-              <h2> Titre de la section Oracle</h2>
-              {% for c in cOracle %}
-                <a href="#">
-                  <h3> {{c.nomC}} </h3>
-                  <p><small>{{c.contenueC}}</small></p>
-                </a>
-              {% endfor %}
-            </div>
+              <p class="text-center">Selectionner un module pour avoir la liste des cours</p>
+              <div class="case-cours">
+                <h3>Contenue</h3>
+                <p><small>http://materializecss.com/buttons.html</small></p>
+              </div>
+              <div class="case-cours">
+                <h3>Contenue</h3>
+                <p><small>https://scotch.io/tutorials/make-material-design-websites-with-the-materialize-css-framework</small></p>
+              </div>
         
           </div>
 
@@ -209,45 +183,7 @@
         
           <div class="part" id="exercice">
             <h1 class="part-heading text-center">Exercice</h1>
-            <div id="exerciceWord">
-              <h2> Titre de la section Word</h2>
-              {% for c in eWord %}
-                <a href="#">
-                  <h3> {{c.nomE}} </h3>
-                  <p><small>{{c.contenueE}}</small></p>
-                </a>
-              {% endfor %}
-            </div>
-            
-            <div id="exerciceExcel">
-              <h2> Titre de la section Excel</h2>
-              {% for c in eExcel %}
-                <a href="#">
-                  <h3> {{c.nomE}} </h3>
-                  <p><small>{{c.contenueE}}</small></p>
-                </a>
-              {% endfor %}
-            </div>
-              
-            <div id="exercicePowerPoint">
-              <h2> Titre de la section PowerPoint</h2>
-              {% for c in ePp %}
-                <a href="#">
-                  <h3> {{c.nomE}} </h3>
-                  <p><small>{{c.contenueE}}</small></p>
-                </a>
-              {% endfor %}
-            </div>
-          
-            <div id="exerciceOracle">
-              <h2> Titre de la section Oracle</h2>
-              {% for c in eOracle %}
-                <a href="#">
-                  <h3> {{c.nomE}} </h3>
-                  <p><small>{{c.contenueE}}</small></p>
-                </a>
-              {% endfor %}
-            </div>
+              <p class="text-center">Selectionner un module pour avoir la liste des exercices</p>
           </div>
 
           <div class="separator"></div>
@@ -279,14 +215,13 @@
     {% endblock %}
 
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-    <!-- JS perso -->
-    <script src="js/script.js"></script>
+    <!-- test -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.js"></script>
 
 
 </html>
