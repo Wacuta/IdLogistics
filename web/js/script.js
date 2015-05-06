@@ -22,7 +22,7 @@ $(document).ready(function () {
             window.location.hash = target;
         });
     });
-
+    
 
     /* Animation de la nav-tabs quand on scroll*/
     $('body').scrollspy({ 'target': '#nav', 'offset': 10 });
@@ -42,7 +42,16 @@ $(document).ready(function () {
     });
 
 
+    /* Scroll pour aller a la partie des cours*/
+    $(".vignette").click(function (){
+        $('html, body').animate({
+            scrollTop: $("#cours").offset().top
+        }, 500);
+                
+    });
+
 });
+
 
 
 
@@ -54,8 +63,16 @@ function module(d, e) {
         success:function(){
             $('#cours').empty();
             cours(d);
-            $('#exercice').empty();
+            $('#exercices').empty();
             exercices(e);
+            Materialize.showStaggeredList('#liste-magique');
+            // Materialize.showStaggeredList('#liste-magique2');
+            var options = [
+              // {selector: '#liste-magique', offset: 200, callback: 'Materialize.showStaggeredList("#liste-magique")' },
+              {selector: '#liste-magique2', offset: 200, callback: 'Materialize.showStaggeredList("#liste-magique2")' },
+            ];
+            Materialize.scrollFire(options);
+
         },
         error:function(){
             alert('error');
@@ -63,35 +80,49 @@ function module(d, e) {
     });
 }
 
+/* lister les cours en fonction des datas donné */
 function cours(data){
     var d = JSON.parse(data);
 
     var contenu = '<h1 class="part-heading text-center"> Cours</h1>';
 
-        for(var i = 0; i<d.length; i++){
-            contenu += '<div class="case-cours">';
-            contenu += '<h3>'+ d[i].nomC +'</h3>';
-            contenu += '<p><small>'+ d[i].contenueC +'</small></p></div>';
-        }
-    
+    contenu +='<ul id="liste-magique">';
 
-    contenu +='</div>';
+        for(var i = 0; i<d.length; i++){
+            contenu +='<li style="opacity:0;">';
+            contenu += '<div class="card blue waves-effect waves-light cliquable">';
+            contenu += '<div class="card-content">';
+            contenu += '<span class="card-title">'+ d[i].nomC +'</span>';
+            contenu += '<p>'+ d[i].detailC +'</p>';
+            contenu += '</div></div>';
+            contenu +='</li>';
+        }
+
+    contenu +='</ul>';
+
     $("#cours").append(contenu);
-    // $("#cours").text(jsonPretty);
 }
 
+
+/* lister les exercices en fonction des datas donné */
 function exercices(data){
     var d = JSON.parse(data);
 
     var contenu = '<h1 class="part-heading text-center"> Exercices</h1>';
 
-        for(var i = 0; i<d.length; i++){
-            contenu += '<div class="case-cours">';
-            contenu += '<h3>'+ d[i].nomE +'</h3>';
-            contenu += '<p><small>'+ d[i].contenueE +'</small></p></div>';
-        }
-    
+    contenu +='<ul id="liste-magique2">';
 
-    contenu +='</div>';
-    $("#exercice").append(contenu);
+        for(var i = 0; i<d.length; i++){
+            contenu +='<li style="opacity:0;">';
+            contenu += '<div class="card light-green waves-effect waves-light cliquable">';
+            contenu += '<div class="card-content">';
+            contenu += '<span class="card-title">'+ d[i].nomE +'</span>';
+            contenu += '<p>'+ d[i].detailE +'</p>';
+            contenu += '</div></div>';
+            contenu +='</li>';
+        }
+        
+    contenu +='</ul>';
+
+    $("#exercices").append(contenu);
 }

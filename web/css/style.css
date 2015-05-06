@@ -57,6 +57,10 @@
   font-size: 100px;
 }
 
+.autre{
+  background-color: #693884;
+}
+
 .word{
   background-color: #0D47A1;
 }
@@ -81,7 +85,7 @@
 
 .part-heading{
   padding-bottom: 50px;
-  font-family: "Proxima Nova";
+  font-family: "Roboto";
 }
 
 .separator {
@@ -107,16 +111,15 @@ li.list-group-item {
 }
 
 li.list-group-item a{
-    color:#212121;
+    color:#a8a8a8;
 
 }
 
 li.list-group-item:hover > a:hover{
   border-width:thin;
   border-left-style:solid;
-  border-left-color: #B20000;
-  color: #B20000;      
-  font-weight:500;
+  border-left-color: #ea4a4f;
+  color: #ea4a4f;      
   border-width:1px;
   background-color:#fff;
   
@@ -129,9 +132,8 @@ li.list-group-item.active > a:hover,
 li.list-group-item.active > a:focus { 
   border-width:2px;
   border-left-style:solid;
-  border-left-color: #B20000;  
-  color: #B20000;  
-  font-weight: bold;
+  border-left-color: #ea4a4f;  
+  color: #ea4a4f;  
   padding: 3px 8px;
 }
  
@@ -160,20 +162,18 @@ ul.list-group.affix {
 /* ============= CONTENUE ACCUEIL ============= */
 
 body{
-  font-family: "Proxima Nova";
+  font-family: "Roboto";
+  font-weight: 300;
 }
 
-.case-cours{
-  padding-left: 20px;
-  border-width: 1px;
-  border-top: solid;
-} 
+.logo-module{
+  max-width: 50px;
+}
 
-.case-cours:focus,
-.case-cours:hover{
-  /* border-width:1px; */
-  border-left-style:solid;
-  border-left-color: #B20000;
+.cliquable:hover{
+  -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 }
 
 

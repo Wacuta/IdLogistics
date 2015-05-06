@@ -6,13 +6,14 @@
     <head>
       <meta charset="utf-8">
       <title>GuideOffice</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
       <!-- jQuery & Ajax -->
       <script src="js/jquery.js"></script>
 
       <!-- Bootstrap Core CSS -->
-      <link href="css/bootstrap.min.css" rel="stylesheet">
-        
+      <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+
       <!-- Icon de l'onglet -->
       <link rel="icon" type="image/png" href="images/Logo_ID.png" />
 
@@ -22,13 +23,15 @@
       <!-- CSS pour les vignette -->
       <link rel="stylesheet" type="text/css" href="css/vignette/style.css" />
       <link rel="stylesheet" type="text/css" href="css/vignette/common.css" />
-      
+
+      <!-- CSS Maretialize -->
+      <link type="text/css" rel="stylesheet" href="css/materialize/materialize.css"  media="screen,projection"/>
+
+
       <!-- CSS & JS Perso -->
       <link href="css/style.css" rel="stylesheet" >
       <script src="js/script.js"></script>
 
-      <!-- test -->
-      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">
  
 
 
@@ -72,21 +75,12 @@
                 <li class="list-group-item"><a href="#logo" class="">Accueil</a></li>
                 <li class="list-group-item"><a href="#prepa" class="">Présentation</a></li>
                 <li class="list-group-item"><a href="#modules" class="">Modules</a></li>
-                <li class="list-group-item"><a href="#cours" class="">Cours</a>
-                    <!-- <ul class="nav submenu">
-                        <li class="list-group-item hide"><a href="#coursWord" class="">Word</a></li>
-                        <li class="list-group-item hide"><a href="#coursExcel" class="">Excel</a></li>
-                        <li class="list-group-item hide"><a href="#coursPowerPoint" class="">PowerPoint</a></li>
-                        <li class="list-group-item hide"><a href="#coursOracle" class="">Oracle</a></li>
-                    </ul> -->
-                </li>
-                <li class="list-group-item"><a href="#exercice" class="">Exercice</a>
-                    <!-- <ul class="nav submenu">
-                        <li class="list-group-item hide"><a href="#exerciceWord" class="">Word</a></li>
-                        <li class="list-group-item hide"><a href="#exerciceExcel" class="">Excel</a></li>
-                        <li class="list-group-item hide"><a href="#exercicePowerPoint" class="">PowerPoint</a></li>
-                        <li class="list-group-item hide"><a href="#exerciceOracle" class="">Oracle</a></li>
-                    </ul> -->
+                <li class="list-group-item"><a href="#contenue" class="">Contenue</a>
+                    <ul class="nav submenu">
+                        <li class="list-group-item hide"><a href="#contenue" class="">Recherche</a></li>
+                        <li class="list-group-item hide"><a href="#cours" class="">Cours</a></li>
+                        <li class="list-group-item hide"><a href="#exercices" class="">Exercices</a></li>
+                    </ul>
                 </li>
                 <li class="list-group-item"><a href="#contact" class="">Contact</a></li>
             </ul>
@@ -98,7 +92,7 @@
           <!-- PARTIE PRESENTATION -->
           <div class="part" id="prepa">
             <h1 class="part-heading text-center"> Présentation</h1>
-            <div class="text-center"> Cette application a pour but de vous aider à progresser dans l’utilisation des logiciels du pack office de Microsoft, Word, Excel, PowerPoint ainsi qu’au langage informatique SQL pours les bases de données de Oracle.
+            <div class="text-center">Cette application a pour but de vous aider à progresser dans l’utilisation des logiciels du pack office de Microsoft, Word, Excel, PowerPoint ainsi qu’au langage informatique SQL pours les bases de données de Oracle.
             L’application est divisée en ces quatre modules composés de cours et d’exercice, où vous pourrez à la fois approfondir vos connaissances mais aussi les mettre à l’épreuve.
             </div>
           </div>
@@ -110,10 +104,21 @@
           
           <div class="part" id="modules">
             <h1 class="part-heading text-center"> Modules</h1>
+            
             <ul class="ch-grid">
 
-              <li>
-                <div class="ch-item ch-img-1 word" 
+              <li class="vignette">
+                <div class="ch-item ch-img-1 autre waves-effect waves-light cliquable" 
+                    style="background-image: url(images/Logo_Word.png);"
+                    onclick="module({{cOracle | json_encode}}, {{eOracle | json_encode}})">
+                  <div class="ch-info" >
+                    <h3>Autre</h3>
+                  </div>
+                </div>
+              </li>
+            
+              <li class="vignette">
+                <div class="ch-item ch-img-1 word waves-effect waves-light cliquable" 
                     style="background-image: url(images/Logo_Word.png);" 
                     onclick="module({{cWord | json_encode}}, {{eWord | json_encode}})">
                   <div class="ch-info" >
@@ -121,9 +126,9 @@
                   </div>
                 </div>
               </li>
-
-              <li>
-                <div class="ch-item ch-img-1 excel" 
+            
+              <li class="vignette">
+                <div class="ch-item ch-img-1 excel waves-effect waves-light cliquable" 
                     style="background-image: url(images/Logo_Excel.png);"
                     onclick="module({{cExcel | json_encode}}, {{eExcel | json_encode}})">
                   <div class="ch-info" >
@@ -131,9 +136,9 @@
                   </div>
                 </div>
               </li>
-
-              <li>
-                <div class="ch-item ch-img-1 powerpoint" 
+            
+              <li class="vignette">
+                <div class="ch-item ch-img-1 powerpoint waves-effect waves-light cliquable" 
                     style="background-image: url(images/Logo_PowerPoint.png);"
                     onclick="module({{cPp | json_encode}}, {{ePp | json_encode}})">
                   <div class="ch-info" >
@@ -141,9 +146,9 @@
                   </div>
                 </div>
               </li>
-
-              <li>
-                <div class="ch-item ch-img-1 vignette oracle" 
+            
+              <li class="vignette">
+                <div class="ch-item ch-img-1 oracle waves-effect waves-light cliquable" 
                     style="background-image: url(images/Logo_Oracle.png);"
                     onclick="module({{cOracle | json_encode}}, {{eOracle | json_encode}})">
                   <div class="ch-info" >
@@ -152,7 +157,9 @@
                 </div>
               </li>
 
-
+              
+              
+                     
             </ul>
           </div>           
 
@@ -160,44 +167,44 @@
 
           <div class="separator"></div>
 
-          
-          <!-- PARTIE COURS -->
-          <div class="part" id="cours">
-            <h1 class="part-heading text-center"> Cours</h1>
-              <p class="text-center">Selectionner un module pour avoir la liste des cours</p>
-              <div class="case-cours">
-                <h3>Contenue</h3>
-                <p><small>http://materializecss.com/buttons.html</small></p>
-              </div>
-              <div class="case-cours">
-                <h3>Contenue</h3>
-                <p><small>https://scotch.io/tutorials/make-material-design-websites-with-the-materialize-css-framework</small></p>
-              </div>
-        
+          <div class="part" id="contenue">
+            
+            <div class="input-field" id="recherche">
+              <i class="mdi-action-search prefix"></i>
+              <input id="icon_prefix" type="text" class="validate">
+              <label for="icon_prefix">Recherche</label>
+            </div>
+
+            <!-- PARTIE COURS -->
+            <div class="part" id="cours">
+              <h1 class="part-heading text-center"> Cours</h1>
+                <p class="text-center">Selectionner un module ou faites une recherche pour afficher une liste de cours</p>       
+            </div>
+
+            <div class="separator"></div>
+
+
+            <!-- PARTIE EXERCICE -->
+            <div class="part" id="exercices">
+              <h1 class="part-heading text-center">Exercices</h1>
+                <p class="text-center">Selectionner un module ou faites une recherche pour afficher une liste d'exercices</p>
+            </div>
+
           </div>
 
           <div class="separator"></div>
 
-
-          <!-- PARTIE EXERCICE -->
-        
-          <div class="part" id="exercice">
-            <h1 class="part-heading text-center">Exercice</h1>
-              <p class="text-center">Selectionner un module pour avoir la liste des exercices</p>
-          </div>
-
-          <div class="separator"></div>
-
-          <!-- PARTIE PRESENTATION -->
+          <!-- PARTIE CONTACT -->
           <div class="part" id="contact">
-            <h1 class="part-heading text-center"> Aide</h1>
+            <h1 class="part-heading text-center"> Contact</h1>
             <div class="text-center"> En cas de besoin n'hesitez pas à remplire le formulaire ci-dessous.</div>
             <br/>
-            <iframe src="https://docs.google.com/forms/d/17T3nBDiLyp7IgzqdNGVTF-ifasEn5Szq9aU-2m1tFkE/viewform?embedded=true" width="700" height="1000">Chargement en cours...</iframe>
+            <div class="text-center">
+              <iframe src="https://docs.google.com/forms/d/17T3nBDiLyp7IgzqdNGVTF-ifasEn5Szq9aU-2m1tFkE/viewform?embedded=true" width="700" height="1000">Chargement en cours...</iframe>
+            </div>
           </div>
         </div>
        {% endblock %}
-
 
 
     </body>
@@ -216,12 +223,15 @@
 
 
     
+    <!-- Materialize -->
+    <script src="js/materialize/materialize.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- test -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    
+  <script type="text/javascript">
+     
+  </script>
 
 
 </html>
