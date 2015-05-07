@@ -66,9 +66,7 @@ function module(d, e) {
             $('#exercices').empty();
             exercices(e);
             Materialize.showStaggeredList('#liste-magique');
-            // Materialize.showStaggeredList('#liste-magique2');
             var options = [
-              // {selector: '#liste-magique', offset: 200, callback: 'Materialize.showStaggeredList("#liste-magique")' },
               {selector: '#liste-magique2', offset: 200, callback: 'Materialize.showStaggeredList("#liste-magique2")' },
             ];
             Materialize.scrollFire(options);
