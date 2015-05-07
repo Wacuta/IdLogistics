@@ -31,6 +31,7 @@
       <!-- CSS & JS Perso -->
       <link href="css/style.css" rel="stylesheet" >
       <script src="js/script.js"></script>
+      <script src="js/recherche/recherche.js"></script>
 
  
 
@@ -167,29 +168,35 @@
 
           <div class="separator"></div>
 
-          <div class="part" id="contenue">
+            <div class="part" id="contenue">
             
-            <div class="input-field" id="recherche">
-              <i class="mdi-action-search prefix"></i>
-              <input id="icon_prefix" type="text" class="validate">
-              <label for="icon_prefix">Recherche</label>
+              <div class="input-field" id="recherche">
+                <i class="mdi-action-search prefix"></i>
+                <input id="icon_prefix" type="text" class="validate">
+                <label for="icon_prefix">Recherche</label>
+              </div>
+
+              <div id="sous_contenue">
+
+              <!-- PARTIE COURS -->
+              <div class="part" id="cours">
+                <h1 class="part-heading text-center"> Cours</h1>
+                <div id='contenue_cours'>
+                  <p class="text-center">Selectionner un module ou faites une recherche pour afficher une liste de cours</p> 
+                </div>      
+              </div>
+
+              <div class="separator"></div>
+
+
+              <!-- PARTIE EXERCICE -->
+              <div class="part" id="exercices">
+                <h1 class="part-heading text-center">Exercices</h1>
+                <div id='contenue_exercice'>
+                  <p class="text-center">Selectionner un module ou faites une recherche pour afficher une liste d'exercices</p>
+                </div>
+              </div>
             </div>
-
-            <!-- PARTIE COURS -->
-            <div class="part" id="cours">
-              <h1 class="part-heading text-center"> Cours</h1>
-                <p class="text-center">Selectionner un module ou faites une recherche pour afficher une liste de cours</p>       
-            </div>
-
-            <div class="separator"></div>
-
-
-            <!-- PARTIE EXERCICE -->
-            <div class="part" id="exercices">
-              <h1 class="part-heading text-center">Exercices</h1>
-                <p class="text-center">Selectionner un module ou faites une recherche pour afficher une liste d'exercices</p>
-            </div>
-
           </div>
 
           <div class="separator"></div>
