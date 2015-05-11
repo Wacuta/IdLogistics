@@ -83,7 +83,7 @@
                         <li class="list-group-item hide"><a href="#exercices" class="">Exercices</a></li>
                     </ul>
                 </li>
-                <li class="list-group-item"><a href="#contact" class="">Contact</a></li>
+                <li class="list-group-item"><a href="#aide" class="">Aide</a></li>
             </ul>
         </div>
         
@@ -201,14 +201,37 @@
 
           <div class="separator"></div>
 
-          <!-- PARTIE CONTACT -->
-          <div class="part" id="contact">
-            <h1 class="part-heading text-center"> Contact</h1>
-            <div class="text-center"> En cas de besoin n'hesitez pas à remplire le formulaire ci-dessous.</div>
-            <br/>
-            <div class="text-center">
-              <iframe src="https://docs.google.com/forms/d/17T3nBDiLyp7IgzqdNGVTF-ifasEn5Szq9aU-2m1tFkE/viewform?embedded=true" width="700" height="1000">Chargement en cours...</iframe>
+          <!-- PARTIE AIDE -->
+          <div class="part" id="aide">
+            <h1 class="part-heading text-center"> Aide</h1>
+            <ul class="tabs">
+              <li class="tab col s3"><a href="#contact" class="active">Contact</a></li>
+              <li class="tab col s3"><a href="#faq">FAQ</a></li>
+            </ul>
+            
+            <div id="contact">
+              <div class="text-center"> En cas de besoin n'hesitez pas à remplire le formulaire ci-dessous.</div>
+              <br/>
+              <div class="text-center">
+                <iframe src="https://docs.google.com/forms/d/17T3nBDiLyp7IgzqdNGVTF-ifasEn5Szq9aU-2m1tFkE/viewform?embedded=true" width="700" height="1000">Chargement en cours...</iframe>
+              </div>
             </div>
+
+            <div id="faq">
+              <ul class="collapsible popout" data-collapsible="accordion">
+
+                {% for i in faq %}
+                <li>
+                  <div class="collapsible-header">
+                    <i class="mdi-hardware-keyboard-arrow-right"></i>
+                    {{i.question}}
+                  </div>
+                  <div class="collapsible-body"><p>{{i.reponse}}</p></div>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+
           </div>
         </div>
        {% endblock %}
@@ -237,7 +260,10 @@
     <script src="js/bootstrap/bootstrap.min.js"></script>
     
   <script type="text/javascript">
-     
+    /* $(document).ready(function(){
+        $('ul.tabs').tabs();
+      });*/
+      
   </script>
 
 
