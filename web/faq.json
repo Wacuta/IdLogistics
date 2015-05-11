@@ -1,0 +1,42 @@
+[
+    {
+        "question": "Peut-on étirer une image en gardant sa proportion ?",
+        "reponse": "Oui, pour cela il faut garder la touche du clavier 'Ctrl' enfoncé et étirer les diagonales de l'image."
+    },
+    {
+        "question": "Comment peut-on avoir une image avec un fond transparent ?",
+        "reponse": "Le fond transparent est n'est pas disponible sur tout les formats d'image. Les images JPG ne peuvent pas avoir de fond transparent, mais les images au formats au formats PNG peuvent. Il faut aussi que l'image soit paramètré des sa création, car une image PNG peut aussi avoir un fond de couleur."
+    },
+    {
+        "question": "Pourquoi je ne peux pas créer de liste de diffusion sur Outlook ?",
+        "reponse": "Le problème est présent sur chez tout le monde. Suite à l'enregistrement d'une liste, on se rend compte qu'elle est vide. Le problème n'a pas été résolut et ne le sera pas, Microsoft abandonne le logiciel petit à petit."
+    },
+    {
+        "question": "Question 4",
+        "reponse": "Ici reposera la reponse à toute vos attente"
+    },
+    {
+        "question": "Question 5",
+        "reponse": "Ici reposera la reponse à toute vos attente"
+    },
+    {
+        "question": "Question 6",
+        "reponse": "Ici reposera la reponse à toute vos attente"
+    },
+    {
+        "question": "Question 7",
+        "reponse": "Ici reposera la reponse à toute vos attente"
+    },
+    {
+        "question": "Question 8",
+        "reponse": "Ici reposera la reponse à toute vos attente"
+    },
+    {
+        "question": "Question 9",
+        "reponse": "Ici reposera la reponse à toute vos attente"
+    },
+    {
+        "question": "Question 10",
+        "reponse": "Ici reposera la reponse à toute vos attente"
+    }
+]

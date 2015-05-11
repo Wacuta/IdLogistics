@@ -16,6 +16,21 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 include("admin/requet.php");
 
 
+/* retourner la FAQ */
+function faq(){
+	$json = file_get_contents("faq.json");
+	$data = json_decode($json);
+	$faq = array();
+	$size = sizeof($data);
+	for ($i=0; $i < $size; $i++) { 
+		$c = $data[$i];
+		array_push($faq, $c);
+	}
+	
+	return $faq;
+}
+
+
 // page d'acceuil
 $app->get('/', function() use ($app){
 
@@ -29,6 +44,8 @@ $app->get('/', function() use ($app){
 	$ePp = exercicePowerpoint();
 	$eOracle = exerciceOracle();
 
+	$faq = faq();
+
 	return $app['twig']->render('layout.twig', array(
 				'cWord' => $cWord,
 				'cExcel' => $cExcel,
@@ -37,7 +54,8 @@ $app->get('/', function() use ($app){
 				'eWord' => $eWord,
 				'eExcel' => $eExcel,
 				'ePp' => $ePp,
-				'eOracle' => $eOracle
+				'eOracle' => $eOracle,
+				'faq' => $faq
 			));
 });
 
