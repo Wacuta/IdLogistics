@@ -88,7 +88,7 @@ function cours(data){
 
         for(var i = 0; i<d.length; i++){
             contenu +='<li style="opacity:0;">';
-            contenu += '<div class="card blue waves-effect waves-light cliquable" onclick="nouvelleFenetre(\'cours-'+d[i].idC+'\')">';
+            contenu += '<div class="card '+d[i].typeC+' waves-effect waves-light cliquable" onclick="nouvelleFenetre(\'cours-'+d[i].idC+'\')">';
             contenu += '<div class="card-content">';
             contenu += '<span class="card-title">'+ d[i].nomC +'</span>';
             contenu += '<p>'+ d[i].detailC +'</p>';
@@ -112,7 +112,7 @@ function exercices(data){
 
         for(var i = 0; i<d.length; i++){
             contenu +='<li style="opacity:0;">';
-            contenu += '<div class="card light-green waves-effect waves-light cliquable">';
+            contenu += '<div class="card '+d[i].typeE+' waves-effect waves-light cliquable">';
             contenu += '<div class="card-content">';
             contenu += '<span class="card-title">'+ d[i].nomE +'</span>';
             contenu += '<p>'+ d[i].detailE +'</p>';

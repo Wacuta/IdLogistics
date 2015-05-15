@@ -8,8 +8,8 @@
 		$q = array('motclef' => '%'.$motclef.'%');
 		
 		
-		$sqlC = "SELECT * from Cours where nomC like :motclef";
-		$sqlE = "SELECT * from Exercice where nomE like :motclef";
+		$sqlC = "SELECT * from Cours where nomC like :motclef or detailC like :motclef";
+		$sqlE = "SELECT * from Exercice where nomE like :motclef or detailE like :motclef";
 		
 		$reqC = $connexion->prepare($sqlC);
 		$reqE = $connexion->prepare($sqlE);
@@ -29,7 +29,7 @@
             echo '<ul id="liste-magique">';
 			while ($result = $reqC->fetch(PDO::FETCH_OBJ)){
 				echo '<li style="opacity:0;">';
-	            echo  '<div class="card blue waves-effect waves-light cliquable">';
+	            echo  '<div class="card '.$result->typeC.' waves-effect waves-light cliquable"onclick="nouvelleFenetre(\'cours-'.$result->idC.'\')">';
 	            echo  '<div class="card-content">';
 	            echo  '<span class="card-title">'.$result->nomC.'</span>';
 	            echo  '<p>'.$result->detailC.'</p>';
@@ -59,7 +59,7 @@
             echo '<ul id="liste-magique2">';
 			while($result = $reqE->fetch(PDO::FETCH_OBJ)){
 				echo '<li style="opacity:0;">';
-	            echo  '<div class="card light-green waves-effect waves-light cliquable">';
+	            echo  '<div class="card '.$result->typeE.' waves-effect waves-light cliquable">';
 	            echo  '<div class="card-content">';
 	            echo  '<span class="card-title">'.$result->nomE.'</span>';
 	            echo  '<p>'.$result->detailE.'</p>';

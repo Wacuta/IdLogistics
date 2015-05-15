@@ -40,35 +40,30 @@
 
 
 
-   {% block menu_nav %} 
-    
-   {% endblock %}
+   
         
      
 
     <body data-spy="scroll" data-target="#myScrollspy">
         
-        {% block header %}
-                
+       
+        <div class="banniere blue darken-4">   
           <div class="container">
-            <div class="banniere">
-              <div>
-                <img src="images/Logo_ID.png" id="logo">
-              </div>
-              <div class="ligne_vertical"></div>
-              <div>
-                <h1 id="titreSite">GuideOffice</h1>
-                <h1 id="descSite"><small>Guide au application Office et Oracle</small></h1>
-              </div>
+            <div>
+              <img src="images/Logo_ID_RedArrow.png" id="logo">
+            </div>
+            <div class="center-align">
+              <h1 id="titreSite">GuideOffice</h1>
+              <h1 id="descSite">Guide au application Office et Oracle</h1>
             </div>
           </div>            
-            
-        {% endblock %}
+        </div>
+
 
     
 
 
-       {% block contenue %}
+
 
        <div class="row" id="nav">
         <div class="col-xs-3" id="myScrollspy">
@@ -93,11 +88,11 @@
           <!-- PARTIE PRESENTATION -->
           <div class="part" id="prepa">
             <h1 class="part-heading text-center"> Présentation</h1>
-            <div class="text-center">Cette application a pour but de vous aider à progresser dans l’utilisation des logiciels du pack office de Microsoft, Word, Excel, PowerPoint ainsi qu’au langage informatique SQL pours les bases de données de Oracle.
+            <div class="text-center">Cette application a pour but de vous aider à progresser dans l’utilisation des logiciels du pack Office de Microsoft, Word, Excel, PowerPoint ainsi qu’au langage informatique SQL pour les bases de données de Oracle.<br/>
             L’application est divisée en ces quatre modules composés de cours et d’exercice, où vous pourrez à la fois approfondir vos connaissances mais aussi les mettre à l’épreuve.
             </div>
           </div>
-
+          <!-- FIN PRESENTATION -->
 
           <div class="separator"></div>
 
@@ -108,7 +103,7 @@
             
             <ul class="ch-grid">
 
-              <li class="vignette">
+              <!-- <li class="vignette">
                 <div class="ch-item ch-img-1 autre waves-effect waves-light cliquable" 
                     style="background-image: url(images/Logo_Word.png);"
                     onclick="module({{cOracle | json_encode}}, {{eOracle | json_encode}})">
@@ -116,7 +111,7 @@
                     <h3>Autre</h3>
                   </div>
                 </div>
-              </li>
+              </li> -->
             
               <li class="vignette">
                 <div class="ch-item ch-img-1 word waves-effect waves-light cliquable" 
@@ -157,17 +152,16 @@
                   </div>
                 </div>
               </li>
-
-              
-              
-                     
+      
             </ul>
           </div>           
-
+          <!-- FIN MODULE -->
 
 
           <div class="separator"></div>
+            
 
+            <!-- PARTIE CONTENUE -->
             <div class="part" id="contenue">
             
               <div class="input-field" id="recherche">
@@ -176,51 +170,53 @@
                 <label for="icon_prefix">Recherche</label>
               </div>
 
+              <!-- PARIE SOUS_CONTENUE -->
               <div id="sous_contenue">
 
-              <!-- PARTIE COURS -->
-              <div class="part" id="cours">
-                <h1 class="part-heading text-center"> Cours</h1>
-                <div id='contenue_cours'>
-                  <p class="text-center">
-                    Selectionner un module ou faites une recherche pour afficher une liste de cours
-                  </p> 
-                </div>      
+                <!-- PARTIE COURS -->
+                <div class="part" id="cours">
+                  <h1 class="part-heading text-center"> Cours</h1>
+                  <div id='contenue_cours'>
+                    <p class="text-center">
+                      Selectionner un module ou faites une recherche pour afficher une liste de cours
+                    </p> 
+                  </div>      
+                </div> 
+                <!-- FIN COURS -->
+
+                <div class="separator"></div>
+
+
+                <!-- PARTIE EXERCICE -->
+                <div class="part" id="exercices">
+                  <h1 class="part-heading text-center">Exercices</h1>
+                  <div id='contenue_exercice'>
+                    <p class="text-center">
+                      Selectionner un module ou faites une recherche pour afficher une liste d'exercices
+                    </p>
+                  </div>
+                </div> 
+                <!-- FIN EXERCICE -->
               </div>
-
-              <div class="separator"></div>
-
-
-              <!-- PARTIE EXERCICE -->
-              <div class="part" id="exercices">
-                <h1 class="part-heading text-center">Exercices</h1>
-                <div id='contenue_exercice'>
-                  <p class="text-center">
-                    Selectionner un module ou faites une recherche pour afficher une liste d'exercices
-                  </p>
-                </div>
-              </div>
-            </div>
+              <!-- FIN SOUS_CONTENUE -->
           </div>
+          <!-- FIN CONTENUE -->
+
+
 
           <div class="separator"></div>
+
+
+
 
           <!-- PARTIE AIDE -->
           <div class="part" id="aide">
             <h1 class="part-heading text-center"> Aide</h1>
             <ul class="tabs">
-              <li class="tab col s3"><a href="#contact" class="active">Contact</a></li>
-              <li class="tab col s3"><a href="#faq">FAQ</a></li>
+              <li class="tab col s3"><a href="#faq" class="active">FAQ</a></li>
+              <li class="tab col s3"><a href="#contact">Contact</a></li>
             </ul>
             
-            <div id="contact">
-              <div class="text-center"> En cas de besoin n'hesitez pas à remplire le formulaire ci-dessous.</div>
-              <br/>
-              <div class="text-center">
-                <iframe src="https://docs.google.com/forms/d/17T3nBDiLyp7IgzqdNGVTF-ifasEn5Szq9aU-2m1tFkE/viewform?embedded=true" width="700" height="1000">Chargement en cours...</iframe>
-              </div>
-            </div>
-
             <div id="faq">
               <ul class="collapsible popout" data-collapsible="accordion">
 
@@ -236,24 +232,67 @@
               </ul>
             </div>
 
-          </div>
-        </div>
-       {% endblock %}
+            <div id="contact">
+              <div class="text-center"> En cas de besoin n'hesitez pas à remplire le formulaire ci-dessous.</div>
+              <br/>
+              <div class="text-center">
+                <iframe src="https://docs.google.com/forms/d/17T3nBDiLyp7IgzqdNGVTF-ifasEn5Szq9aU-2m1tFkE/viewform?embedded=true" width="700" height="1000">Chargement en cours...</iframe>
+              </div>
+            </div>
 
+          </div>
+          <!-- FIN AIDE -->
+        </div>
+        <!-- FIN col s6 -->
+      </div>
+      <!-- FIN row principal -->
+
+      
+      <!-- FOOTER -->
+      <div class="foot blue darken-4 white-text">
+        <div class="container">
+          <div class="row" style="padding-bottom:20px;">
+
+             <div class="col s4">
+              <h3>ID LOGISTICS</h3>
+              Parc Synergie Val de Loire <br/>
+              6ème avenue <br/>
+              45130 Meung sur Loire <br/>
+              France <br/>
+              <a href="http://www.id-logistics.com">www.id-logistics.com</a> <br/>
+            </div>
+
+            <div class="col s4">
+              <h3>François Bieron</h3>
+              Responsable de site <br/>
+              <i class="mdi-maps-local-phone"></i> : 02.38.46.75.70 <br/>
+              <i class="mdi-hardware-phone-android"></i> : 06.17.91.58.94 <br/>
+              <i class="mdi-content-mail"></i> : fbieron@id-logistics.com <br/>
+
+            </div>
+
+           
+
+            <div class="col s4">
+              <h3>Réalisation</h3>
+              Cette application sous la forme d'un site, a été réalisé par Maxime Guyot, au cours d'un stage sur la période de Avril à Juin 2015.
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s10 valign-wrapper">
+              © 2015-2016 IDLogistics - Meung sur Loire. 
+            </div>
+          </div>
+
+        </div>
+
+      
+      </div>
+      <!-- FIN FOOTER -->
 
     </body>
 
-<footer>
-    {% block footer %}
-
-    {% endblock %}
-
-</footer>
-
-
-    {% block plus %}
-
-    {% endblock %}
 
 
     
@@ -263,9 +302,10 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap/bootstrap.min.js"></script>
     
-  <script type="text/javascript">
-    
-  </script>
+    <script type="text/javascript">
+     
+
+    </script>
 
 
 </html>
