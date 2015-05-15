@@ -1,0 +1,138 @@
+{% extends 'contenu/layout_excel.twig' %}
+
+
+
+
+{% block contenu %}
+
+
+	<h1 class="center-align">{{nomC}}</h1>
+	<p class="center-align">
+		Les opérations mathématiques sur Excel sont les bases du tableurs.<br>
+		Les opérations possible sont: l'addition, la soustraction, la multiplication et la division.<br>
+		Certainne d'entre elles peuvent être réalisé de manières différentes.
+	</p>
+
+	<ul class="collection">
+      <li class="collection-item"><h3>Addition</h3>
+			L'opérateur + : Il additionne la valeur de gauche avec la valeur de droite.<br>
+			La fonction <em>SOMME(A1:B3)</em> * fait la somme des valeurs comprise dans la selection.<br><br>
+			*<small><em>SUM(A1:B3)</em> en anglais</small> 
+      </li>
+      <li class="collection-item"><h3>Soustraction</h3>
+		
+			L'opérateur - : Il soustrait la valeur de gauche avec la valeur de droite.
+		
+      </li>
+      <li class="collection-item"><h3>Multiplication</h3>
+		
+			L'opérateur * : Il multiplie la valeur de gauche avec la valeur de droite. <br>
+			La fonction <em>PRODUIT(A1:B3)</em> * multiplie tout valeur de la selection.<br><br>
+			*<small><em>PRODUCT(A1:B3)</em> en anglais</small>
+		
+      </li>
+      <li class="collection-item"><h3>Division</h3>
+		
+			L'opérateur / : Il divise la valeur de gauche par la valeur de droite.<br>
+		
+      </li>
+    </ul>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% block foot %}
+<script src="../js/contenu/excel.js"></script>
+{% endblock %}
+
+{% block script %}
+$(document).ready(function () {
+
+	var spread = $("#ss").wijspread("spread");
+	var sheet = spread.getActiveSheet();
+
+	var r = new $.wijmo.wijspread.Range(2, 1, 2, 3); // coordonnée 2, 2 sur une étendu de 2, 3
+	sheet.setBorder(r, new $.wijmo.wijspread.LineBorder("#000",$.wijmo.wijspread.LineStyle.medium), {all:true},3);
+
+	
+
+	sheet.addSpan(2, 1, 1, 3, $.wijmo.wijspread.SheetArea.viewport);
+	cell = sheet.getCell(2, 1, $.wijmo.wijspread.SheetArea.viewport);
+    cell.value("Valeur");
+    cell.hAlign($.wijmo.wijspread.HorizontalAlign.center);
+    cell.vAlign($.wijmo.wijspread.VerticalAlign.center);
+
+    sheet.addSpan(2, 5, 2, 1, $.wijmo.wijspread.SheetArea.viewport);
+	cell = sheet.getCell(2, 5, $.wijmo.wijspread.SheetArea.viewport);
+    cell.value("Addition");
+    cell.backColor("#E2B9B9");
+    cell.hAlign($.wijmo.wijspread.HorizontalAlign.center);
+    cell.vAlign($.wijmo.wijspread.VerticalAlign.center);
+
+	cell = sheet.getCell(4, 5, $.wijmo.wijspread.SheetArea.viewport);
+    cell.value("Soustraction");
+    cell.backColor("#C9B9E2");
+    cell.hAlign($.wijmo.wijspread.HorizontalAlign.center);
+    cell.vAlign($.wijmo.wijspread.VerticalAlign.center);
+
+    sheet.addSpan(5, 5, 2, 1, $.wijmo.wijspread.SheetArea.viewport);
+	cell = sheet.getCell(5, 5, $.wijmo.wijspread.SheetArea.viewport);
+    cell.value("Multiplication");
+    cell.backColor("#B9E2BA");
+    cell.hAlign($.wijmo.wijspread.HorizontalAlign.center);
+    cell.vAlign($.wijmo.wijspread.VerticalAlign.center);
+
+	cell = sheet.getCell(7, 5, $.wijmo.wijspread.SheetArea.viewport);
+    cell.value("Division");
+    cell.backColor("#E2CFB9");
+    cell.hAlign($.wijmo.wijspread.HorizontalAlign.center);
+    cell.vAlign($.wijmo.wijspread.VerticalAlign.center);
+
+	cell = sheet.getCell(1, 6, $.wijmo.wijspread.SheetArea.viewport);
+	cell.value("Opération");
+    cell.hAlign($.wijmo.wijspread.HorizontalAlign.center);
+    cell.vAlign($.wijmo.wijspread.VerticalAlign.center);
+
+	cell = sheet.getCell(1, 7, $.wijmo.wijspread.SheetArea.viewport);
+	cell.value("Résultat");
+    cell.hAlign($.wijmo.wijspread.HorizontalAlign.center);
+    cell.vAlign($.wijmo.wijspread.VerticalAlign.center);
+
+
+	sheet.isPaintSuspended(true); // ecrire dans le tableur
+
+    sheet.setValue(3,1, 2);
+    sheet.setValue(3,2, 6);
+    sheet.setValue(3,3, 8);
+    sheet.setValue(2,6, "=B4+C4+D4"); // somme
+    sheet.setFormula(2,7, "B4+C4+D4");
+    sheet.setValue(3,6, "=SUM(B4:D4)");
+    sheet.setFormula(3,7, "SUM(B4:D4)");
+    sheet.setValue(4,6, "=D4-C4-B4"); // soustraction
+    sheet.setFormula(4,7, "D4-C4-B4");
+    sheet.setValue(5,6, "=B4*C4*D4"); // multiplication
+    sheet.setFormula(5,7, "B4*C4*D4");
+    sheet.setValue(6,6, "=PRODUCT(B4:D4)");
+    sheet.setFormula(6,7, "PRODUCT(B4:D4)");
+    sheet.setValue(7,6, "=D4/B4"); // division
+    sheet.setFormula(7,7, "D4/B4");
+
+    sheet.isPaintSuspended(false); // fin de ecrire
+
+    sheet.autoFitColumn(5);
+    sheet.autoFitColumn(6);
+});
+{% endblock %}

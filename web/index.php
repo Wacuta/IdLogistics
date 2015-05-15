@@ -2,6 +2,8 @@
 
 require_once __DIR__.'/../vendor/autoload.php';
 
+
+
 $app = new Silex\Application();
 
 
@@ -57,6 +59,26 @@ $app->get('/', function() use ($app){
 				'eOracle' => $eOracle,
 				'faq' => $faq
 			));
+});
+
+
+/* page de contenu */
+$app->get('/cours-{id}', function($id) use ($app){
+
+	$data = cours($id);
+
+	$idC = $data['idC'];
+	$typeC = $data['typeC'];
+	$nomC = $data['nomC'];
+	$contenuC = $data['contenueC'];
+	$detailC = $data['detailC'];
+
+	return $app['twig']->render('contenu/'.$contenuC, array(
+			'idC' => $idC,
+			'typeC' => $typeC,
+			'nomC' => $nomC,
+			'detailC' => $detailC
+		));
 });
 
 

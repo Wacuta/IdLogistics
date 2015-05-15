@@ -9,6 +9,15 @@
     	return $result;
 	}
 
+	/* retourner les cours en fonction de son id */
+	function cours($id){
+		global $connexion;
+		$rqt = $connexion->prepare("SELECT * from Cours where idC=".$id);
+		$rqt->execute();
+    	$result = $rqt->fetchAll();
+		return $result[0];
+	}
+
 	/* lister tout les exercices */
 	function listerExercice(){
 		global $connexion;
@@ -17,10 +26,11 @@
     	return $result;
 	}
 
+
 	/* lister les exercicex en fonction du cours associe */
 	function exerciceDuCours($x){
 		global $connexion;
-		$result = $connexion->prepare("SELECT contenueE from Exercice where idC=".$x);
+		$result = $connexion->prepare("SELECT * from Exercice where idC=".$x);
 		$result->execute();
     	return $result;
 	}
