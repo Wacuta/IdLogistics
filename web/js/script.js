@@ -88,7 +88,7 @@ function cours(data){
 
         for(var i = 0; i<d.length; i++){
             contenu +='<li style="opacity:0;">';
-            contenu += '<div class="card blue waves-effect waves-light cliquable">';
+            contenu += '<div class="card blue waves-effect waves-light cliquable" onclick="nouvelleFenetre(\'cours-'+d[i].idC+'\')">';
             contenu += '<div class="card-content">';
             contenu += '<span class="card-title">'+ d[i].nomC +'</span>';
             contenu += '<p>'+ d[i].detailC +'</p>';
@@ -124,3 +124,11 @@ function exercices(data){
 
     $("#exercices").append(contenu);
 }
+
+
+/* ouvrir la fanetre de contenu */
+function nouvelleFenetre(url) { 
+    propriete = "top=0,left=0,resizable=yes, status=no, directories=no, addressbar=no, toolbar=no, scrollbars=yes, menubar=no, location=no, statusbar=no"; 
+    propriete += ",width=" + screen.availWidth*0.75 + ",height=" + screen.availHeight*0.75; 
+    win = window.open("index.php/"+url,'popup', propriete);
+} 

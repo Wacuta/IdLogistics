@@ -1,0 +1,54 @@
+/* 
+  ============= INDEX DE COLOR =============
+
+    home: 693884
+    word: 0D47A1
+    excel: 43A047
+    powerpoint: E65100
+    oracle: d02023
+
+    navnbar style
+      bcg color par defaut: 0D47A1
+      bcg color selectionné:
+      text color par defaut: fafafa
+      text color selectionne: f5f5f5
+
+    color de ID: 
+      bleu: 00457e;
+    
+*/
+
+/* ============= NEW FONT-FAMILY ============= */
+
+@import url('fonts.css');
+
+
+
+/* ============= BANNIERE ============= */
+
+#logo{
+  max-width: 64px;
+  height: auto;
+}
+
+
+.autre{
+  background-color: #693884;
+}
+
+.word{
+  background-color: #0D47A1;
+}
+
+.excel{
+  background-color: #43A047;
+}
+
+.powerpoint{
+  background-color: #E65100;
+}
+
+.oracle{
+  background-color: #d02023;
+}
+
