@@ -9,19 +9,19 @@
 		$connexion->exec("DELETE FROM Exercice");
 		$sql = "INSERT INTO Cours ( idC, typeC, nomC, contenueC, detailC) 
 				VALUES 
-					('00', 'Word', 'Cours Word 1', 'cours_word_1.twig', 'detail de ouf'), 
-					('01', 'Word', 'Cours Word 2', 'cours_word_2.twig', 'detail de ouf'),
+					('00', 'Word', 'Présentation du logiciel', 'cours_word_2.twig', 'Présentation du logiciel Word'),
+					('01', 'Word', 'Mise en forme du text', 'cours_word_1.twig', 'Police, Taille, Gras, italic, souligner, surligner, couleur...'), 
 					('02', 'Word', 'Cours Word 3', 'cours_word_3.twig', 'detail de ouf'),
 					('03', 'Word', 'Cours Word 4', 'cours_word_4.twig', 'detail de ouf'),
-					('04', 'Excel', 'Les Opérations', 'cours_excel_1.twig', 'detail de ouf'), 
-					('05', 'Excel', 'Cours Excel 2', 'cours_excel_2.twig', 'detail de ouf'),
+					('04', 'Excel', 'Présentation du logiciel', 'cours_excel_2.twig', 'Présentation du logiciel Excel'),
+					('05', 'Excel', 'Les Opérations', 'cours_excel_1.twig', 'Les opérations basique de Excel: Addition, Soustraction, Multiplication, Division'), 
 					('06', 'Excel', 'Cours Excel 3', 'cours_excel_3.twig', 'detail de ouf'),
 					('07', 'Excel', 'Cours Excel 4', 'cours_excel_4.twig', 'detail de ouf'),
-					('08', 'PP', 'Cours Powerpoint 1', 'cours_powerpoint_1.twig', 'detail de ouf'), 
+					('08', 'PP', 'Présentation du logiciel', 'cours_powerpoint_1.twig', 'Présentation du logiciel PowerPoint'), 
 					('09', 'PP', 'Cours Powerpoint 2', 'cours_powerpoint_2.twig', 'detail de ouf'),
 					('10', 'PP', 'Cours Powerpoint 3', 'cours_powerpoint_3.twig', 'detail de ouf'),
 					('11', 'PP', 'Cours Powerpoint 4', 'cours_powerpoint_4.twig', 'detail de ouf'),
-					('12', 'Oracle', 'Cours Oracle 1', 'cours_oracle_1.twig', 'detail de ouf'), 
+					('12', 'Oracle', 'Présentation', 'cours_oracle_1.twig', 'Présentation de Oracle'), 
 					('13', 'Oracle', 'Cours Oracle 2', 'cours_oracle_2.twig', 'detail de ouf'),
 					('14', 'Oracle', 'Cours Oracle 3', 'cours_oracle_3.twig', 'detail de ouf'),
 					('15', 'Oracle', 'Cours Oracle 4', 'cours_oracle_4.twig', 'detail de ouf')";
