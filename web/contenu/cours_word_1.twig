@@ -1,1 +1,369 @@
 {% extends 'contenu/layout_word.twig' %}
+
+
+{% block contenu %}
+
+<style type="text/css">
+	.test{
+		height:50px;
+		width: 100px;
+		border: 1px solid #BBB8B8;
+		cursor: hand;
+	}
+
+	.test img{
+		display: block;
+		margin-left: auto;
+	    margin-right: auto;
+	   	height:100%;
+		
+	}
+
+	#test{
+		font-size:14px;
+		font-family: Arial;
+	}
+</style>
+
+<h1 class="center-align">{{nomC}}</h1>
+<p align="justify">
+	La mise en forme d'un text permet de donner un peu plus de vie dans le document Word.<br>
+	Celle-ci se fait généralement avec la partie <i>Police</i> du menu <i>Accueil</i>,
+	mais elle peut se faire grace au menu contextuel que l'on peu faire apparaître grâce au clique droit.<br>
+	Nous allons voir les differnents changement que provoque les boutons de cette partie.
+</p>
+
+<div class="center-align image">
+	<img src="../images/contenu/cours_word_1_photo_1.png"/>
+	<br/>
+	<label> Capture de Microsoft Word 2013</label>
+</div>
+
+
+
+<h1 class="center-align">Démonstration</h1>
+<p align="justify">
+	Cliquez sur les differents icon pour voir les changements.
+</p>
+<!-- 1er partie des bouton test -->
+<div class="row">
+	<div class="col s2">
+		<div class="test tooltipped" data-position="bottom" data-delay="50" data-tooltip="Changer la police">
+			<select id="font" class="browser-default">
+		      <option value="Arial" selected>Arial</option>
+		      <option value="Arial Black">Arial Black</option>
+		      <option value="Comic Sans MS">Comic Sans MS</option>
+		      <option value="Courier New">Courier New</option>
+		      <option value="Georgia">Georgia</option>
+		      <option value="Impact">Impact</option>
+		      <option value="Time New Roman">Time New Roman</option>
+		      <option value="Trebuchet MS">Trebuchet MS</option>
+		      <option value="Verdana">Verdana</option>
+		    </select>
+		</div>
+	</div>
+	<div class="col s2">
+		<div class="test tooltipped" data-position="bottom"	data-delay="50" data-tooltip="Changer la taille de la police">
+			<select id="size" class="browser-default">
+		      {% for i in 8..13 %}
+		      <option value="{{i}}">{{i}}</option>
+		      {% endfor %}
+		      <option value="14" selected>14</option>
+		      {% for i in 15..30 %}
+		      <option value="{{i}}">{{i}}</option>
+		      {% endfor %}
+		    </select>
+		</div>
+	</div>
+	<div class="col s2">
+		<div id="upsize" class="test tooltipped" data-position="bottom"	data-delay="50" data-tooltip="Augmenter la taille de la police">
+			<img src="../images/contenu/cours_word_1_photo_4.png">
+		</div>
+	</div>
+	<div class="col s2">
+		<div id="downsize" class="test tooltipped" data-position="bottom"	data-delay="50" data-tooltip="Diminuer la taille de la police">
+			<img src="../images/contenu/cours_word_1_photo_5.png">
+		</div>
+	</div>
+</div>
+
+<!-- 2eme partie des bouton tests -->
+<div class="row">
+	<div class="col s2">
+		<div  id="bold" class="test tooltipped" data-position="bottom"	data-delay="50" data-tooltip="Mettre en Gras">
+			<img src="../images/contenu/cours_word_1_photo_6.png">
+		</div>
+	</div>
+	<div class="col s2">
+		<div id="italic" class="test tooltipped" data-position="bottom"	data-delay="50" data-tooltip="Mettre en italic">
+			<img src="../images/contenu/cours_word_1_photo_7.png">
+		</div>
+	</div>
+	<div class="col s2">
+		<div id="underline" class="test tooltipped" data-position="bottom"	data-delay="50" data-tooltip="Souligner le text">
+			<img src="../images/contenu/cours_word_1_photo_8.png">
+		</div>
+	</div>
+	<div class="col s2">
+		<div id="strike" class="test tooltipped" data-position="bottom"	data-delay="50" data-tooltip="Rayer le text">
+			<img src="../images/contenu/cours_word_1_photo_9.png">
+		</div>
+	</div>
+	<div class="col s2">
+		<div id="index" class="test tooltipped" data-position="bottom"	data-delay="50" data-tooltip="Mettre en indice">
+			<img src="../images/contenu/cours_word_1_photo_12.png">
+		</div>
+	</div>
+	<div class="col s2">
+		<div id="power" class="test tooltipped" data-position="bottom"	data-delay="50" data-tooltip="Mettre en exposant">
+			<img src="../images/contenu/cours_word_1_photo_13.png">
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col s2">
+		<div id="stabilo" class="test tooltipped color" data-position="bottom"	data-delay="50" data-tooltip="Surligner le text">
+			<img src="../images/contenu/cours_word_1_photo_10.png">
+		</div>
+	</div>
+	<div class="col s2">
+		<div id="color" class="test tooltipped color" data-position="bottom"	data-delay="50" data-tooltip="Changer le text">
+			<img src="../images/contenu/cours_word_1_photo_11.png">
+		</div>
+	</div>
+
+</div>
+
+<div class="row">
+	<div class="col s12">
+		<div class="card darken-1 z-depth-2">
+            <div class="card-content">
+				<p id="test">Cette phrase change de forme à chaque fois que l'on clique sur un bouton<txt id="indice">(indice)</txt> </p>
+            </div>
+        </div>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+/* DICO D'ETAT */
+var etat = {};
+etat['bold'] = false;
+etat['italic'] = false;
+etat['underline'] = false;
+etat['strike'] = false;
+etat['sub'] = false;
+etat['sup'] = false;
+etat['size'] = 14;
+
+
+
+/* CHOIX LA POLICE */
+$( "#font" ).change(function(){
+	$('#test').css("font-family", $("#font").val());
+});
+
+
+/* CHOIX DE LA TAILLE */
+$( "#size" ).change(function(){
+	etat['size'] = Number($("#size").val());
+	$('#test').stop().animate({fontSize: etat['size']+"px"},300);
+	console.log(etat['size']);
+});
+
+
+/* UP LA TAILLE*/
+$("#upsize").click(function(){
+	etat['size'] += 1;
+	if(etat['size'] > 30)
+		etat['size'] = 30;	
+	$('#size').val(etat['size']);
+	$('#test').stop().animate({fontSize: etat['size']+"px"},300);
+	console.log(etat['size']);
+
+});
+
+
+/* DOWN LA TAILLE*/
+$("#downsize").click(function(){
+	etat['size'] -= 1;
+	if(etat['size'] < 8)
+		etat['size'] = 8;
+	$('#size').val(etat['size']);
+	$('#test').stop().animate({fontSize: etat['size']+"px"},300);
+	console.log(etat['size']);
+
+});
+
+
+/* GRAS */
+$("#bold").click(function(){
+	if(etat['bold'] == false){
+		$("#test").css({'font-weight':'bold'})
+		$("#bold").css("border-color", "#000");
+		etat['bold'] = true;
+	}
+	else{
+		$("#test").css({'font-weight':'normal'})
+		$("#bold").css("border-color", "#BBB8B8");
+		etat['bold'] = false;
+	}
+	console.log("bold");
+});
+
+
+/* ITALIC */
+$("#italic").click(function(){
+	if(etat['italic'] == false){
+		$("#test").css({'font-style':'italic'});
+		$("#italic").css("border-color", "#000");
+		etat['italic']=true;
+	}
+	else{
+		$("#test").css({'font-style':'normal'});
+		$("#italic").css("border-color", "#BBB8B8");
+		etat['italic']=false;
+	}
+
+	console.log("italic");
+});
+
+
+/* INDICE */
+$("#index").click(function(){
+	var result = "(indice)";
+    if(etat['sub'] == false){
+    	result = result.sub();
+	    document.getElementById("indice").innerHTML = result;
+	    $("#index").css("border-color", "#000");
+	    $("#power").css("border-color", "#BBB8B8");
+		etat['sub']=true;
+		etat['sup']=false;
+	}
+	else{
+		document.getElementById("indice").innerHTML = result;
+		$("#index").css("border-color", "#BBB8B8");
+		etat['sub']=false;
+		
+	}
+	console.log("sub");
+	
+});
+
+
+/* EXPOSANT */
+$("#power").click(function(){
+	var result = "(indice)";
+	if(etat['sup'] == false){
+    	result = result.sup();
+    	document.getElementById("indice").innerHTML = result;
+    	$("#power").css("border-color", "#000");
+    	$("#index").css("border-color", "#BBB8B8");
+		etat['sup']=true;
+		etat['sub']=false;
+	}
+	else{
+		document.getElementById("indice").innerHTML = result;
+		$("#power").css("border-color", "#BBB8B8");
+		etat['sup']=false;
+	}
+	console.log("sup");
+});
+
+
+/* SOULIGNER */
+$("#underline").click(function(){
+	if(etat['underline'] == false && etat['strike'] == true){
+		$("#test").css('text-decoration', 'underline line-through');
+		$("#underline").css("border-color", "#000");
+		etat['underline']=true;
+	}
+	else if(etat['underline'] == false && etat['strike'] == false){
+		$("#test").css('text-decoration', 'underline');
+		$("#underline").css("border-color", "#000");
+		etat['underline']=true;
+	}
+	else if(etat['underline'] == true && etat['strike'] == true){
+		$("#test").css({'text-decoration':'line-through'});
+		$("#underline").css("border-color", "#BBB8B8");
+		etat['underline']=false;
+	}
+	else{
+		$("#test").css({'text-decoration':'none'});
+		$("#underline").css("border-color", "#BBB8B8");
+		etat['underline']=false;
+	}
+	console.log("underline");
+});
+
+
+/* RAYER */
+$("#strike").click(function(){
+	if(etat['strike'] == false && etat['underline'] == true){
+		$("#test").css('text-decoration', 'underline line-through');
+		$("#strike").css("border-color", "#000");
+		etat['strike']=true;
+	}
+	else if(etat['strike'] == false && etat['underline'] == false){
+		$("#test").css('text-decoration', 'line-through');
+		$("#strike").css("border-color", "#000");
+		etat['strike']=true;
+	}
+	else if(etat['strike'] == true && etat['underline'] == true){
+		$("#test").css({'text-decoration':'underline'});
+		$("#strike").css("border-color", "#BBB8B8");
+		etat['strike']=false;
+	}
+	else{
+		$("#test").css({'text-decoration':'none'});
+		$("#strike").css("border-color", "#BBB8B8");
+		etat['strike']=false;
+	}
+	console.log("strike");
+});
+
+
+/* CHANGER LA COULEUR DE SURLIGNAGE */
+$('#stabilo').click(function(){
+	
+	$('#stabilo').ColorPicker({
+		color: '#000',
+		onShow: function (colpkr) {
+			$(colpkr).fadeIn(500);
+			return false;
+		},
+		onHide: function (colpkr) {
+			$(colpkr).fadeOut(500);
+			return false;
+		},
+		onChange: function (hsb, hex, rgb) {
+			$("#test").css({'background-color': '#'+hex});
+		}
+	});
+	console.log("stabilo");
+});
+
+/* CHANGER LA COULEUR DE TEXT */
+$('#color').click(function(){
+	
+	$('#color').ColorPicker({
+		color: '#000',
+		onShow: function (colpkr) {
+			$(colpkr).fadeIn(500);
+			return false;
+		},
+		onHide: function (colpkr) {
+			$(colpkr).fadeOut(500);
+			return false;
+		},
+		onChange: function (hsb, hex, rgb) {
+			$("#test").css({'color': '#'+hex});
+		}
+	});
+	console.log("color");
+});
+
+{% endblock %}
