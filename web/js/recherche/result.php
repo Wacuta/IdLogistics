@@ -29,10 +29,10 @@
             echo '<ul id="liste-magique">';
 			while ($result = $reqC->fetch(PDO::FETCH_OBJ)){
 				echo '<li style="opacity:0;">';
-	            echo  '<div class="card '.$result->typeC.' waves-effect waves-light cliquable"onclick="nouvelleFenetre(\'cours-'.$result->idC.'\')">';
+	            echo  '<div class="card '.$result->typeC.' waves-effect waves-light cliquable" onclick="nouvelleFenetre(\'cours-'.$result->idC.'\')">';
 	            echo  '<div class="card-content">';
 	            echo  '<span class="card-title">'.$result->nomC.'</span>';
-	            echo  '<p>'.$result->detailC.'</p>';
+	            echo  '<p class="grey-text text-lighten-2">'.$result->detailC.'</p>';
 	            echo  '</div></div>';
 	            echo '</li>';
 			}
@@ -59,10 +59,10 @@
             echo '<ul id="liste-magique2">';
 			while($result = $reqE->fetch(PDO::FETCH_OBJ)){
 				echo '<li style="opacity:0;">';
-	            echo  '<div class="card '.$result->typeE.' waves-effect waves-light cliquable">';
+	            echo  '<div class="card '.$result->typeE.' waves-effect waves-light cliquable" onclick="nouvelleFenetre(\'exercices-'.$result->idE.'\')">';
 	            echo  '<div class="card-content">';
 	            echo  '<span class="card-title">'.$result->nomE.'</span>';
-	            echo  '<p>'.$result->detailE.'</p>';
+	            echo  '<p class="grey-text text-lighten-2">'.$result->detailE.'</p>';
 	            echo  '</div></div>';
 	            echo '</li>';
 			}

@@ -1,1 +1,643 @@
 {% extends 'contenu/layout_word.twig' %}
+
+
+{% block contenu %}
+
+<style type="text/css">
+	.tabs .tab a {
+		color: #616161;
+	}
+	.tabs .tab a:hover{
+		color: #1565c0;
+	}
+	
+	.tabs .indicator{
+		background-color: #1565c0;
+	}
+
+	.indiceImage{
+		text-align:center;
+		padding-right:25px
+	}
+
+	h4{
+		color: #1565c0;
+		font-size: 20px;
+	}
+	color{
+		font-size: 20px;
+	}
+</style>
+
+
+<h1 class="center-align">{{nomC}}</h1>
+
+<p align="justify">
+	Microsoft Word est un logiciel de traitement de texte publié par Microsoft. 
+	Word 2013 est la dernière version de Word, l'interface graphique est similaire à celle de 2010. 
+	Les Menus sous forme de ruban et les catégories sont inchangées, les utilisateurs de Word 2010 ne se perdront pas dans la navigation.
+</p>
+
+<div class="row">
+	<div class="col s6">
+		<div class="center-align image">
+			<img class="materialboxed" data-caption="Capture de Microsoft Word 2010" width="300"src="../images/contenu/cours_word_2/02.jpg"/>
+			<br/>
+			<label> Capture de Microsoft Word 2010</label>
+		</div>
+	</div>
+	<div class="col s6">
+		<div class="center-align image">
+			<img class="materialboxed" data-caption="Capture de Microsoft Word 2013" width="300"src="../images/contenu/cours_word_2/01.png"/>
+			<br/>
+			<label> Capture de Microsoft Word 2013</label>
+		</div>
+	</div>
+</div>
+
+<div>
+	<ul class="tabs">
+		<li class="tab"><a href="#accueil" >Accueil</a></li>
+		<li class="tab"><a href="#insertion" >Insert</a></li>
+		<li class="tab"><a href="#création" >Créat</a></li>
+		<li class="tab"><a href="#miseP" class="active">Mise en p</a></li>
+		<li class="tab"><a href="#ref">Référe</a></li>
+		<li class="tab"><a href="#publipost">Publipost</a></li>
+		<li class="tab"><a href="#revision">Révision</a></li>
+		<li class="tab"><a href="#affiche">Afficha</a></li>
+	</ul>
+		
+	<div class="menu-word">
+	
+
+		<!-- MENU Accueil -->
+		<div id="accueil">
+			<h4>Accueil</h4>
+			<p align="justify">
+				Affichage principal de l'application, la majeure partie des fonctionnalités les plus utilisé se trouve dans l'onglet Accueil.<br>
+				Le menu est découpé en plusieurs catégories que nous allons définir.
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_word_2/03.png"/>
+				<br/>
+				<label> Capture de Microsoft Word 2013</label>
+			</div>
+
+			<table>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ed1c24;" >1</color>
+					</td>
+					<td>
+						Le Presse-papier contient les fonctions de <i>copier</i>, <i>couper</i> et <i>coller</i>.<br>
+						<i>Reproduire la mise en forme</i> permet de <i>copier/coller<i> le style d'une sélection. Elle prend en compte: la police, la taille, la couleur et le décor.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#f7941d;" >2</color>
+					</td>
+					<td>
+						Dans la partie <i>Police</i>, on peut retrouver toutes les fonctions pouvant mettre en forme le style du texte:
+						la police, la taille, la couleur et le décore <small>(souligné, sur-ligné, rayé, contour...)</small>.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#fff200;" >3</color>
+					</td>
+					<td>
+						<i>Paragraphe</i> permet de contrôler le style des lignes du document.<br>
+						On peut ajuster l'interligner, changer la position d'écriture (gauche, centre, droite), ajouter des bords et de la couleur.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#39b54a;" >4</color>
+					</td>
+					<td>
+						Dans cette partie, des styles sont déjà prédéfinis. 
+						Cela permet de faciliter la création d'un document avec des titres et des paragraphes de même style.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#0072bc;" >5</color>
+					</td>
+					<td>
+						La partie Modification contient des fonctionnalités de modification de document.<br>
+						<i>Recherche</i> permet de rechercher un mot ou un groupe de mots dans tout le document.<br>
+						<i>Remplacer</i> permet de remplacer un mot ou un groupe de mots par un autre mot ou groupe de mots.<br>
+						<i>Sélectionner</i> permet de faire des sélections de texte ou d'objet.
+					</td>
+				</tr>
+			</table>
+
+		</div>
+
+		<!-- MENU Insertion -->
+
+		<div id="insertion">
+			<h4>Insertion</h4>
+			<p align="justify">
+				L'insertion va vous permettre d'insérer différents éléments à votre document. 
+				Des éléments imprimables, comme un tableau ou des images, et des éléments médiatique comme une vidéo, pour une interaction numérique.
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_word_2/04.png"/>
+				<br/>
+				<label> Capture de Microsoft Word 2013</label>
+			</div>
+			<table>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#7b2e00;" >1</color>
+					</td>
+					<td>
+						Inutile de sauter des lignes jusqu'à la prochaine page, 
+						vous pouvez insérer une nouvelle page ou passer à la page suivante.<br>
+						<i>Page de garde</i> permet d'insérer une page de garde. 
+						Word propose des pages préconçues avec juste les chants à remplir.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ed1c24;" >2</color>
+					</td>
+					<td>
+						Vous pouvez insérer un nouveau tableau en définissant le nombre de lignes et de colonnes. <br>
+						Il est possible aussi de dessiner sont tableau ou de rajouter des cases. <br>
+						Word propose aussi d'insérer une feuille de calcule Excel, avec toute ses fonctionnalités. 
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#f26522;" >3</color>
+					</td>
+					<td>
+						Illustration vous permet d'insérer des images, des formes ou même des graphiques.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#fff200;" >4</color>
+					</td>
+					<td>
+						Vous pouvez interagir avec des application extérieur à Word, comme faire une recherche sur Wikipédia.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#39b54a;" >5</color>
+					</td>
+					<td>
+						Comme pour les illustrations, vous pouvez insérer une vidéo en Bing ou Youtube sur votre document.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#197b30;" >6</color>
+					</td>
+					<td>
+						Pour une meilleur interation avec le lecteur, vous pouvez insérer des liens hypertextes ou des chemins pour un accès rapide aux page.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#00a99d;" >7</color>
+					</td>
+					<td>
+						N'hésitez pas a commenter votre document, cela ne figurera pas sur le document imprimé.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#0072BC;" >8</color>
+					</td>
+					<td>
+						En-tête et pied de page vous permettront d'insérer un élément, en haut ou en bas de toutes les pages (sauf la première page si vous le décidez).
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#662D91;" >9</color>
+					</td>
+					<td>
+						<i>Texte</i> contient plusieurs fonction d'insertion d'éléments. Ces éléments peuvent être une zone de texte, un Tag, ou même une zone de signature.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#9933cc;" >10</color>
+					</td>
+					<td>
+						Le clavier ne possède pas tous les caractères du monde, mais Word propose une table des symboles et l'insertion de zone d'équations mathématiques.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ec008c;" >11</color>
+					</td>
+					<td>
+						Utilisable uniquement par les lecteurs sur ordinateur, vous pouvez incorporer des animations Flash.
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+		
+		<!-- MENU Création -->
+		<div id="création">
+			<h4>Création</h4>
+			<p align="justify">
+				Couleur, Thème, harmonie, vous pouvez paramétrer la forme de tout le document en quelques cliques.
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_word_2/05.png"/>
+				<br/>
+				<label> Capture de Microsoft Word 2013</label>
+			</div>
+			
+			<table>	
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#00aeef;" >1</color>
+					</td>
+					<td>
+						La Mise en forme du document est important pour rendre la lecture agréable. 
+						Word 2013 propose comme des "packs" de mise en forme liant couleur, police, effet et paragraphe offrant une harmonisation  du document.<br>
+						Bien sûr vous pouvez changer chacun des paramètres <small>(voir aussi l'onglet <i>Accueil</i>)</small>.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#39b54a;" >2</color>
+					</td>
+					<td>
+						Vous pouvez aussi ajouter une couleur de font à la page, un cadre de couleur ou un message en filigrane comme le célèbre "Top Secret".
+					</td>
+				</tr>
+			</table>
+			
+
+
+		</div>
+
+		<!-- MENU Mise en page -->
+		<div id="miseP">
+			<h4>Mise en page</h4>
+			<p align="justify">
+				Dans l'onglet Mise en page, vous pouvez changer le support mais aussi certain affichage, comme les marges du support ou d'un pragraphe.
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_word_2/06.png"/>
+				<br/>
+				<label> Capture de Microsoft Word 2013</label>
+			</div>
+
+			
+			<table>	
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#9933cc;" >1</color>
+					</td>
+					<td>
+						Les principale fonction de la mise en page: 
+						changer les marges, l'orientation <small>(portait/paysage)</small>, changer le support <small>(A3, A4, A5...)</small>.<br>
+						On peut également changer la gestion de la coupure des mots,
+						"Est-ce que je vais à la ligne si le mot est trop grand ou est-ce que je met un trait d'unions au milieux ?"<br>
+						On peut aussi numéroter les lignes comme dans une pièce de théâtre. 
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#99cc00;" >2</color>
+					</td>
+					<td>
+						Un peux comme les marge du support, on peu changer changer la marge d'un paragraphe. 
+						Il faut s'imaginer que le paragraphe est dans un cadre, avec des bords de taille 0.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ff8800;" >3</color>
+					</td>
+					<td>
+						Cette partie est utile pour tout ce qui est un éléments <small>(illustration, vidéo, zone de texte...) </small>
+						Vous pouvez positionner un élément dans un texte, sans pour autant le cacher, le texte s'adapte.
+						Si plusieurs élément se superposent, vous pouvez changer leur ordre d'empilage.
+					</td>
+				</tr>
+				
+			</table>
+
+
+		</div>
+
+
+
+
+		<!-- MENU Référence -->
+		<div id="ref">
+			<h4>Référence</h4>
+			<p align="justify">
+				Les références permettent de rendre votre document plus complet. <br>
+				Un sommaire, une légende, une note, une citation… 
+				des fonctions pouvant être utiles pour un rapport ou un cahier des charges
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_word_2/07.png"/>
+				<br/>
+				<label> Capture de Microsoft Word 2013</label>
+			</div>
+			<table>	
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ed1c24;" >1</color>
+					</td>
+					<td>
+						La fabrication d’un sommaire n’a jamais été aussi simple. 
+						Word génère tout seul, une table des matières avec les numéros de page.<br>
+						Il faut que le document soit bien construit, 
+						tous les titres du même degré doivent avoir le même style.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#f7941d;" >2</color>
+					</td>
+					<td>
+						Les notes de bas de page permettent de faire des références via un indice numérique.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#fff200;" >3</color>
+					</td>
+					<td>
+						Une fois l’écriture d’une citation, vous pouvez ajouter facilement la référence grâce à une bibliothèque de source. 
+						Si la référence n’existe pas, il est possible de la créer.
+						Après avoir tout référencé, Bibliographie permet de générer, comme la table des matières, une liste de tous les auteurs.
+
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#39b54a;" >4</color>
+					</td>
+					<td>
+						Comme pour les citations, vous pouvez légender une illustration, un tableau, une équation et générer une table.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#0072bc;" >5</color>
+					</td>
+					<td>
+						Vous pouvez indexer des éléments sélectionnés, afin de répertorier des mots clés et les numéros de page dans lesquelles ils apparaissent.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ec008c;" >6</color>
+					</td>
+					<td>
+						De même que vous pouvez faire une table de  toutes les citations référencées.
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+
+		<!-- MENU Publipostage -->
+		<div id="publipost">
+			<h4>Publipostage</h4>
+			<p align="justify">
+				Publipostage est un autre aspect de la rédaction puisqu’il s’agit de la préparation de l’enveloppe qui contiendra le document. 
+				Il y a aussi une très grande partie technique permettant la liaison avec la boite mail de l’expéditeur.
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_word_2/08.png"/>
+				<br/>
+				<label> Capture de Microsoft Word 2013</label>
+			</div>
+			<table>	
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ed1c24;" >1</color>
+					</td>
+					<td>
+						Vous pouvez créer une enveloppe et une étiquette. <br>
+						<i>Enveloppes</i> : vous pouvez  choisir la taille, la forme de l’adresse et ajouter un affranchissement électronique.<br>
+						<i>Étiquettes</i> : Pour arborer votre enveloppe, ou même un disque. Différentes tailles sont proposées.<br>
+
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#f7941d;" >2</color>
+					</td>
+					<td>
+						Le processus de fusion et publipostage permet de créer un ensemble de documents, 
+						par exemple une lettre type envoyée à un grand nombre de clients, 
+						ou une feuille contenant des étiquettes d'adresses. 
+						Chaque lettre ou étiquette possède le même type d'informations, 
+						mais chaque contenu est unique. Par exemple, dans les lettres adressées à vos clients, 
+						chaque lettre peut être personnalisée et afficher le nom du client. 
+						Les informations uniques de chaque lettre ou 
+						de chaque étiquette proviennent des entrées stockées dans une source de données.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#fff200;" >3</color>
+					</td>
+					<td>
+						Pour vérifier si Word peut trouver, dans votre fichier de données, 
+						une colonne correspondant à chaque élément d'adresse ou de salutation, 
+						vous devrez peut-être faire correspondre les champs de fusion de Word 
+						aux colonnes de votre fichier de données.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#39b54a;" >4</color>
+					</td>
+					<td>
+						Une fois les champs ajoutés à votre document de base, 
+						vous pouvez afficher un aperçu des résultats de la fusion. 
+						Si l'aperçu vous convient, vous pouvez lancer le processus de fusion.
+
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#0072bc;" >5</color>
+					</td>
+					<td>
+						Vous pouvez imprimer les documents fusionnés ou les modifier un par un. 
+						Vous pouvez imprimer ou modifier tout ou partie des documents.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ec008c;" >6</color>
+					</td>
+					<td>
+						Possibilité de fusionner au format PDF.
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+
+		<!-- MENU Révision -->
+		<div id="revision">
+			<h4>Révision</h4>
+			<p align="justify">
+				Les révisons permettent de faire une “inspection” du contenu: 
+				orthographe, traduction, définition… 
+				Mais possède quelques fonctionnalités de collaboration.
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_word_2/09.png"/>
+				<br/>
+				<label> Capture de Microsoft Word 2013</label>
+			</div>
+			<table>	
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ed1c24;" >1</color>
+					</td>
+					<td>
+						<i>Vérification</i> possède les outils pour vérifier l’orthographe d’un mot, 
+						chercher une définition, un synonyme ou afficher des statistiques sur le document.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#f7941d;" >2</color>
+					</td>
+					<td>
+						<i>Langue</i> permet de traduire un passage ou de changer la langue d’écriture.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#fff200;" >3</color>
+					</td>
+					<td>
+						On retrouve ici la fonctionnalité de Commentaire <small>(voir l’onglet insertion)</small>
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#39b54a;" >4</color>
+					</td>
+					<td>
+						Grâce à <i>Suivi</i> vous pouvez suivre les différentes modifications apportées au document… 
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#0072bc;" >5</color>
+					</td>
+					<td>
+						Couplé à <i>Suivi</i>, <i>Modification</i> sert à valider ou supprimer les différentes modifications apportées au document.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#9933cc;" >6</color>
+					</td>
+					<td>
+						<i>Comparer</i> quand à lui permet de comparer différentes versions du document.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ec008c;" >7</color>
+					</td>
+					<td>
+						Afin de sécuriser le document, vous pouvez le protéger en limitant l’accès à des utilisateurs ou en restreignant la modification.
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<!-- MENU Afficahge -->
+		<div id="affiche">
+			<h4>Affichage</h4>
+			<p align="justify">
+				Cette partie sert uniquement à modifier le visuel du logiciel. Toute modification sur cette onglet n’aura aucun effet sur le document.
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_word_2/10.png"/>
+				<br/>
+				<label> Capture de Microsoft Word 2013</label>
+			</div>
+
+			<table>	
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ed1c24;" >1</color>
+					</td>
+					<td>
+						Vous pouvez modifier l’affichage. Le mode lecture ne permet pas de modifier le document.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#f7941d;" >2</color>
+					</td>
+					<td>
+						Vous pouvez faires apparaître les règles, le quadrillage et le volet de navigation.
+
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#fff200;" >3</color>
+					</td>
+					<td>
+						Outils de zoom
+
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#39b54a;" >4</color>
+					</td>
+					<td>
+						Avec les fonction de de Fenêtre, 
+						vous pouvez générer les fenêtre de plusieurs documents ouvert. <br>
+						Fractionner permet d’avoir 2 vues sur le même document.
+
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#0072bc;" >5</color>
+					</td>
+					<td>
+						Il est possible de crée des macros.
+					</td>
+				</tr>
+			</table>
+		</div>
+
+	</div>
+</div>
+
+
+{% endblock %}
+
+{% block script %}
+
+
+ $(document).ready(function(){
+
+});
+
+
+{% endblock %}

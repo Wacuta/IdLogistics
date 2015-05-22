@@ -18,6 +18,14 @@
 		return $result[0];
 	}
 
+	function exercices($id){
+		global $connexion;
+		$rqt = $connexion->prepare("SELECT * from Exercice where idE=".$id);
+		$rqt->execute();
+    	$result = $rqt->fetchAll();
+		return $result[0];
+	}
+
 	/* lister tout les exercices */
 	function listerExercice(){
 		global $connexion;

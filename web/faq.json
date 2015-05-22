@@ -5,38 +5,38 @@
     },
     {
         "question": "Comment peut-on avoir une image avec un fond transparent ?",
-        "reponse": "Le fond transparent est n'est pas disponible sur tout les formats d'image. Les images JPG ne peuvent pas avoir de fond transparent, mais les images au formats au formats PNG peuvent. Il faut aussi que l'image soit paramètré des sa création, car une image PNG peut aussi avoir un fond de couleur."
+        "reponse": "Le fond transparent n'est pas disponible sur tous les formats d'images. Les images JPG ne peuvent pas avoir de fond transparent, mais les images aux formats PNG peuvent. Il faut aussi que l'image soit paramétrée dès sa création, car une image PNG peut aussi avoir un fond de couleur."
     },
     {
         "question": "Pourquoi je ne peux pas créer de liste de diffusion sur Outlook ?",
-        "reponse": "Le problème est présent sur chez tout le monde. Suite à l'enregistrement d'une liste, on se rend compte qu'elle est vide. Le problème n'a pas été résolut et ne le sera pas, Microsoft abandonne le logiciel petit à petit."
+        "reponse": "Le problème est présent chez tout le monde. Suite à l'enregistrement d'une liste, on se rend compte qu'elle est vide. Le problème n'a pas été résolu et ne le sera pas, Microsoft abandonne le logiciel petit à petit."
     },
     {
         "question": "Question 4",
-        "reponse": "Ici reposera la reponse à toute vos attente"
+        "reponse": "Ici reposera la réponse à toutes vos attentes"
     },
     {
         "question": "Question 5",
-        "reponse": "Ici reposera la reponse à toute vos attente"
+        "reponse": "Ici reposera la réponse à toutes vos attentes"
     },
     {
         "question": "Question 6",
-        "reponse": "Ici reposera la reponse à toute vos attente"
+        "reponse": "Ici reposera la réponse à toutes vos attentes"
     },
     {
         "question": "Question 7",
-        "reponse": "Ici reposera la reponse à toute vos attente"
+        "reponse": "Ici reposera la réponse à toutes vos attentes"
     },
     {
         "question": "Question 8",
-        "reponse": "Ici reposera la reponse à toute vos attente"
+        "reponse": "Ici reposera la réponse à toutes vos attentes"
     },
     {
         "question": "Question 9",
-        "reponse": "Ici reposera la reponse à toute vos attente"
+        "reponse": "Ici reposera la réponse à toutes vos attentes"
     },
     {
         "question": "Question 10",
-        "reponse": "Ici reposera la reponse à toute vos attente"
+        "reponse": "Ici reposera la réponse à toutes vos attentes"
     }
 ]

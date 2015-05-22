@@ -81,6 +81,24 @@ $app->get('/cours-{id}', function($id) use ($app){
 		));
 });
 
+$app->get('/exercices-{id}', function($id) use ($app){
+
+	$data = exercices($id);
+
+	$idE = $data['idE'];
+	$typeE = $data['typeE'];
+	$nomE = $data['nomE'];
+	$contenuE = $data['contenueE'];
+	$detailE = $data['detailE'];
+
+	return $app['twig']->render('contenu/'.$contenuE, array(
+			'idE' => $idE,
+			'typeE' => $typeE,
+			'nomE' => $nomE,
+			'detailE' => $detailE
+		));
+});
+
 
 $app["debug"] = true;
 
