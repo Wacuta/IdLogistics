@@ -1,0 +1,402 @@
+{% extends 'contenu/layout_excel.twig' %}
+
+{% block contenu %}
+
+
+	<h1 class="center-align">{{nomE}}</h1>
+	<h3>Exercice</h3>
+	<p class="justify">
+		Vous pouvez faires cette exercice avec Excel ou sur le plan de travail.
+		Choisissez des valeurs que vous entrerez dans les cellules B3, C3 et D3, puis répondez aux questions suivantes <br>
+		Certaines d'entre elles peuvent être réalisées de manières différentes.
+	</p>
+
+  <div id="valeurs" class="row" style="margin-top:50px">
+    <div class="input-field col s4">
+      <input id="b3" type="text" class="validate">
+      <label for="b3">Valeur B3</label>
+    </div>
+    <div class="input-field col s4">
+      <input id="c3" type="text" class="validate">
+      <label for="c3">Valeur C3</label>
+    </div>
+    <div class="input-field col s4">
+      <input id="d3" type="text" class="validate">
+      <label for="d3">Valeur D3</label>
+    </div>
+  </div>
+
+  
+    
+  <div style="margin-top:50px">
+   
+      <div id="question1"></div>
+      <div id="question2"></div>
+      <div id="question3"></div>
+      <div id="question4"></div>
+    
+  </div>
+    
+  <a id="valide" class="waves-effect waves-light btn modal-trigger" href="#modal1" onclick="valide()">Valiser</a>
+
+  <div id="modal1" class="modal"></div>
+
+{% endblock %}
+
+
+
+{% block script %}
+
+
+/* nouvelle methode*/
+jQuery.extend(jQuery.fn,
+{       
+    
+    randQuestion: function(i){
+      switch(i){
+        case 1:
+          this.calculeDeSomme();
+          break;
+        case 2:
+          this.calculeDeProduit();
+          break;
+        case 3:
+          this.calculeDeDiv();
+          break;
+        case 4:
+          this.calculeDeSub();
+          break;
+
+      }
+    },
+
+    calculeDeSomme: function(){
+      
+      var val = parseInt(b3) + parseInt(c3) + parseInt(d3);
+
+      var res = '<h4>Que faut-il taper dans la cellule E3 pour obtenir la somme des 3 valeurs ?</h4>';
+          res += '<div class="input-field">';
+       	  res += '<input id="calculeDeSomme"  type="text" class="validate">';
+          res += '<label for="calculeDeSomme"></label>';
+          res += '</div>';
+      this.html(res);
+    },
+    calculeDeProduit: function(){
+      
+      var val = parseInt(b3) * parseInt(d3);
+
+      var res = '<h4>Que faut-il taper dans la cellule E4 pour obtenir un produit égale à '+ val +' ?</h4>';
+          res += '<div class="input-field">';
+          res += '<input id="calculeDeProduit" type="text" class="validate">';
+          res += '<label for="calculeDeProduit"></label>';
+          res += '</div>';
+      this.html(res);
+    },
+    calculeDeSub: function(){
+      
+      var val = parseInt(b3) - parseInt(c3) - parseInt(d3);
+
+      var res = '<h4>Que faut-il taper dans la cellule E5 pour obtenir '+ val +' ?</h4>';
+          res += '<div class="input-field">';
+          res += '<input id="calculeDeSub" type="text" class="validate">';
+          res += '<label for="calculeDeSub"></label>';
+          res += '</div>';
+      this.html(res);
+    },
+    calculeDeDiv: function(){
+      
+      var val = parseInt(d3) / parseInt(c3);
+
+      var res = '<h4>Que faut-il taper dans la cellule E6 pour obtenir '+ val +' ?</h4>';
+          res += '<div class="input-field">';
+          res += '<input id="calculeDeDiv" type="text" class="validate">';
+          res += '<label for="calculeDeDiv"></label>';
+          res += '</div>';
+      this.html(res);
+    },
+    fonctionChoix: function(){
+      var res = '<h4>Quelle fonction faut-il utiliser pour faire...</h4>';
+
+          res += '<div class="row" id="choixF">';
+
+          res += '<div class="col s4">';
+          res += '<div class="input-field">';
+          res += '<select id="choixF_1">';
+          res += '<option value="0" disabled selected>Choisir une réponse</option>';
+          res += '<option value="0">=PRODUCT(...)</option>';
+          res += '<option value="1">=SOMME(...)</option>';
+          res += '<option value="0">=DIVISE(...)</option>';
+          res += "<option value='0'>ça n'existe pas</option>";
+          res += '</select>';
+          res += '<label>une addition ?</label>';
+          res += '</div>';
+          res += '</div>';
+
+          res += '<div class="col s4">';
+          res += '<div class="input-field">';
+          res += '<select id="choixF_2">';
+          res += '<option value="0" disabled selected>Choisir une réponse</option>';
+          res += '<option value="1">=PRODUCT(...)</option>';
+          res += '<option value="0">=SOMME(...)</option>';
+          res += '<option value="0">=DIVISE(...)</option>';
+          res += "<option value='0'>ça nexiste pas</option>'"
+          res += '</select>';
+          res += '<label>une multiplication ?</label>';
+          res += '</div>';
+          res += '</div>';
+
+          res += '<div class="col s4">';
+          res += '<div class="input-field">';
+          res += '<select id="choixF_3">';
+          res += '<option value="0" disabled selected>Choisir une réponse</option>';
+          res += '<option value="0">=PRODUCT(...)</option>';
+          res += '<option value="0">=SOMME(...)</option>';
+          res += '<option value="0">=DIVISE(...)</option>';
+          res += "<option value='1'>ça n'existe pas</option>";
+          res += '</select>';
+          res += '<label>une division ?</label>';
+          res += '</div>';
+          res += '</div>';
+
+          res += '</div>';
+      this.html(res);
+    },
+    actionChoix: function(){
+      var res = '<h4>A quoi servent les fonctions...</h4>';
+
+          res += '<div class="row" id="choixD">';
+
+          res += '<div class="col s4">';
+          res += '<div class="input-field">';
+          res += '<select id="choixD_1">';
+          res += '<option value="0" disabled selected>Choisir une réponse</option>';
+          res += '<option value="0">une multiplication</option>';
+          res += '<option value="0">une addition</option>';
+          res += '<option value="0">une division</option>';
+          res += "<option value='1'>ça n'existe pas</option>";
+          res += '</select>';
+          res += '<label>=DIVISE(...) ?</label>';
+          res += '</div>';
+          res += '</div>';
+
+
+          res += '<div class="col s4">';
+          res += '<div class="input-field">';
+          res += '<select id="choixD_2">';
+          res += '<option value="0" disabled selected>Choisir une réponse</option>';
+          res += '<option value="0">une multiplication</option>';
+          res += '<option value="1">une addition</option>';
+          res += '<option value="0">une division</option>';
+          res += "<option value='0'>ça n'existe pas</option>";
+          res += '</select>';
+          res += '<label>=SOMME(...) ?</label>';
+          res += '</div>';
+          res += '</div>';
+          
+
+          res += '<div class="col s4">';
+          res += '<div class="input-field">';
+          res += '<select id="choixD_3">';
+          res += '<option value="0" disabled selected>Choisir une réponse</option>';
+          res += '<option value="1">une multiplication</option>';
+          res += '<option value="0">une addition</option>';
+          res += '<option value="0">une division</option>';
+          res += "<option value='0'>ça nexiste pas</option>'"
+          res += '</select>';
+          res += '<label>=PRODUCT(...) ?</label>';
+          res += '</div>';
+          res += '</div>';
+
+          res += '</div>';
+      this.html(res);
+      
+    },
+    reponseVrais: function(){
+      var res = '<div class="modal-content" id="reponse">';
+          res += '<h4 class="green-text">Félicitations</h4>';
+          res += '<p>Vous savez maintenant faire les opérations basiques de Excel.</p>';
+          res += '</div>';
+          res += '<div class="modal-footer">';
+          res += '<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>';
+          res += '</div>';
+        this.html(res);
+    },
+    reponseFaux: function(){
+      var res = '<div class="modal-content" id="reponse">';
+          res += '<h4 class="red-text">Désolé</h4>';
+          res += '<p>Vous vous est trompé dans une des questions. <br>';
+          res += "Si vous rencontrez des difficultés n'hésitez pas à retourner au cours.</p>";
+          res += '</div>';
+          res += '<div class="modal-footer">';
+          res += '<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>';
+          res += '<a href="cours-5" class=" modal-action modal-close waves-effect waves-green btn-flat">Retourner au cours</a>';
+          res += '</div>';
+        this.html(res);
+          this.html(res);
+    }
+});
+/* fin formule */
+
+
+function gen(){
+  var choix1 =Math.floor((Math.random() * 4) + 1);
+  var choix2 =Math.floor((Math.random() * 4) + 1);
+  var choix3 =Math.floor((Math.random() * 4) + 1);
+  while(choix1 == choix2 || choix1 == choix3 || choix2 == choix3){
+    choix2 =Math.floor((Math.random() * 4) + 1);
+    choix3 =Math.floor((Math.random() * 4) + 1);
+  }
+  $("#question2").randQuestion(choix1);
+  $("#question3").randQuestion(choix2);
+  $("#question4").randQuestion(choix3);
+}
+
+var b3 = 1;
+var c3 = 1;
+var d3 = 1;
+
+
+$(document).ready(function () {
+
+  $('.modal-trigger').leanModal();
+
+  $("#valeurs").keyup(function(){
+
+    b3 = $("#b3").val();
+    c3 = $("#c3").val();
+    d3 = $("#d3").val();
+
+    if(b3.length>0 && c3.length>0 && d3.length>0){
+      $.ajax({
+        type:"POST",
+        url:"../contenu/exercice_excel_1.twig",
+        data: null,
+        success:  function(server_response){
+          gen();
+          $("#question1").show();
+          $("#valide").show();
+        }
+
+      });
+      
+    }
+  });
+}); 
+
+
+
+
+
+
+
+var choix = Math.floor((Math.random()*2)+1)
+console.log(choix);
+switch(choix){
+  case 1:
+    $("#question1").actionChoix();
+    break;
+  case 2:
+    $("#question1").fonctionChoix();
+    break;
+}
+
+
+$("#valide").hide();
+$("#question1").hide();
+
+
+var choixF=0;
+var choixD=0;
+var som=0;
+var mul=0;
+var div=0;
+var sub=0;
+
+function valide(){
+  
+  /* CHOIX F */
+  choixF = parseInt($("#choixF_1").val());
+  choixF += parseInt($("#choixF_2").val());
+  choixF += parseInt($("#choixF_3").val());
+
+  console.log("choixF: "+choixF);
+
+
+  /* CHOIX D */
+  choixD = parseInt($("#choixD_1").val());
+  choixD += parseInt($("#choixD_2").val());
+  choixD += parseInt($("#choixD_3").val());
+
+  console.log("choixD: "+choixD);
+
+
+  /* SOMME */
+  var val = $("#calculeDeSomme").val();
+  var tab = new Array("=SOMME(B3:D3)", "=SOMME(D3:B3)", "=SUM(B3:D3)", "=SUM(D3:B3)", "=B3+C3+D3", "=B3+D3+C3", "=C3+B3+D3", "=C3+D3+B3", "=D3+B3+C3", "=D3+C3+B3");
+    for(var i=0; i<tab.length; i++){
+      if(val == tab[i]){
+        som = 1;
+        break;
+      }
+      else{
+        som = 0;
+      }
+    }
+    console.log( "som: "+som);
+  
+
+  /* PRODUIT */
+  val = $("#calculeDeProduit").val();
+  tab = new Array("=PRODUIT(B3;D3)", "=PRODUIT(D3;B3)", "=PRODUCT(B3;D3)", "=PRODUCT(D3;B3)", "=B3*D3", "=D3*B3");
+    for(var i=0; i<tab.length; i++){
+      if(val == tab[i]){
+        mul = 1;
+        break;
+      }
+      else{
+        mul = 0;
+      }
+    }
+    console.log("mul: "+mul);
+
+
+  /* SUBSTRACTION */
+  val = $("#calculeDeSub").val();
+    if(val == "=B3-C3-D3"){
+      sub = 1;
+    }
+    else{
+      sub = 0;
+    }
+    console.log("sub: "+sub);
+
+  
+  /* DIVISION */
+  val = $("#calculeDeDiv").val();
+    if(val == "=D3/C3"){
+      div = 1;
+    }
+    else{
+      div = 0;
+    }
+    console.log("div: "+div);
+
+  if(isNaN(choixD)) choixD=0;
+  if(isNaN(choixF)) choixF=0;
+
+
+  var res = 0;
+  res = choixD+choixF+som+mul+div+sub;
+  console.log("res: "+res);
+  if(res >= 6){
+    $("#modal1").reponseVrais();
+  }
+  else{
+    $("#modal1").reponseFaux();
+  }
+
+
+
+}
+
+{% endblock %}
