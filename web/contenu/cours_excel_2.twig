@@ -1,1 +1,585 @@
 {% extends 'contenu/layout_excel.twig' %}
+
+
+{% block contenu %}
+
+<style type="text/css">
+	.tabs .tab a {
+		color: #616161;
+	}
+	.tabs .tab a:hover{
+		color: #388e3c;
+	}
+	
+	.tabs .indicator{
+		background-color: #388e3c;
+	}
+
+	.indiceImage{
+		text-align:center;
+		padding-right:25px
+	}
+
+	h4{
+		color: #388e3c;
+		font-size: 20px;
+	}
+	color{
+		font-size: 20px;
+	}
+	
+</style>
+
+
+<h1 class="center-align">{{nomC}}</h1>
+
+<p align="justify">
+	Microsoft Excel est un tableur publié par Microsoft. 
+	Excel 2013 est la dernière version de Excel, l'interface graphique est similaire à celle de 2010. 
+	Les Menus sous forme de ruban et les catégories sont inchangées, les utilisateurs de Excel 2010 ne se perdront pas dans la navigation.
+</p>
+
+<div class="row">
+	<div class="col s6">
+		<div class="center-align image">
+			<img class="materialboxed" data-caption="Capture de Microsoft Excel 2010" width="300"src="../images/contenu/cours_excel_2/02.png"/>
+			<br/>
+			<label> Capture de Microsoft Excel 2010</label>
+		</div>
+	</div>
+	<div class="col s6">
+		<div class="center-align image">
+			<img class="materialboxed" data-caption="Capture de Microsoft Excel 2013" width="300"src="../images/contenu/cours_excel_2/01.png"/>
+			<br/>
+			<label> Capture de Microsoft Excel 2013</label>
+		</div>
+	</div>
+</div>
+
+<div>
+	<ul class="tabs">
+		<li class="tab"><a href="#accueil" class="active">Accueil</a></li>
+		<li class="tab"><a href="#insertion" >Insert</a></li>
+		<li class="tab"><a href="#miseP" >Mise en p</a></li>
+		<li class="tab"><a href="#formule">Form</a></li>
+		<li class="tab"><a href="#donnee">Données</a></li>
+		<li class="tab"><a href="#revision">Révison</a></li>
+		<li class="tab"><a href="#affiche">Afficha</a></li>
+		<li class="tab"><a href="#developpeur">Dévelop</a></li>
+	</ul>
+		
+	<div>
+
+		<!-- MENU ACCUEIL -->
+		<div id="accueil">
+			<h4>Accueil</h4>
+			<p align="justify">
+				Affichage principal de l'application, la majeure partie des fonctionnalités les plus utilisé se trouve dans l'onglet Accueil.<br>
+				Le menu est découpé en plusieurs catégories que nous allons définir.
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_excel_2/03.png"/>
+				<br/>
+				<label> Capture de Microsoft Excel 2013</label>
+			</div>
+			<table>	
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ed1c24;" >1</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#f7941d;" >2</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#fff200;" >3</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#39b54a;" >4</color>
+					</td>
+					<td>
+						 
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#0072bc;" >5</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#9933cc;" >6</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ec008c;" >7</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<!-- MENU INSERTION -->
+
+		<div id="insertion">
+			<h4>Insertion</h4>
+			<p align="justify">
+				blabla
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_excel_2/04.png"/>
+				<br/>
+				<label> Capture de Microsoft Excel 2013</label>
+			</div>
+			<table>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#7b2e00;" >1</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ed1c24;" >2</color>
+					</td>
+					<td>
+						 
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#f26522;" >3</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#fff200;" >4</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#39b54a;" >5</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#197b30;" >6</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#00a99d;" >7</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#0072BC;" >8</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#662D91;" >9</color>
+					</td>
+					<td>
+
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#9933cc;" >10</color>
+					</td>
+					<td>
+
+					</td>
+				</tr>
+								
+			</table>
+		</div>
+
+		
+		<!-- MENU MISE EN PAGE -->
+		<div id="miseP">
+			<h4>Mise en page</h4>
+			<p align="justify">
+				blabla
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_excel_2/05.png"/>
+				<br/>
+				<label> Capture de Microsoft Excel 2013</label>
+			</div>
+
+			<table>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ed1c24;" >1</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#f7941d;" >2</color>
+					</td>
+					<td>
+					
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#fff200;" >3</color>
+					</td>
+					<td>
+
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#39b54a;" >4</color>
+					</td>
+					<td>
+
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#0072bc;" >5</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+			</table>
+
+		</div>
+
+		<!-- MENU FORMULE -->
+		<div id="formule">
+			<h4>Formule</h4>
+			<p align="justify">
+				blabla
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_excel_2/06.png"/>
+				<br/>
+				<label> Capture de Microsoft Excel 2013</label>
+			</div>
+
+			<table>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ed1c24;" >1</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#f7941d;" >2</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#fff200;" >3</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#39b54a;" >4</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+			</table>
+
+		</div>
+
+		<!-- MENU DONNEE -->
+		<div id="donnee">
+			<h4>Données</h4>
+			<p align="justify">
+				Affichage principal de l'application, la majeure partie des fonctionnalités les plus utilisé se trouve dans l'onglet Accueil.<br>
+				Le menu est découpé en plusieurs catégories que nous allons définir.
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_excel_2/07.png"/>
+				<br/>
+				<label> Capture de Microsoft Excel 2013</label>
+			</div>
+
+			<table>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ed1c24;" >1</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#f7941d;" >2</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#fff200;" >3</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#39b54a;" >4</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#0072bc;" >5</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+			</table>
+
+		</div>
+
+
+		<!-- MENU REVISION -->
+		<div id="revision">
+			<h4>Révision</h4>
+			<p align="justify">
+				blabla
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_excel_2/08.png"/>
+				<br/>
+				<label> Capture de Microsoft Excel 2013</label>
+			</div>
+
+			<table>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ed1c24;" >1</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#f7941d;" >2</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#fff200;" >3</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#39b54a;" >4</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+			</table>
+
+		</div>
+
+
+		<!-- MENU AFFICHAGE -->
+		<div id="affiche">
+			<h4>Affichage</h4>
+			<p align="justify">
+				blabla
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_excel_2/09.png"/>
+				<br/>
+				<label> Capture de Microsoft Excel 2013</label>
+			</div>
+
+			<table>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ed1c24;" >1</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#f7941d;" >2</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#fff200;" >3</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#39b54a;" >4</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#0072bc;" >5</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+			</table>
+
+		</div>
+
+		<!-- MENU DEVELOPPEUR -->
+		<div id="developpeur">
+			<h4>Développeur</h4>
+			<p align="justify">
+				blabla
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_excel_2/10.png"/>
+				<br/>
+				<label> Capture de Microsoft Excel 2013</label>
+			</div>
+
+			<table>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ed1c24;" >1</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#f7941d;" >2</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#fff200;" >3</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#39b54a;" >4</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#0072bc;" >5</color>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+			</table>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+{% endblock %}
+
+{% block script %}
+
+
+
+
+
+{% endblock %}
