@@ -1,1 +1,587 @@
 {% extends 'contenu/layout_powerpoint.twig' %}
+
+
+{% block contenu %}
+
+<style type="text/css">
+	.tabs .tab a {
+		color: #616161;
+	}
+	.tabs .tab a:hover{
+		color: #f57c00;
+	}
+	
+	.tabs .indicator{
+		background-color: #f57c00;
+	}
+
+	.indiceImage{
+		text-align:center;
+		padding-right:25px
+	}
+
+	h4{
+		color: #f57c00;
+		font-size: 20px;
+	}
+	color{
+		font-size: 20px;
+	}
+	
+</style>
+
+
+<h1 class="center-align">{{nomC}}</h1>
+
+<p align="justify">
+	Microsoft PowerPoint est un tableur publié par Microsoft. 
+	PowerPoint 2013 est la dernière version de PowerPoint, l'interface graphique est similaire à celle de 2010. 
+	Les Menus sous forme de ruban et les catégories sont inchangées, les utilisateurs de PowerPoint 2010 ne se perdront pas dans la navigation.
+</p>
+
+<div class="row">
+	<div class="col s6">
+		<div class="center-align image">
+			<img class="materialboxed" data-caption="Capture de Microsoft PowerPoint 2010" width="300"src="../images/contenu/cours_powerpoint_1/01.png"/>
+			<br/>
+			<label> Capture de Microsoft PowerPoint 2010</label>
+		</div>
+	</div>
+	<div class="col s6">
+		<div class="center-align image">
+			<img class="materialboxed" data-caption="Capture de Microsoft PowerPoint 2013" width="300"src="../images/contenu/cours_powerpoint_1/02.png"/>
+			<br/>
+			<label> Capture de Microsoft PowerPoint 2013</label>
+		</div>
+	</div>
+</div>
+
+<div>
+
+	<ul class="tabs">
+		<li class="tab"><a href="#accueil" >Accueil</a></li>
+		<li class="tab"><a href="#insertion" >Insert</a></li>
+		<li class="tab"><a href="#creation" >Créat</a></li>
+		<li class="tab"><a href="#transitions" >Transi</a></li>
+		<li class="tab"><a href="#animations" class="active">Anima</a></li>
+		<li class="tab"><a href="#diaporama" >Diapo</a></li>
+		<li class="tab"><a href="#revision" >Revisi</a></li>
+		<li class="tab"><a href="#affichage" >Affich</a></li>
+	</ul>
+
+
+	<div>
+		
+		<!-- MENU ACCUEIL -->
+		<div id="accueil">
+			<h4>Accueil</h4>
+			<p align="justify">
+				Affichage principal de l'application, la majeure partie des fonctionnalités les plus utilisé se trouve dans l'onglet Accueil.<br>
+				Le menu est découpé en plusieurs catégories que nous allons définir.
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_powerpoint_1/03.png"/>
+				<br/>
+				<label> Capture de Microsoft PowerPoint 2013</label>
+			</div>
+			<table>	
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ed1c24;" >1</color>
+					</td>
+					<td>
+						Le Presse-papier contient les fonctions de <i>copier</i>, <i>couper</i> et <i>coller</i>.<br>
+						<i>Reproduire la mise en forme</i> permet de <i>copier/coller<i> le style d'une sélection. Elle prend en compte: la police, la taille, la couleur et le décor.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#f7941d;" >2</color>
+					</td>
+					<td>
+						La partie diapositive permet d'ajouter de nouvelle diapo en choisissant des modèles près conçut. 
+						En cas de modification, on peut aussi rétablir la disposition du model de départ. <br>
+						Les diapositives peuvent être organisées dans des sections.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#fff200;" >3</color>
+					</td>
+					<td>
+						Comme dans Microsoft Word, il est possible de gérer le style de la <i>Police</i> des textes.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#39b54a;" >4</color>
+					</td>
+					<td>
+						De même que l'on peut gérer le style des lignes avec la partie <i>Paragraphe</i>
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#0072bc;" >5</color>
+					</td>
+					<td>
+						Il est possible d'ajouter des formes géométriques comme un carré, un triangle, un cercle 
+						ou des formes un peux plus fantaisiste comme le croissant de lune, l’éclaire ou le cœur. <br>
+						En cas de formes superposé, on peut les organiser avec la fonction Organiger.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ec008c;" >6</color>
+					</td>
+					<td>
+						Comme dans Word, la partie Modification contient des fonctionnalités de modification de document.<br>
+						<i>Recherche</i> permet de rechercher un mot ou un groupe de mots dans tout le document.<br>
+						<i>Remplacer</i> permet de remplacer un mot ou un groupe de mots par un autre mot ou groupe de mots.<br>
+						<i>Sélectionner</i> permet de faire des sélections de texte ou d'objet.
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+
+		<!-- MENU INSERTION -->
+		<div id="insertion">
+			<h4>Insertion</h4>
+			<p align="justify">
+				L'insertion va vous permettre d'insérer différents éléments à votre document. 
+				Des éléments imprimables, comme un tableau ou des images, et des éléments médiatique comme une vidéo, pour une interaction numérique.
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_powerpoint_1/04.png"/>
+				<br/>
+				<label> Capture de Microsoft PowerPoint 2013</label>
+			</div>
+			<table>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#7b2e00;" >1</color>
+					</td>
+					<td>
+						On retrouve ici la fonction du menu <i>Accueil</i>, permettant d'ajouter une diapositive.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ed1c24;" >2</color>
+					</td>
+					<td>
+						Vous pouvez insérer un nouveau tableau en définissant le nombre de lignes et de colonnes. <br>
+						Il est possible aussi de dessiner sont tableau ou de rajouter des cases. <br>
+						Word propose aussi d'insérer une feuille de calcule Excel, avec toute ses fonctionnalités.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#f26522;" >3</color>
+					</td>
+					<td>
+						<i>Images</i> porte bien son nom puisque cette partie n’est dédié que pour les images. 
+						Vous pouvez insérer des images de votre ordinateur, du presse papier ou provenant d’internet. <br>
+						La fonction <i>Album photo</i>, permet de créer rapidement un diaporama de photo. 
+
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#fff200;" >4</color>
+					</td>
+					<td>
+						Illustration vous permet d'insérer des images, des formes ou même des graphiques.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#39b54a;" >5</color>
+					</td>
+					<td>
+						Vous pouvez interagir avec des application extérieur à Powerpoint, comme sur Word.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#197b30;" >6</color>
+					</td>
+					<td>
+						Une fois un élément crée, vous pouvez le rendre cliquable en lui ajoutant un lien, 
+						afin d'ouvrir un dossier/fichier ou une page internet.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#00a99d;" >7</color>
+					</td>
+					<td>
+						N'hésitez pas a commenter votre document, cela ne figurera pas sur le document imprimé.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#0072BC;" >8</color>
+					</td>
+					<td>
+						<i>Texte</i> contient plusieurs fonction d'insertion d'éléments. 
+						Ces éléments peuvent être une zone de texte, un En-Tête/Pied de page, 
+						une date et heure, un numéro de page ou un autre objet.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#662D91;" >9</color>
+					</td>
+					<td>
+						Le clavier ne possède pas tous les caractères du monde, 
+						mais Word propose une table des symboles et l'insertion de zone d'équations mathématiques.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#9933cc;" >10</color>
+					</td>
+					<td>
+						Média vous permet d'insérer des vidéos ou des sons audio, comme pour les images. <br>
+						Il est possible de faire une vidéo en enregistrant une partie de son écran.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ec008c;" >11</color>
+					</td>
+					<td>
+						Utilisable uniquement par les lecteurs sur ordinateur, 
+						vous pouvez incorporer des animations Flash.
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+
+
+
+		<!-- MENU CREATION -->
+		<div id="creation">
+			<h4>Création</h4>
+			<p align="justify">
+				Le menu Création est là pour nous faciliter la mise en forme du diaporama.
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_powerpoint_1/05.png"/>
+				<br/>
+				<label> Capture de Microsoft PowerPoint 2013</label>
+			</div>
+
+			
+			<table>	
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#9933cc;" >1</color>
+					</td>
+					<td>
+						 Plusieurs thèmes préconçus sont proposés.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#99cc00;" >2</color>
+					</td>
+					<td>
+						Une sélectionné, le thème en question peut avoir quelque variation de couleur.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ff8800;" >3</color>
+					</td>
+					<td>
+						Il est quand même possible de personnaliser les diapositives, ainsi que la taille de celle-ci.
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+
+
+		<!-- MENU TRANSITION -->
+		<div id="transitions">
+			<h4>Transition</h4>
+			<p align="justify">
+				Afin de ne pas rendre l’affichage des diapositives trop brutes, 
+				il est possible d’ajouter des animations, d’apparition et de disparition pour chacune d’elle.
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_powerpoint_1/06.png"/>
+				<br/>
+				<label> Capture de Microsoft PowerPoint 2013</label>
+			</div>
+
+			
+			<table>	
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#9933cc;" >1</color>
+					</td>
+					<td>
+						Il est possible de tester la transition de la diapositive actuelle.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#99cc00;" >2</color>
+					</td>
+					<td>
+						Voici la liste de toute les transitions possibles. <br>
+						Certaines ont des variations dans <i>Option d'effet</i>.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ff8800;" >3</color>
+					</td>
+					<td>
+						Les transitions peuvent s'accompagner d’un son audio et peuvent avoir une durée, 
+						afin d’accélérer ou ralentir l’apparition. <br>
+						Il est possible aussi de contrôler le passage de diapositive, 
+						le changement se fera de manière automatique grâce à un timer.
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+
+		
+		<!-- MENU ANIMATIONS -->
+		<div id="animations">
+			<h4>Animations</h4>
+			<p align="justify">
+				Comme les transitions, l"apparition et la disparition des contenus, des diapositives peuvent être animé.
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_powerpoint_1/07.png"/>
+				<br/>
+				<label> Capture de Microsoft PowerPoint 2013</label>
+			</div>
+
+			<table>	
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ed1c24;" >1</color>
+					</td>
+					<td>
+						Il est possible de tester l'animation de l'élément sélectionné.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#f7941d;" >2</color>
+					</td>
+					<td>
+						Voici la liste de toute les animations possibles. <br>
+						Certaines ont des variations dans <i>Option d'effet</i>.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#fff200;" >3</color>
+					</td>
+					<td>
+						Les animations peuvent s'additionner et changer d'ordre d'execution.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#39b54a;" >4</color>
+					</td>
+					<td>
+						Les animations peuvent avoir une durée, 
+						afin d’accélérer ou ralentir l’apparition. <br>
+						Il est possible aussi de contrôler le passage de diapositive, 
+						le changement se fera de manière automatique grâce à un timer.
+					</td>
+				</tr>
+			</table>
+		</div>
+
+
+		<!-- MENU DIAPORAMA -->
+		<div id="diaporama">
+			<h4>Diaporama</h4>
+			<p align="justify">
+				Ce menu sert à avoir accès au paramétrer du diaporama.
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_powerpoint_1/08.png"/>
+				<br/>
+				<label> Capture de Microsoft PowerPoint 2013</label>
+			</div>
+
+			
+			<table>	
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#9933cc;" >1</color>
+					</td>
+					<td>
+						Vous pouvez choisir où démarre le diaporama (depuis le début, depuis la diapo actif, en ligne…).
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#99cc00;" >2</color>
+					</td>
+					<td>
+						Plusieurs configurations sont possibles, comme enregistrer la représentation. 
+						La plus part des options sont disponible dans les menus déjà exploré.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ff8800;" >3</color>
+					</td>
+					<td>
+						Si vous avez un plusieurs moniteurs/projecteurs, vous pouvez choisir où s’affiche le diaporama.
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+
+
+		<!-- MENU REVISION -->
+		<div id="revision">
+			<h4>Révision</h4>
+			<p align="justify">
+				Comme celui de Microsoft Word, le menu <i>Révision</i> permet de faire une “inspection” du contenu: 
+				orthographe, traduction, définition… 
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_powerpoint_1/09.png"/>
+				<br/>
+				<label> Capture de Microsoft PowerPoint 2013</label>
+			</div>
+
+			<table>	
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ed1c24;" >1</color>
+					</td>
+					<td>
+						<i>Vérification</i> possède les outils pour vérifier l’orthographe d’un mot, 
+						chercher une définition ou un synonyme.						
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#f7941d;" >2</color>
+					</td>
+					<td>
+						<i>Langue</i> permet de traduire un passage ou de changer la langue d’écriture.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#fff200;" >3</color>
+					</td>
+					<td>
+						On retrouve ici les fonctions pour commenter la diapositive.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#39b54a;" >4</color>
+					</td>
+					<td>
+						Les fonctionnalités de comparaison permettent de comparer 2 fichiers PowerPoint, 
+						d’insérer des diapositives du deuxième fichier ou de les supprimer.
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		
+		<!-- MENU AFFICHAGE -->
+		<div id="affichage">
+			<h4>Affichage</h4>
+			<p align="justify">
+				Cette partie sert uniquement à modifier le visuel du logiciel. 
+				Toute modification sur cette onglet n’aura aucun effet sur le document.
+			</p>
+			<div class="center-align image">
+				<img class="materialboxed" width="100%"src="../images/contenu/cours_powerpoint_1/10.png"/>
+				<br/>
+				<label> Capture de Microsoft PowerPoint 2013</label>
+			</div>
+			<table>	
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ed1c24;" >1</color>
+					</td>
+					<td>
+						Vous pouvez modifier l’affichage. Le mode lecture ne permet pas de modifier le document.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#f7941d;" >2</color>
+					</td>
+					<td>
+						Les masque de diapositives contrôlent l'apparence de toute votre présentation, 
+						y compris les couleur, les polices, l'arrière-plan et les effets.<br>
+						Vous pouvez changer l'aspect de votre présentaton pour l'impression.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#fff200;" >3</color>
+					</td>
+					<td>
+						Vous pouvez faires apparaître les règles, le quadrillage et la zone de note.<br>
+						Les notes sont très pratique
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#39b54a;" >4</color>
+					</td>
+					<td>
+						Outils de Zoom
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#0072bc;" >5</color>
+					</td>
+					<td>
+						Changer l'affichage des couleurs.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#9933cc;" >6</color>
+					</td>
+					<td>
+						Avec les fonction de de Fenêtre, 
+						vous pouvez générer les fenêtre de plusieurs documents ouvert. <br>
+						Fractionner permet d’avoir 2 vues sur le même document.
+					</td>
+				</tr>
+				<tr>
+					<td class="indiceImage">
+						<color style="color:#ec008c;" >7</color>
+					</td>
+					<td>
+						Il est possible de crée des macros.
+					</td>
+				</tr>
+			</table>
+		</div>
+
+
+	</div>
+</div>
+
+{% endblock %}
