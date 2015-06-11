@@ -91,6 +91,10 @@ $app->get('/exercices-{id}', function($id) use ($app){
 	$contenuE = $data['contenueE'];
 	$detailE = $data['detailE'];
 
+	if ($typeE == "Oracle") {
+		require_once __DIR__.'/contenu/oracle_base_de_donnee/completeTable.php';
+	}
+
 	return $app['twig']->render('contenu/'.$contenuE, array(
 			'idE' => $idE,
 			'typeE' => $typeE,

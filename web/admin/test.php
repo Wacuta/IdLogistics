@@ -28,7 +28,7 @@
 		//echo $sql;
 		$connexion->exec($sql);
 
-		$sql = "INSERT INTO Exercice (idE, idC, nomE, typeE, contenueE, detailE)
+		$sql = "INSERT INTO Exercice (idE, coursE, nomE, typeE, contenueE, detailE)
 				VALUES
 					('00', '0', 'Exercice Word 1', 'Word', 'exercice_word_1.twig', 'détail'),
 					('01', '0', 'Exercice Word 2', 'Word', 'exercice_word_2.twig', 'détail'),
@@ -42,7 +42,7 @@
 					('09', '0', 'Exercice Powerpoint 2', 'PP', 'exercice_powerpoint_2.twig', 'détail'),
 					('10', '2', 'Exercice Powerpoint 3', 'PP', 'exercice_powerpoint_3.twig', 'détail'),
 					('11', '3', 'Exercice Powerpoint 4', 'PP', 'exercice_powerpoint_4.twig', 'détail'),
-					('12', '0', 'Exercice Oracle 1', 'Oracle', 'exercice_oracle_1.twig', 'détail'),
+					('12', '0', 'Pratique libre', 'Oracle', 'exercice_oracle_1.twig', 'Pratiquer toutes les opérations que vous voulez, librement, sur la base de données local'),
 					('13', '0', 'Exercice Oracle 2', 'Oracle', 'exercice_oracle_2.twig', 'détail'),
 					('14', '2', 'Exercice Oracle 3', 'Oracle', 'exercice_oracle_3.twig', 'détail'),
 					('15', '3', 'Exercice Oracle 4', 'Oracle', 'exercice_oracle_4.twig', 'détail')";
