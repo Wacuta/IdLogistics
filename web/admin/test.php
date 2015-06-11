@@ -28,7 +28,7 @@
 		//echo $sql;
 		$connexion->exec($sql);
 
-		$sql = "INSERT INTO Exercice (idE, idC, nomE, typeE, contenueE, detailE)
+		$sql = "INSERT INTO Exercice (idE, coursE, nomE, typeE, contenueE, detailE)
 				VALUES
 					('00', '0', 'Exercice Word 1', 'Word', 'exercice_word_1.twig', 'détail'),
 					('01', '0', 'Exercice Word 2', 'Word', 'exercice_word_2.twig', 'détail'),

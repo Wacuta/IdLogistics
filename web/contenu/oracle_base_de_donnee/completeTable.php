@@ -31,7 +31,7 @@
 		$connexion->exec($sql);
 
 		
-		$sql = "INSERT INTO Commande (numCom, idC, quantiteCom)
+		$sql = "INSERT INTO Commande (numCom, idPdV, quantiteCom)
 				VALUES
 					('01', '01', '25'),
 					('02', '01', '12'),
@@ -55,16 +55,5 @@
 		echo $sql . "<br>" . $e->getMessage();
 	}
 
-	/*echo "<h1>liste des Point de Vente </h1><br>";
-	print_r(listerPdV());
-
-	echo "<h1>liste des Base de Livraison </h1><br>";
-	print_r(listerBase());
-
-	echo "<h1>liste des Commande </h1><br>";
-	print_r(listerCommande());
-
-	echo "<h1>liste des Produit </h1><br>";
-	print_r(listerProduit());*/
 
 ?>
