@@ -2,6 +2,15 @@
 
 {% block contenu %}
 
+  <style type="text/css">
+    .done{
+      color: #7cb342;
+    }
+    .clear{
+      color: #d50000;
+    }
+  </style>
+
 
 	<h1 class="center-align">{{nomE}}</h1>
 	<h3>Exercice</h3>
@@ -30,16 +39,28 @@
     
   <div style="margin-top:50px">
    
-      <div id="question1"></div>
-      <div id="question2"></div>
-      <div id="question3"></div>
-      <div id="question4"></div>
+      
+      
+
+      <table>
+        <tr id="question1"></tr>
+
+        <tr id="question2"></tr>
+
+        <tr id="question3"></tr>
+
+        <tr id="question4"></tr>
+      </table>
     
   </div>
-    
+  
   <a id="valide" class="waves-effect waves-light btn modal-trigger" href="#modal1" onclick="valide()">Valider</a>
+  
 
   <div id="modal1" class="modal"></div>
+
+
+
 
 {% endblock %}
 
@@ -74,171 +95,192 @@ jQuery.extend(jQuery.fn,
       
       var val = parseInt(b3) + parseInt(c3) + parseInt(d3);
 
-      var res = '<h4>Que faut-il taper dans la cellule E3 pour obtenir la somme des 3 valeurs ?</h4>';
-          res += '<div class="input-field">';
-       	  res += '<input id="calculeDeSomme"  type="text" class="validate">';
-          res += '<label for="calculeDeSomme"></label>';
-          res += '</div>';
+      var res = '<td>';
+            res = '<h4>Que faut-il taper dans la cellule E3 pour obtenir la somme des 3 valeurs ?</h4>';
+            res += '<div class="input-field">';
+         	    res += '<input id="calculeDeSomme"  type="text" class="validate">';
+              res += '<label for="calculeDeSomme"></label>';
+            res += '</div>';
+          res += '</td>';
+          res+= '<td><i id="resSom" style="font-size:3em"></i></td>';
       this.html(res);
     },
     calculeDeProduit: function(){
       
       var val = parseInt(b3) * parseInt(d3);
-
-      var res = '<h4>Que faut-il taper dans la cellule E4 pour obtenir un produit égale à '+ val +' ?</h4>';
-          res += '<div class="input-field">';
-          res += '<input id="calculeDeProduit" type="text" class="validate">';
-          res += '<label for="calculeDeProduit"></label>';
-          res += '</div>';
+      
+      var res = '<td>';
+          res += '<h4>Que faut-il taper dans la cellule E4 pour obtenir un produit égale à '+ val +' ?</h4>';
+            res += '<div class="input-field">';
+              res += '<input id="calculeDeProduit" type="text" class="validate">';
+              res += '<label for="calculeDeProduit"></label>';
+            res += '</div>';
+          res += '</td>';
+          res+= '<td><i id="resProd" style="font-size:3em"></i></td>';
       this.html(res);
     },
     calculeDeSub: function(){
       
       var val = parseInt(b3) - parseInt(c3) - parseInt(d3);
-
-      var res = '<h4>Que faut-il taper dans la cellule E5 pour obtenir '+ val +' ?</h4>';
-          res += '<div class="input-field">';
-          res += '<input id="calculeDeSub" type="text" class="validate">';
-          res += '<label for="calculeDeSub"></label>';
-          res += '</div>';
+  
+      var res = '<td>';
+            res += '<h4>Que faut-il taper dans la cellule E5 pour obtenir '+ val +' ?</h4>';
+            res += '<div class="input-field">';
+              res += '<input id="calculeDeSub" type="text" class="validate">';
+              res += '<label for="calculeDeSub"></label>';
+            res += '</div>';
+          res += '</td>';
+          res+= '<td><i id="resSub" style="font-size:3em"></i></td>';
       this.html(res);
     },
     calculeDeDiv: function(){
       
       var val = parseInt(d3) / parseInt(c3);
 
-      var res = '<h4>Que faut-il taper dans la cellule E6 pour obtenir '+ val +' ?</h4>';
-          res += '<div class="input-field">';
-          res += '<input id="calculeDeDiv" type="text" class="validate">';
-          res += '<label for="calculeDeDiv"></label>';
-          res += '</div>';
+      var res = '<td>';
+            res += '<h4>Que faut-il taper dans la cellule E6 pour obtenir '+ val +' ?</h4>';
+            res += '<div class="input-field">';
+              res += '<input id="calculeDeDiv" type="text" class="validate">';
+              res += '<label for="calculeDeDiv"></label>';
+            res += '</div>';
+            res += '</td>';
+          res+= '<td><i id="resDiv" style="font-size:3em"></i></td>';
       this.html(res);
     },
     fonctionChoix: function(){
-      var res = '<h4>Quelle fonction faut-il utiliser pour faire...</h4>';
+      var res = '<td>';
+          res += '<h4>Quelle fonction faut-il utiliser pour faire...</h4>';
 
-          res += '<div class="row" id="choixF">';
+            res += '<div class="row" id="choixF">';
 
-          res += '<div class="col s4">';
-          res += '<div class="input-field">';
-          res += '<select id="choixF_1">';
-          res += '<option value="0" disabled selected>Choisir une réponse</option>';
-          res += '<option value="0">=PRODUCT(...)</option>';
-          res += '<option value="1">=SOMME(...)</option>';
-          res += '<option value="0">=DIVISE(...)</option>';
-          res += "<option value='0'>ça n'existe pas</option>";
-          res += '</select>';
-          res += '<label>une addition ?</label>';
-          res += '</div>';
-          res += '</div>';
+              res += '<div class="col s4">';
+                res += '<div class="input-field">';
+                  res += '<select id="choixF_1">';
+                    res += '<option value="0" disabled selected>Choisir une réponse</option>';
+                    res += '<option value="0">=PRODUCT(...)</option>';
+                    res += '<option value="1">=SOMME(...)</option>';
+                    res += '<option value="0">=DIVISE(...)</option>';
+                    res += "<option value='0'>ça n'existe pas</option>";
+                  res += '</select>';
+                  res += '<label>une addition ?</label>';
+                res += '</div>';
+              res += '</div>';
 
-          res += '<div class="col s4">';
-          res += '<div class="input-field">';
-          res += '<select id="choixF_2">';
-          res += '<option value="0" disabled selected>Choisir une réponse</option>';
-          res += '<option value="1">=PRODUCT(...)</option>';
-          res += '<option value="0">=SOMME(...)</option>';
-          res += '<option value="0">=DIVISE(...)</option>';
-          res += "<option value='0'>ça nexiste pas</option>'"
-          res += '</select>';
-          res += '<label>une multiplication ?</label>';
-          res += '</div>';
-          res += '</div>';
+              res += '<div class="col s4">';
+                res += '<div class="input-field">';
+                  res += '<select id="choixF_2">';
+                    res += '<option value="0" disabled selected>Choisir une réponse</option>';
+                    res += '<option value="1">=PRODUCT(...)</option>';
+                    res += '<option value="0">=SOMME(...)</option>';
+                    res += '<option value="0">=DIVISE(...)</option>';
+                    res += "<option value='0'>ça nexiste pas</option>'"
+                  res += '</select>';
+                  res += '<label>une multiplication ?</label>';
+                res += '</div>';
+              res += '</div>';
 
-          res += '<div class="col s4">';
-          res += '<div class="input-field">';
-          res += '<select id="choixF_3">';
-          res += '<option value="0" disabled selected>Choisir une réponse</option>';
-          res += '<option value="0">=PRODUCT(...)</option>';
-          res += '<option value="0">=SOMME(...)</option>';
-          res += '<option value="0">=DIVISE(...)</option>';
-          res += "<option value='1'>ça n'existe pas</option>";
-          res += '</select>';
-          res += '<label>une division ?</label>';
-          res += '</div>';
-          res += '</div>';
+              res += '<div class="col s4">';
+                res += '<div class="input-field">';
+                  res += '<select id="choixF_3">';
+                    res += '<option value="0" disabled selected>Choisir une réponse</option>';
+                    res += '<option value="0">=PRODUCT(...)</option>';
+                    res += '<option value="0">=SOMME(...)</option>';
+                    res += '<option value="0">=DIVISE(...)</option>';
+                    res += "<option value='1'>ça n'existe pas</option>";
+                  res += '</select>';
+                  res += '<label>une division ?</label>';
+                res += '</div>';
+              res += '</div>';
 
-          res += '</div>';
+            res += '</div>';
+          res += '</td>';
+          res += '<td><i id="resF" style="font-size:3em"></i></td>';
       this.html(res);
     },
     actionChoix: function(){
-      var res = '<h4>A quoi servent les fonctions...</h4>';
+      var res = '<td>';
+            res = '<h4>A quoi servent les fonctions...</h4>';
 
-          res += '<div class="row" id="choixD">';
+            res += '<div class="row" id="choixD">';
+              res += '<div class="col s4">';
+                res += '<div class="input-field">';
+                  res += '<select id="choixD_1">';
+                    res += '<option value="0" disabled selected>Choisir une réponse</option>';
+                    res += '<option value="0">une multiplication</option>';
+                    res += '<option value="0">une addition</option>';
+                    res += '<option value="0">une division</option>';
+                    res += "<option value='1'>ça n'existe pas</option>";
+                  res += '</select>';
+                  res += '<label>=DIVISE(...) ?</label>';
+                res += '</div>';
+              res += '</div>';
 
-          res += '<div class="col s4">';
-          res += '<div class="input-field">';
-          res += '<select id="choixD_1">';
-          res += '<option value="0" disabled selected>Choisir une réponse</option>';
-          res += '<option value="0">une multiplication</option>';
-          res += '<option value="0">une addition</option>';
-          res += '<option value="0">une division</option>';
-          res += "<option value='1'>ça n'existe pas</option>";
-          res += '</select>';
-          res += '<label>=DIVISE(...) ?</label>';
-          res += '</div>';
-          res += '</div>';
+              res += '<div class="col s4">';
+                res += '<div class="input-field">';
+                  res += '<select id="choixD_2">';
+                    res += '<option value="0" disabled selected>Choisir une réponse</option>';
+                    res += '<option value="0">une multiplication</option>';
+                    res += '<option value="1">une addition</option>';
+                    res += '<option value="0">une division</option>';
+                    res += "<option value='0'>ça n'existe pas</option>";
+                  res += '</select>';
+                  res += '<label>=SOMME(...) ?</label>';
+                res += '</div>';
+              res += '</div>';
+            
 
+              res += '<div class="col s4">';
+                res += '<div class="input-field">';
+                  res += '<select id="choixD_3">';
+                    res += '<option value="0" disabled selected>Choisir une réponse</option>';
+                    res += '<option value="1">une multiplication</option>';
+                    res += '<option value="0">une addition</option>';
+                    res += '<option value="0">une division</option>';
+                    res += "<option value='0'>ça nexiste pas</option>'"
+                  res += '</select>';
+                  res += '<label>=PRODUCT(...) ?</label>';
+                res += '</div>';
+              res += '</div>';
 
-          res += '<div class="col s4">';
-          res += '<div class="input-field">';
-          res += '<select id="choixD_2">';
-          res += '<option value="0" disabled selected>Choisir une réponse</option>';
-          res += '<option value="0">une multiplication</option>';
-          res += '<option value="1">une addition</option>';
-          res += '<option value="0">une division</option>';
-          res += "<option value='0'>ça n'existe pas</option>";
-          res += '</select>';
-          res += '<label>=SOMME(...) ?</label>';
-          res += '</div>';
-          res += '</div>';
-          
-
-          res += '<div class="col s4">';
-          res += '<div class="input-field">';
-          res += '<select id="choixD_3">';
-          res += '<option value="0" disabled selected>Choisir une réponse</option>';
-          res += '<option value="1">une multiplication</option>';
-          res += '<option value="0">une addition</option>';
-          res += '<option value="0">une division</option>';
-          res += "<option value='0'>ça nexiste pas</option>'"
-          res += '</select>';
-          res += '<label>=PRODUCT(...) ?</label>';
-          res += '</div>';
-          res += '</div>';
-
-          res += '</div>';
+            res += '</div>';
+          res += '</td>';
+          res += '<td><i id="resD" style="font-size:3em"></i></td>';
       this.html(res);
       
     },
     reponseVrais: function(){
       var res = '<div class="modal-content" id="reponse">';
-          res += '<h4 class="green-text">Félicitations</h4>';
-          res += '<p>Vous savez maintenant faire les opérations basiques de Excel.</p>';
+            res += '<h4 class="green-text">Félicitations</h4>';
+            res += '<p>Vous savez maintenant faire les opérations basiques de Excel.</p>';
           res += '</div>';
-          res += '<div class="modal-footer">';
-          res += '<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>';
+            res += '<div class="modal-footer">';
+            res += '<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>';
           res += '</div>';
         this.html(res);
     },
     reponseFaux: function(){
       var res = '<div class="modal-content" id="reponse">';
-          res += '<h4 class="red-text">Désolé</h4>';
-          res += '<p>Vous vous est trompé dans une des questions. <br>';
-          res += "Si vous rencontrez des difficultés n'hésitez pas à retourner au cours.</p>";
+            res += '<h4 class="red-text">Désolé</h4>';
+            res += '<p>Vous vous est trompé dans une des questions. <br>';
+            res += "Si vous rencontrez des difficultés n'hésitez pas à retourner au cours.</p>";
           res += '</div>';
           res += '<div class="modal-footer">';
-          res += '<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>';
-          res += '<a href="cours-5" class=" modal-action modal-close waves-effect waves-green btn-flat">Retourner au cours</a>';
+            res += '<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>';
+            res += '<a href="cours-5" class=" modal-action modal-close waves-effect waves-green btn-flat">Retourner au cours</a>';
           res += '</div>';
         this.html(res);
           this.html(res);
     }
 });
-/* fin formule */
+/* fin nouvelle methode */
 
 
+
+
+/**/
 function gen(){
+
+  var choix = Math.floor((Math.random()*2)+1);
   var choix1 =Math.floor((Math.random() * 4) + 1);
   var choix2 =Math.floor((Math.random() * 4) + 1);
   var choix3 =Math.floor((Math.random() * 4) + 1);
@@ -246,10 +288,29 @@ function gen(){
     choix2 =Math.floor((Math.random() * 4) + 1);
     choix3 =Math.floor((Math.random() * 4) + 1);
   }
+
+  console.log(choix);
+  switch(choix){
+    case 1:
+      $("#question1").actionChoix();
+      break;
+    case 2:
+      $("#question1").fonctionChoix();
+      break;
+  }
+
+ 
   $("#question2").randQuestion(choix1);
   $("#question3").randQuestion(choix2);
   $("#question4").randQuestion(choix3);
+
+ 
 }
+
+function isInteger(x) {
+  return (typeof x === 'number') && (x % 1 === 0);
+}
+
 
 var b3 = 1;
 var c3 = 1;
@@ -259,6 +320,7 @@ var d3 = 1;
 $(document).ready(function () {
 
   $('.modal-trigger').leanModal();
+  $('select').material_select();
 
   $("#valeurs").keyup(function(){
 
@@ -266,15 +328,16 @@ $(document).ready(function () {
     c3 = $("#c3").val();
     d3 = $("#d3").val();
 
-    if(b3.length>0 && c3.length>0 && d3.length>0){
+
+    //if(b3.length>0 && c3.length>0 && d3.length>0){
+    if(isInteger(parseInt(b3)) && isInteger(parseInt(c3)) && isInteger(parseInt(d3)) ){
       $.ajax({
         type:"POST",
         url:"../contenu/exercice_excel_1.twig",
         data: null,
         success:  function(server_response){
           gen();
-          $("#question1").show();
-          $("#valide").show();
+          $('select').material_select();
         }
 
       });
@@ -289,28 +352,14 @@ $(document).ready(function () {
 
 
 
-var choix = Math.floor((Math.random()*2)+1)
-console.log(choix);
-switch(choix){
-  case 1:
-    $("#question1").actionChoix();
-    break;
-  case 2:
-    $("#question1").fonctionChoix();
-    break;
-}
-
-
-$("#valide").hide();
-$("#question1").hide();
-
-
 var choixF=0;
 var choixD=0;
 var som=0;
 var mul=0;
 var div=0;
 var sub=0;
+
+
 
 function valide(){
   
@@ -385,6 +434,28 @@ function valide(){
   if(isNaN(choixF)) choixF=0;
 
 
+  /* indicateur de resulat */
+  if (choixD == 0) $("#resD").addClass("mdi-content-clear clear").removeClass("mdi-action-done done");
+  else $("#resD").addClass("mdi-action-done done").removeClass("mdi-content-clear clear");
+  
+  if (choixF == 0) $("#resF").addClass("mdi-content-clear clear").removeClass("mdi-action-done done");
+  else $("#resF").addClass("mdi-action-done done").removeClass("mdi-content-clear clear");
+
+  if (som == 0) $("#resSom").addClass("mdi-content-clear clear").removeClass("mdi-action-done done");
+  else $("#resSom").addClass("mdi-action-done done").removeClass("mdi-content-clear clear");
+
+  if (mul == 0) $("#resProd").addClass("mdi-content-clear clear").removeClass("mdi-action-done done");
+  else $("#resProd").addClass("mdi-action-done done").removeClass("mdi-content-clear clear");
+
+  if (div == 0) $("#resDiv").addClass("mdi-content-clear clear").removeClass("mdi-action-done done");
+  else $("#resDiv").addClass("mdi-action-done done").removeClass("mdi-content-clear clear");
+
+  if (sub == 0) $("#resSub").addClass("mdi-content-clear clear").removeClass("mdi-action-done done");
+  else $("#resSub").addClass("mdi-action-done done").removeClass("mdi-content-clear clear");
+
+  if (div == 0) $("#resDiv").addClass("mdi-content-clear clear").removeClass("mdi-action-done done");
+  else $("#resDiv").addClass("mdi-action-done done").removeClass("mdi-content-clear clear");
+  
   var res = 0;
   res = choixD+choixF+som+mul+div+sub;
   console.log("res: "+res);
