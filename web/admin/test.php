@@ -15,16 +15,19 @@
 					('03', 'Word', 'Cours Word 4', 'cours_word_4.twig', 'détail'),
 					('04', 'Excel', 'Présentation du logiciel', 'cours_excel_2.twig', 'Présentation du logiciel Excel'),
 					('05', 'Excel', 'Les Opérations', 'cours_excel_1.twig', 'Les opérations basiques de Excel: Addition, Soustraction, Multiplication, Division'), 
-					('06', 'Excel', 'Cours Excel 3', 'cours_excel_3.twig', 'détail'),
-					('07', 'Excel', 'Cours Excel 4', 'cours_excel_4.twig', 'détail'),
-					('08', 'PP', 'Présentation du logiciel', 'cours_powerpoint_1.twig', 'Présentation du logiciel PowerPoint'), 
-					('09', 'PP', 'Cours Powerpoint 2', 'cours_powerpoint_2.twig', 'détail'),
-					('10', 'PP', 'Cours Powerpoint 3', 'cours_powerpoint_3.twig', 'détail'),
-					('11', 'PP', 'Cours Powerpoint 4', 'cours_powerpoint_4.twig', 'détail'),
-					('12', 'Oracle', 'Présentation', 'cours_oracle_1.twig', 'Présentation de Oracle'), 
-					('13', 'Oracle', 'Cours Oracle 2', 'cours_oracle_2.twig', 'détail'),
-					('14', 'Oracle', 'Cours Oracle 3', 'cours_oracle_3.twig', 'détail'),
-					('15', 'Oracle', 'Cours Oracle 4', 'cours_oracle_4.twig', 'détail')";
+					('06', 'Excel', 'Les références absolues', 'cours_excel_3.twig', 'Faire référence à une cellule ou une plage avec le sympole $'),
+					('07', 'Excel', 'Les messages d\'erreurs', 'cours_excel_4.twig', '\#DIV/0!, \#NUL!, \#VALEUR!, \#REF!, \#NOM?, \#NOMBRE!, \#N/A, \#\#\#\#\#\#\#\#\#\#\#'),
+					('08', 'Excel', 'Les fonctions logiques', 'cours_excel_5.twig', 'Les opérateurs (\<, \>, \=, \<\=, \>\=, \<\>), le ET, le OU, le NON, le SI'),
+					('09', 'Excel', 'Les arrondis', 'cours_excel_6.twig', 'Arrondire les valeurs au supérieur, à l\'inférieur ou les tronqueées'),
+					('10', 'Excel', 'Compter les cellules', 'cours_excel_7.twig', 'Compter les cellules en fonction de différents critère (vide, valeur, ensemble, condition...)'),
+					('11', 'PP', 'Présentation du logiciel', 'cours_powerpoint_1.twig', 'Présentation du logiciel PowerPoint'), 
+					('12', 'PP', 'Cours Powerpoint 2', 'cours_powerpoint_2.twig', 'détail'),
+					('13', 'PP', 'Cours Powerpoint 3', 'cours_powerpoint_3.twig', 'détail'),
+					('14', 'PP', 'Cours Powerpoint 4', 'cours_powerpoint_4.twig', 'détail'),
+					('15', 'Oracle', 'Présentation', 'cours_oracle_1.twig', 'Présentation de Oracle'), 
+					('16', 'Oracle', 'Cours Oracle 2', 'cours_oracle_2.twig', 'détail'),
+					('17', 'Oracle', 'Cours Oracle 3', 'cours_oracle_3.twig', 'détail'),
+					('18', 'Oracle', 'Cours Oracle 4', 'cours_oracle_4.twig', 'détail')";
 		//echo $sql;
 		$connexion->exec($sql);
 

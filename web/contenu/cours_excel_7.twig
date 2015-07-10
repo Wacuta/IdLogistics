@@ -1,0 +1,194 @@
+{% extends 'contenu/layout_excel.twig' %}
+
+
+{% block contenu %}
+
+<style type="text/css">
+	
+	.opera{
+		font-size: 50px;
+		text-align: center;
+	}
+
+	.fonction{
+		font-size: 25px;
+		text-align: center;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+
+	.violet{
+		color: #ba68c8;
+	}
+
+	.ora{
+		color: #ffb74d;
+	}
+
+	.vert{
+		color: #81c784;
+	}
+</style>
+
+<h1 class="center-align">{{nomC}}</h1>
+
+<p align="justify">
+	Plusieur fonctions nous permet de 
+</p>
+
+<ul class="tabs">
+	<li class="tab col s2"><a href="#nb" class="active">NB</a></li>
+	<li class="tab col s2"><a href="#si" >SI</a></li>
+	<li class="tab col s2"><a href="#siens">SI.ENS</a></li>
+	<li class="tab col s2"><a href="#vide">VIDE</a></li>
+	<li class="tab col s2"><a href="#val">NBVAL</a></li>
+	<li class="tab col s2"><a href="#car">NBCAR</a></li>
+</ul>
+       
+
+       <!-- ARRONDI -->
+<div id="nb">
+	<h3>NB</h3>
+	
+	La fonction <i>NB</i> permet de compter le nombre de cellule qui contient des valeurs numériques. 
+	La selection peut-etre une liste de cellules ou une plage de cellules.
+
+	<div class="fonction">NB(<color class="vert">valeur1</color>; <color class="ora">[valeur2]</color>...)</div>
+	
+	<blockquote>
+		<h3>Exemple : </h3>
+		<div class="center-align image">
+			<img class="materialboxed" width="75%"src="../images/contenu/cours_excel_7/01.png"/>
+			<br/>
+		</div>
+		=NB(B2;D2;E2) --> 2 <br>
+		=NB(B2:E2) --> 3 <br>
+	</blockquote>
+	
+	
+</div>
+
+
+		<!-- ARRONDI AU SUPERIEUR -->
+<div id="si">
+
+	<h3>NB.SI</h3>
+	
+	La fonction <i>NB.SI</i> permet de compter le nombre de cellules qui respect une condition. 
+	La selection peut-etre une cellule ou une plage de cellules.
+	La condition doit-etre entre guillemet.
+
+	<div class="fonction">NB.SI(<color class="vert">plage</color>; <color class="ora">critère</color>)</div>
+	
+	On peut lire cette fonction :
+	"Combien de cellules dans la plage <color class="vert">plage</color> respect le critère <color class="ora">critère</color>."<br>
+
+	<blockquote>
+		<h3>Exemple : </h3>
+		<div class="center-align image">
+			<img class="materialboxed" width="75%"src="../images/contenu/cours_excel_7/01.png"/>
+			<br/>
+		</div>
+		=NB.SI(B2:E2; "< 5") --> 2 <br>
+		=NB.SI(B2:E2; "=colis") --> 1 <br>
+	</blockquote>
+
+</div>
+	
+
+		<!-- ARRONDI A L'INFERIEUR -->
+<div id="siens">
+
+    <h3>NB.SI.ENS</h3>
+    
+	La fonction <i>NB.SI.ENS</i> permet de compter le nombre de cellules qui respect un ensemble de condition. 
+	Les selections peuvent-etre une cellule ou des plages de cellules, mais elles doivent toutes être de la même dimension.
+	La condition doit-etre entre guillemet.
+
+	<div class="fonction">NB.SI.ENS(<color class="vert">plage1</color>; <color class="vert">critère1</color>; <color class="ora">plage2</color>; <color class="ora">critère2</color>;...)</div>
+
+    On peut lire cette fonction :
+	"Combien de cellules dans la plage <color class="vert">plage1</color> respect le critère <color class="vert">critère1</color>, 
+	ainsi que de cellules dans la plage <color class="ora">plage2</color> respect le critère <color class="ora">critère2</color>..."<br>
+
+	<blockquote>
+		<h3>Exemple : </h3>
+		<div class="center-align image">
+			<img class="materialboxed" width="50%"src="../images/contenu/cours_excel_7/02.png"/>
+			<br/>
+		</div>
+		=NB.SI.ENS(B3:B6; "= A"; C3:C6; ">=5") --> 2 <br>
+		<small>combien de lignes du tableau ont le nom "A" et un numéro supérieur ou égale à 5</small> <br>
+	</blockquote>
+	
+</div>
+
+
+		<!-- ARRONDIR AU MULTIPLE -->
+<div id="vide">
+
+    <h3>NB.VIDE</h3>
+    
+	La fonction <i>NB.VIDE</i> permet de compter le nombre de cellule vide, dans une plage.
+
+
+	<div class="fonction">NB.VIDE(<color class="vert">plage</color>)</div>
+
+	<blockquote>
+		<h3>Exemple : </h3>
+		<div class="center-align image">
+			<img class="materialboxed" width="75%"src="../images/contenu/cours_excel_7/03.png"/>
+			<br/>
+		</div>
+		=NB.VIDE(B2:H8) --> 16<br>
+	</blockquote>
+	
+</div>
+
+
+		<!-- TRONQUER -->
+<div id="val">
+
+    <h3>NBVAL</h3>
+    
+	La fonction <i>NBVAL</i> permet de compter le nombre de cellule contenant des valeurs, dans une plage.<br>
+	!! Il n'y a pas de <i>point</i> entre NB et VAL !!
+
+
+	<div class="fonction">NBVAL(<color class="vert">plage</color>)</div>
+
+	<blockquote>
+		<h3>Exemple : </h3>
+		<div class="center-align image">
+			<img class="materialboxed" width="75%"src="../images/contenu/cours_excel_7/03.png"/>
+			<br/>
+		</div>
+		=NBVAL(B2:H8) --> 33<br>
+	</blockquote>
+
+</div>
+
+
+<div id="car">
+
+    <h3>NBCAR</h3>
+    
+	La fonction <i>NBCAR</i> permet de compter le nombre de caractère dans un text ou une cellule.<br>
+	Un espece entre les mots est un caractère. <br>
+	!! Il n'y a pas de <i>point</i> entre NB et CAR !!
+
+
+	<div class="fonction">NBCAR(<color class="vert">text</color>)</div>
+
+	<blockquote>
+		<h3>Exemple : </h3>
+		=NBCAR(150) --> 3<br>
+		=NBCAR("Coucou toi") --> 10<br>
+	</blockquote>
+
+</div>
+
+
+
+
+{% endblock %}

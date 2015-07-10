@@ -1,1 +1,161 @@
-{% extends 'contenu/layout_excel_table.twig' %}
+{% extends 'contenu/layout_excel.twig' %}
+
+
+{% block contenu %}
+
+<style type="text/css">
+	a {
+		color: ##3FB62F;
+	}
+
+
+</style>
+
+<h1 class="center-align">{{nomC}}</h1>
+
+<p align="justify">
+	Les erreurs dans les formules Excel se manifestent par l'apparition d'un petit triangle vert 
+	dans l'angle supérieur gauche de la cellule, 
+	ainsi que par un nom d'erreur précédé du symbole dièse (#).<br>
+	Voici une liste d'erreurs que vous pouvez rencontrer :
+</p>
+
+<ul class="tabs">
+	<li class="tab col s3"><a href="#zero" class="active">#DIV/0!</a></li>
+	<li class="tab col s3"><a href="#null">#NUL!</a></li>
+	<li class="tab col s3"><a href="#val">#VALEUR!</a></li>
+	<li class="tab col s3"><a href="#ref">#REF!</a></li>
+	<li class="tab col s3"><a href="#nom">#NOM?</a></li>
+	<li class="tab col s3"><a href="#nomb">#NOMBRE!</a></li>
+	<li class="tab col s3"><a href="#na">#N/A</a></li>
+	<li class="tab col s3"><a href="#error">###########</a></li>
+</ul>
+       
+
+       <!-- DIVISION PAR ZERO -->
+<div id="zero">
+	<h3>#DIV/0!</h3>
+	<b>Erreur de division par 0 : </b>En arithmétique la division par zéro n'existe pas.<br>
+	Cela peut arriver si, comme divisieur, vous faites référence à une cellule vide ou à cellule contenant 0.
+	<blockquote>
+		<h4>Exemple d'erreurs : </h4>
+		<ul>
+			<li>=5/0</li>
+			<li>=A1/B1 <small>(B1 est vide)</small></li>
+		</ul>
+	</blockquote>
+</div>
+
+
+		<!-- VALEUR NULL -->
+<div id="null">
+	<h3>#NUL!</h3>
+	<b>Erreur de valeur nulle : </b>Cette erreur apparaît lorsque vous utilisez un opérateur de plage 
+	incorrect dans une formule, ou lorsque vous utilisez un opérateur d’intersection (espace) entre des 
+	références de plage pour spécifier une intersection de deux plages qui ne se coupent pas.<br>
+	<blockquote>
+		<h4>Exemple d'erreurs :</h4>
+		=SOMME(A1 A10) il y a deux solution : <br>
+		 - il manque les deux point (:) entre les deux références pour indiquer la plage "de A1 à A10".<br>
+		 - il manque le point virgule (;) entre les deux références pour indiquer la référence "A1 et A10".
+	</blockquote>
+</div>
+	
+
+		<!-- ERREUR NULL -->
+<div id="val">
+
+    <h3>#VALEUR!</h3>
+    <b>Erreur de valeur : </b>Cette erreur survient lorsqu'un type d'argument ou d'opérande inapproprié est utilisé.<br>
+	 - Vous avez attribué une plage de cellules à un opérateur ou à une fonction qui exige une seule valeur et non pas une plage.<br>
+	 - Les éléments de la formule ne sont pas compatibles.<br>
+	 - Vous avez saisi du texte dans une formule nécessitant une valeur numérique ou une valeur logique, telle que VRAI ou FAUX.<br>
+	<blockquote>
+		<h4>Exemple d'erreurs : </h4>
+		<ul>
+			<li>=10+"texte" : On ne peut pas additionner des nombres et des lettres</li>
+			<li>=SOMME("texte";"texte") : On ne peut pas additionner des mots</li>
+		</ul>
+	</blockquote>
+</div>
+
+
+		<!-- REF http://www.bernardcordier.com/excel_erreurs.htm -->
+<div id="ref">
+
+    <h3>#REF!</h3>
+	<b>Erreur de référence de cellule non valide : </b>Cette erreur survient lorsque les coordonnées d'une cellule ne sont pas valides.<br>
+	 - Vous avez supprimé ou collé des cellules auxquelles d’autres formules faisaient référence.<br>
+	 - Vous avez utilisé une liaison de cellule non valide.
+
+</div>
+
+
+		<!-- NOM -->
+<div id="nom">
+
+    <h3>#NOM?</h3>
+	<b>Erreur due à un nom non valide : </b>Cette erreur survient lorsque l'application ne reconnaît pas le texte contenu dans une formule.<br>
+	 - Vous avez utilisé un nom de cellule ou de plage de cellules qui n'existe pas.<br>
+	 - Un nom a été mal orthographié.<br>
+	 - Du texte a été saisi dans une formule sans être placé entre guillemets.<br>
+	 - Une fonction a été mal orthographiée.
+	 <blockquote>
+	 	<h4>Exemple d'erreurs : </h4>
+	 	<ul>
+	 		<li>=SOMME(A1:ZZZ12) : La case ZZZ12 n'existe pas</li>
+	 		<li>=Bonjour : Le mot doit être entre guillements</li>
+	 		<li>=BLABLA(A1:B2) : La fonction <i>BLABLA</i> n'exite pas</li>
+	 	</ul>
+	 </blockquote>
+
+</div>
+
+
+		<!-- NOMBRE -->
+<div id="nomb">
+
+    <h3>#NOMBRE!</h3>
+	<b>Erreur de nombre : </b> Cette erreur survient si une formule ou une fonction contient des valeurs numériques non valides.<br>
+	 - Un nombre est trop grand ou trop petit pour être représenté dans Excel. Les valeurs doivent être comprises entre -1*10<sup>307</sup> et 1*10<sup>307</sup><br>
+	 - Une fonction qui s'exécute par itération ne parvient pas à trouver un résultat.<br>
+	 - Vous avez utilisé un argument incorrect dans une fonction qui exige un argument numérique.
+	<blockquote>
+		<h4>Exemple d'erreurs : </h4>
+		<ul>
+			<li>=FACT(200) : 1 x 2 x 3 x 4 x ... x 200 est trop grand pour être afficher</li>
+		</ul>
+	</blockquote>
+
+</div>
+
+
+		<!-- N/A -->
+<div id="na">
+
+    <h3>#N/A</h3>
+	<b>Erreur de valeur manquante : </b> Cette erreur survient lorsqu'une valeur nécessaire au bon fonctionnement de la formule est manquante.<br>
+	 - Un argument obligatoire dans la formule est absent.<br>
+	 - Un argument d'un type inapproprié est utilisé dans une formule.<br>
+	 - Les fonctions <i>RECHERCHEV</i>, <i>RECHERCHEH</i> ou <i>INDEX</i> effectuent une recherche dans une ligne ou une colonne non triée.
+	
+</div>
+
+
+		<!-- ######## -->
+<div id="error">
+
+ 
+    <h3>###########</h3>
+	<b>Erreur d'affichage d'une valeur numérique : </b><br>
+	Cette erreur survient lorsqu'une colonne n'est pas suffisamment large pour afficher la totalité d'une donnée numérique.
+	Il suffit tout simplement de modifier la largeur de la colonne afin de régler le problème.<br>
+	Cette erreur peut provenir également de calculs sur les dates et les heures qui donnent des résultats négatifs.
+
+</div>
+      
+</ul>
+
+
+
+{% endblock %}

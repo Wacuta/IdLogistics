@@ -1,0 +1,169 @@
+{% extends 'contenu/layout_excel.twig' %}
+
+
+{% block contenu %}
+
+<style type="text/css">
+	
+	.opera{
+		font-size: 50px;
+		text-align: center;
+	}
+
+	.fonction{
+		font-size: 25px;
+		text-align: center;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+
+	.violet{
+		color: #ba68c8;
+	}
+
+	.ora{
+		color: #ffb74d;
+	}
+
+	.vert{
+		color: #81c784;
+	}
+</style>
+
+<h1 class="center-align">{{nomC}}</h1>
+
+<p align="justify">
+	Les deux uniques valeurs logiques sont VRAI et FAUX. 
+	Certaines fonctions renvoient une de ces deux valeurs, permettant ainsi d'établir la véracité d'une proposition. 
+	On compte parmi celles-ci les fonctions logiques, les opérateurs de comparaison et certaines fonctions d'information
+</p>
+
+<ul class="tabs">
+	<li class="tab col s2"><a href="#arr" class="active">ARRONDIR</a></li>
+	<li class="tab col s2"><a href="#sup" >SUPERIEUR</a></li>
+	<li class="tab col s2"><a href="#inf">INFERIEUR</a></li>
+	<li class="tab col s2"><a href="#mult">AU MULTIPLE</a></li>
+	<li class="tab col s2"><a href="#tron">TRONQUER</a></li>
+</ul>
+       
+
+       <!-- ARRONDI -->
+<div id="arr">
+	<h3>Arrondir</h3>
+	
+	La fonction <i>ARRONDI</i> permet d'arrondir une valeur en lui indiquant au combientième chiffre 
+	apres la virgule l'arrondi sera fait.
+
+	<div class="fonction">ARRONDI(<color class="vert">nombre</color>; <color class="ora">no_chiffre</color>)</div>
+	
+	On peut lire cette fonction :
+	"Arrondir <color class="vert">nombre</color>, <color class="ora">no_chiffre</color> chiffre(s) après la virgule."<br>
+
+	<blockquote>
+		<h3>Exemple : </h3>
+		=ARRONDI(18 621,51964; 2) --> 18 621,52 <br>
+		=ARRONDI(18 621,51964; 0) --> 18 622 <br>
+		=ARRONDI(18 621,51964; -1) --> 18 620 <small>( il est possible de mettre des nombres négatif, pour arrondir avant la virgule )</small><br>
+	</blockquote>
+	
+	
+</div>
+
+
+		<!-- ARRONDI AU SUPERIEUR -->
+<div id="sup">
+
+	<h3>Arrondir au supérieur</h3>
+	
+	La fonction <i>ARRONDI.SUP</i> permet d'arrondir une valeur en lui indiquant au combientième chiffre 
+	apres la virgule l'arrondi se fera au supérieur.
+
+	<div class="fonction">ARRONDI.SUP(<color class="vert">nombre</color>; <color class="ora">no_chiffre</color>)</div>
+	
+	On peut lire cette fonction :
+	"Arrondir <color class="vert">nombre</color> au supérieur, <color class="ora">no_chiffre</color> chiffre(s) après la virgule."<br>
+
+	<blockquote>
+		<h3>Exemple : </h3>
+		=ARRONDI.SUP(18 621,51964; 4) --> 18 621,5197 <br>
+		=ARRONDI.SUP(18 621,51964; 0) --> 18 622 <br>
+		=ARRONDI.SUP(18 621,51964; -1) --> 18 630 <small>( il est possible de mettre des nombres négatif, pour arrondir avant la virgule )</small><br>
+	</blockquote>
+
+</div>
+	
+
+		<!-- ARRONDI A L'INFERIEUR -->
+<div id="inf">
+
+    <h3>Arrondir à l'inférieur</h3>
+    
+	La fonction <i>ARRONDI.INF</i> permet d'arrondir une valeur en lui indiquant au combientième chiffre 
+	apres la virgule l'arrondi se fera à l'inférieur. 
+
+	<div class="fonction">ARRONDI.INF(<color class="vert">nombre</color>; <color class="ora">no_chiffre</color>)</div>
+
+    On peut lire cette fonction :
+	"Arrondir <color class="vert">nombre</color> à l'inférieur, <color class="ora">no_chiffre</color> chiffre(s) après la virgule."<br>
+
+	<blockquote>
+		<h3>Exemple : </h3>
+		=ARRONDI.INF(18 621,51964; 2) --> 18 621,51 <br>
+		=ARRONDI.INF(18 621,51964; 0) --> 18 621 <br>
+		=ARRONDI.INF(18 621,51964; -1) --> 18 620 <small>( il est possible de mettre des nombres négatif, pour arrondir avant la virgule )</small><br>
+	</blockquote>
+	
+</div>
+
+
+		<!-- ARRONDIR AU MULTIPLE -->
+<div id="mult">
+
+    <h3>Arrondir au multiple</h3>
+    
+	La fonction <i>ARRONDI.AU.MULTIPLE</i> permet d'arrondir une valeur en lui indiquant de quel multiple le résultat doit être divisible.<br>
+	L'arrondi se fera au plus proche du multiple.
+	Le multiple ne peut pas être négatif.
+	Le résultat sera forcement un nombre entier positif.
+
+
+	<div class="fonction">ARRONDI.AU.MULTIPLE(<color class="vert">nombre</color>; <color class="ora">multiple</color>)</div>
+
+    On peut lire cette fonction :
+	"Arrondir <color class="vert">nombre</color>, et le résultat sera un multiple de <color class="ora">multiple</color>."<br>
+
+	<blockquote>
+		<h3>Exemple : </h3>
+		=ARRONDI.AU.MULTIPLE(18 621,51964; 7) --> 18 620 <small>( 7 x 2 660 = 18 620 )</small><br>
+		=ARRONDI.AU.MULTIPLE(18 621,51964; 13) --> 18 616 <small>( 13 x 1 432 = 18 616 )</small><br>
+	</blockquote>
+	
+</div>
+
+
+		<!-- TRONQUER -->
+<div id="tron">
+
+    <h3>Tronquer</h3>
+    
+	La fonction <i>TRONQUE</i> affiche la partie entier d'un nombre et enlever la partie décimal. 
+	Il est possible aussi n'enlever qu'une partie de la partie décimale.
+
+	<div class="fonction">TRONQUE<color class="vert">nombre</color>; <color class="ora">[no_chiffre]</color>)</div>
+
+    On peut lire cette fonction :
+	"Enlever la partie décimal du nombre <color class="vert">nombre</color>, à partir de la <color class="ora">no_chiffre</color> ème décimale."<br>
+
+	<blockquote>
+		<h3>Exemple : </h3>
+		=TRONQUE(18 621,51964; 2) --> 18 621,51 <br>
+		=TRONQUE(18 621,51964) --> 18 621 <br>
+		=TRONQUE(18 621,51964; -2) --> 18 600 <small>( il est possible de mettre des nombres négatif, pour tronquer avant la virgule )</small><br>
+	</blockquote>
+
+</div>
+
+
+
+
+{% endblock %}
