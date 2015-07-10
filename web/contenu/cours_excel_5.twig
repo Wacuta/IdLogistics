@@ -1,0 +1,183 @@
+{% extends 'contenu/layout_excel.twig' %}
+
+
+{% block contenu %}
+
+<style type="text/css">
+	
+	.opera{
+		font-size: 50px;
+		text-align: center;
+	}
+
+	.fonction{
+		font-size: 25px;
+		text-align: center;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+
+	.violet{
+		color: #ba68c8;
+	}
+
+	.ora{
+		color: #ffb74d;
+	}
+
+	.vert{
+		color: #81c784;
+	}
+</style>
+
+<h1 class="center-align">{{nomC}}</h1>
+
+<p align="justify">
+	Les deux uniques valeurs logiques sont <i>VRAI</i> et <i>FAUX</i>. 
+	Certaines fonctions renvoient une de ces deux valeurs, permettant ainsi d'établir la véracité d'une proposition. 
+	On compte parmi celles-ci les fonctions logiques, les opérateurs de comparaison et certaines fonctions d'information
+</p>
+
+<ul class="tabs">
+	<li class="tab col s4"><a href="#ope" class="active">Les Opérateurs</a></li>
+	<li class="tab col s3"><a href="#et" >ET</a></li>
+	<li class="tab col s3"><a href="#ou">OU</a></li>
+	<li class="tab col s3"><a href="#non">NON</a></li>
+	<li class="tab col s3"><a href="#si">SI</a></li>
+</ul>
+       
+
+       <!-- OPÉRATEUR -->
+<div id="ope">
+	<h3>Les Opérateurs de comparaison</h3>
+	Ceux sont des symboles qui nous permet de comparer des valeurs. Le résultat de la comparaison est soit <i>VRAI</i> soit <i>FAUX</i>.<br>
+	<blockquote>
+		<h4>Exemple : </h4>
+		<ul>
+			<li>5 > 3 --> VRAI</li>
+			<li>10 < 2 --> FAUX</li>
+		</ul>
+	</blockquote>
+	
+	Bien entendu les comparaisons peuvent porter sur des références ou toute expression ayant pour résultat une valeur numérique.<br>
+	Il est aussi possible de comparer des mots, en sachant que :<br>
+	- les majuscules sont égales aux minuscules (a = A, b = B...)<br>
+	- leur valeur sont croissantes, dans le l'ordre de l'alphabet (a < b < c < d < e ... < z)<br>
+	- la valeur d'une lettre est toujours plus forte qu'un nombre<br>
+	<small>( pour qu'il soit considéré comme un mot, il faut que la chaine de caractère soit entre guillemets (" ") )</small>
+
+	<blockquote>
+		<h4>Exemple : </h4>
+		<ul>
+			<li>= "a"="A" --> VRAI</li>
+			<li>= "a">"z" --> FAUX</li>
+			<li>= 100000<"a" --> VRAI</li>
+		</ul>
+	</blockquote>
+
+	Les opérateurs de comparaison sont au nombre de 6.<br>
+
+	<div class="row">
+		<div class="col s2">
+			<div class="opera tooltipped" data-position="bottom" data-delay="50" data-tooltip="strictement supérieur"> > </div>
+		</div>
+		<div class="col s2">
+			<div class="opera tooltipped" data-position="bottom" data-delay="50" data-tooltip="strictement inférieur"> < </div>
+		</div>
+		<div class="col s2">
+			<div class="opera tooltipped" data-position="bottom" data-delay="50" data-tooltip="supérieur ou égale"> >= </div>
+		</div>
+		<div class="col s2">
+			<div class="opera tooltipped" data-position="bottom" data-delay="50" data-tooltip="inférieur ou égale"> <= </div>
+		</div>
+		<div class="col s2">
+			<div class="opera tooltipped" data-position="bottom" data-delay="50" data-tooltip="égale"> = </div>
+		</div>
+		<div class="col s2">
+			<div class="opera tooltipped" data-position="bottom" data-delay="50" data-tooltip="différent"> <> </div>
+		</div>
+	</div>
+	
+	
+	
+</div>
+
+
+		<!-- ET -->
+<div id="et">
+	<h3>le ET</h3>
+	
+	La fonction <i>ET</i> renvoie VRAI si toutes les valeurs logiques valent VRAI, FAUX dans le cas contraire.
+	Il suffit qu'une seul valeur logique soit <i>FAUX</i> pour que le résultat le soit aussi. 
+
+	<div class="fonction">ET(valeur_logique1; [valeur_logique2]; ...)</div>
+
+	
+	<blockquote>
+		<h4>Exemple : </h4>
+		= ET(A1>=0; A1 <= 20) --> VRAI si A1 est comprise entre 0 et 20, sinon c'est FAUX <br>
+		= ET(VRAI; VRAI; VRAI; FAUX; VRAI) --> FAUX
+	</blockquote>
+</div>
+	
+
+		<!-- OU -->
+<div id="ou">
+
+    <h3>le OU</h3>
+    
+	La fonction <i>OU</i> renvoie FAUX si toutes les valeurs logiques valent FAUX, VRAI dans le cas contraire.
+	Il suffit qu'une seul valeur logique soit <i>VRAI</i> pour que le résultat le soit aussi. 
+
+	<div class="fonction">OU(valeur_logique1; [valeur_logique2]; ...)</div>
+
+    <blockquote>
+		<h4>Exemple : </h4>
+		= OU(A1<0; A1>20) --> FAUX si la valeur de A1 est comprise entre 0 et 20 et VRAI dans le cas contraire.<br>
+		= OU(FAUX; FAUX; VRAI; FAUX; FAUX) --> VRAI
+	</blockquote>
+	
+</div>
+
+
+		<!-- NON -->
+<div id="non">
+
+    <h3>le NON</h3>
+	La fonction <i>NON</i> renvoie <i>VRAI</i> si la valeur logique vaut <i>FAUX</i> et renvoi <i>FAUX</i> si la valeur logique est <i>VRAI</i>.
+
+	<div class="fonction">NON(valeur_logique1)</div>
+
+	<blockquote>
+		<h4>Exemple : </h4>
+		= NON(VRAI) --> FAUX <br>
+		= NON(FAUX) --> VRAI
+	</blockquote>
+	
+</div>
+
+
+		<!-- SI -->
+<div id="si">
+
+    <h3>le SI</h3>
+	La fonction <i>SI</i> permet de faire un test et de renvoyer une valeur si le résultat du test est <i>VRAI</i> ou un autre résultat si il est <i>FAUX</i>.
+
+	<div class="fonction">SI(<color class="violet">test_logique</color>; <color class="vert">[valeur_si_vrai]</color>; <color class="ora">[valeur_si_faux]</color>)</div>
+
+	On peut lire cette fonction :<br>
+	"Si le test <color class="violet">test_logique</color> est vrai, alors la cellule affiche la valeur 
+	<color class="vert">valeur_si_vrai</color>, sinon elle affiche la valeur <color class="ora">valeur_si_faux</color>."
+	
+	<blockquote>
+		<h4>Exemple : </h4>
+		= SI(A1>0; "positif"; "négatif") 
+		--> Si <i>A1</i> est supérieur à 0, alors la cellule affichera <i>positif</i> sinon elle affichera <i>négatif</i>
+	</blockquote>
+
+</div>
+
+
+
+
+{% endblock %}

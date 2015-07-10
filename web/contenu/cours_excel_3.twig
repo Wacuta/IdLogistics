@@ -1,1 +1,43 @@
-{% extends 'contenu/layout_excel_table.twig' %}
+{% extends 'contenu/layout_excel.twig' %}
+
+
+{% block contenu %}
+
+<h1 class="center-align">{{nomC}}</h1>
+
+<p align="justify">
+	Pour signaler au tableur Excel que nous souhaitons des valeurs absolues au lieu de référence relatives, 
+	nous allons utiliser le caractère $ devant la référence de la cellule dans la fonction.
+</p>
+
+<ul class="collection">
+	<li class="collection-item">
+
+	    <h3>$ devant la lettre de la cellule</h3>
+		ne modifie pas la référence de la colonne si vous étirez la fonction d'une colonne à l'autre.
+	</li>
+	<li class="collection-item">
+
+	    <h3>$ devant le numéro de la ligne</h3>
+		ne modifie pas le numéro de la ligne lorsque vous étirez la fonction vers le haut ou vers le bas.
+
+	</li>
+	<li class="collection-item">
+
+	    <h3>$ devant la lettre de la colonne et le numéro de la ligne</h3>
+		ne modifie jamais la référence de la cellule quel que soit le sens pour étirer la fonction.
+
+	</li>
+      
+</ul>
+
+<blockquote>
+	<h3>Astuce</h3>
+	Il est possible de changer rapidement le type de réference dans une formule,
+	en placant le curseur sur la référence, dans le barre de formule, et d'appuyer sur <i>F4</i>.
+	<div class="center-align">
+		<img width="50%" src="../images/contenu/cours_excel_3/01.png">
+	</div>
+</blockquote>
+
+{% endblock %}
