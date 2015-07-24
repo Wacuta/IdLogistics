@@ -1,1 +1,170 @@
 {% extends 'contenu/layout_oracle.twig' %}
+
+
+{% block contenu %}
+
+<style>
+
+	.opera{
+		font-size: 20px;
+		text-align: center;
+	}
+	.fonction{
+		font-size: 25px;
+		text-align: center;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+
+	.violet{
+		color: #ba68c8;
+	}
+
+	.ora{
+		color: #ffb74d;
+	}
+
+	.vert{
+		color: #81c784;
+	}
+</style>
+
+
+
+<h1 class="center-align">{{nomC}}</h1>
+
+<p align="justify">
+	Comme son nom l'indique, ce chapitre traitera de la sélection et de l'affichage de données.<br>
+	La requête qui permet de sélectionner et afficher des données s'appelle <b><i>SELECT</i></b>.
+</p>
+
+<div class="fonction">
+	<color class="violet">SELECT</color> <i>colonne1, colonne2</i> <color class="violet">FROM</color> <i>Table1</i>
+</div>
+
+<p align="justify">
+	SELECT permet de sélectionner des données à partir d'une table. 
+	Pour cela, il faut ajouter une clause à la commande SELECT : 
+	la clause FROM, qui définit de quelle structure (dans notre cas, une table) viennent les données.<br>
+	Par exemple, si l'on veut sélectionner l'identifiant et le nom d'un produit on utilisera :
+	<blockquote>
+		<color class="violet">SELECT</color> nomProd, nomProd <color class="violet">FROM</color> Produit
+	</blockquote>
+</p>
+
+<p align="justify">
+	Il est possible d'ajouter autant de colonne à la requête du moment qu'elles sont dans la table selectionné.
+	Il est aussi possible d'ajouter des tables à la selection.
+	Au lieu de taper toutes les colonnes des tables, on peut tout selectionner d'un coup en mettant le caractère *.
+
+	<blockquote>
+		<color class="violet">SELECT</color> * <color class="violet">FROM</color> Produit
+	</blockquote>
+</p>
+
+<p align="justify">
+	<h2>WHERE</h2>
+	Si l'on veut affiner la recherche dans une base de données, il est possible de d'ajouter la clause 
+	<color class="violet">WHERE</color> pour apporter des détails.<br>
+	Par exemple si l'on veut afficher tout les identifiant de produits qui on le nom <i>pomme</i>,
+	alors nous avons:
+
+	<blockquote>
+		<color class="violet">SELECT</color> idProd 
+		<color class="violet">FROM</color> Produit 
+		<color class="violet">WHERE</color> nomProd='pomme'
+		<br>
+		<small>(Comme 'pomme' est une chaîne de caractères, je dois bien sûr l'entourer de guillemets.)</small>
+	</blockquote>
+
+</p>
+
+
+<p align="justify">
+	<h2>Les Opérateur</h2>
+	Les opérateurs de comparaison sont les symboles que l'ont utilise pour définir les critères de recherche 
+	(le = dans notre exemple précédent). Six opérateurs simples peuvent être utilisés.<br>
+
+	<div class="row">
+		<div class="col s2">
+			<div class="opera tooltipped" data-position="bottom" data-delay="50" data-tooltip="strictement supérieur"> > </div>
+		</div>
+		<div class="col s2">
+			<div class="opera tooltipped" data-position="bottom" data-delay="50" data-tooltip="strictement inférieur"> < </div>
+		</div>
+		<div class="col s2">
+			<div class="opera tooltipped" data-position="bottom" data-delay="50" data-tooltip="supérieur ou égale"> >= </div>
+		</div>
+		<div class="col s2">
+			<div class="opera tooltipped" data-position="bottom" data-delay="50" data-tooltip="inférieur ou égale"> <= </div>
+		</div>
+		<div class="col s2">
+			<div class="opera tooltipped" data-position="bottom" data-delay="50" data-tooltip="égale"> = </div>
+		</div>
+		<div class="col s2">
+			<div class="opera tooltipped" data-position="bottom" data-delay="50" data-tooltip="différent"> <> </div>
+		</div>
+	</div>
+
+	<blockquote>
+		Exemple: <br>
+		<color class="violet">SELECT</color> * 
+		<color class="violet">FROM</color> Produit 
+		<color class="violet">WHERE</color> quantite > 150
+	</blockquote>
+
+</p>
+
+<p align="justify">
+	<h2>Combinaisons de critères</h2>
+
+	Pour pousser la recherche, il est possible d'ajouter des critères. 
+	Pour cela, il faut des opérateurs logiques, qui sont au nombre de quatre :
+
+	<div class="row">
+		<div class="col s2">
+			<div class="opera tooltipped" data-position="bottom" data-delay="50" data-tooltip="ET"> AND </div>
+		</div>
+		<div class="col s2">
+			<div class="opera tooltipped" data-position="bottom" data-delay="50" data-tooltip="OU"> OR </div>
+		</div>
+		<div class="col s2">
+			<div class="opera tooltipped" data-position="bottom" data-delay="50" data-tooltip="OU exclusif"> XOR </div>
+		</div>
+		<div class="col s2">
+			<div class="opera tooltipped" data-position="bottom" data-delay="50" data-tooltip="NON"> NOT </div>
+		</div>
+	</div>
+
+	<blockquote>
+		<small>(On veut les id des pommes et des poires)</small><br>
+		<color class="violet">SELECT</color> idProd 
+		<color class="violet">FROM</color> Produit 
+		<color class="violet">WHERE</color> nomProd='pomme'
+		<color class="violet">OR</color> nomProd='poire'
+		<br><br>
+		<small>(On veut les id des pommes sauf celle de la commande 5)</small><br>
+		<color class="violet">SELECT</color> idProd 
+		<color class="violet">FROM</color> Produit 
+		<color class="violet">WHERE</color> nomProd='pomme'
+		<color class="violet">OR NOT</color> ComProd= 5
+		<br><br>
+	</blockquote>
+
+</p>
+	
+<p>
+	<h3>Attention !</h3>
+	<blockquote>
+		<color class="violet">SELECT</color> * 
+		<color class="violet">FROM</color> Produit 
+		<color class="violet">WHERE</color> nomProd='pomme'
+		<color class="violet">AND</color> nomProd='poire'
+	</blockquote>
+	Cette requête est fausse, car la requête selectionne tout les produits dont le nom est <i>pomme</i> ET <i>poire</i>.
+	Ce qui n'est pas possible.
+</p>
+
+
+
+{% endblock %}

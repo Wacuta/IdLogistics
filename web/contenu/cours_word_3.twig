@@ -1,1 +1,91 @@
 {% extends 'contenu/layout_word.twig' %}
+
+
+{% block contenu %}
+
+<h1 class="center-align">{{nomC}}</h1>
+
+<p align="justify">
+	Pour vous y trouver dans un document de plusieurs pages, 
+	il n'y rien de tel qu'une table des matières ou qu'un sommaire. 
+	Pas question toutefois de les faire à la main avec toutes les contraintes que cela implique : 
+	obligation de tout refaire en cas de changement de plan, les numéros de pages mal alignés, ... 
+	sans compter le temps passé à les réaliser.
+	Word sait générer automatiquement une table des matières à partir de la structure de votre document : 
+	une fonction que vous auriez tort de ne pas utiliser !
+</p>
+
+<div class="center-align image">
+	<img class="materialboxed" data-caption="Capture de Microsoft Word 2013" width="300"src="../images/contenu/cours_word_3/01.png"/>
+	<br/>
+	<label> Capture de Microsoft Word 2013</label>
+</div>
+
+<p align="justify">
+	En plus de créer une table des matières dynamique qui s'adapte aux changements que vous apportez à votre document 
+	(les numéros de pages sont mis à jour automatiquement), 
+	Word y ajoute des liens hypertextes pour accéder rapidement aux différentes parties de votre document : 
+	particulièrement utile pour rechercher des informations dans les documents volumineux. 
+</p>
+
+<p align="justify">
+	<h2>Les prérequis</h2>
+	Pour que la génaration se fasse, il faut que le document soit bien structuré des le début. 
+	Pour cela nous allons utiliser les styles préféfinis de Word qui se trouvent dans la partie <b><i>Style</i></b> de l'<b><i>Accueil</i>.</b>
+</p>
+
+<div class="center-align image">
+	<img class="materialboxed" width="400"src="../images/contenu/cours_word_3/02.png"/>
+	<br/>
+	<label> <b>Accueil</b> > <b>Style</b></label>
+</div>
+
+<p align="justify">
+	Cette partie offre des styles pour les titres. Selon la hiérarchie que vous avez construit: <br>
+	- les titres des grandes doivent avoir le style <b><i>Titre 1</i></b>, <br>
+	- les titres des sous-parties doivent avoir le style <b><i>Titre 2</i></b><br>
+	- les titres des sous-sous-parties doivent avoir le style <b><i>Titre 3</i></b><br>
+	etc..
+</p>
+
+<p align="justify">
+	<h2>La génération</h2>
+	
+	<div class="center-align image">
+		<img class="materialboxed" width="300"src="../images/contenu/cours_word_3/03.png"/>
+		<br/>
+		<label> <b>Accueil</b> > <b>Style</b></label>
+	</div>
+
+	Une fois le document bien organisé, la génération d'une table de matière devient un jeux d'enfant. 
+	Dans l'onglet <b><i>Références</i></b>, vous trouverez le bouton <b><i>Table des matières</i></b>, à gauche.
+	Ce bouton dépoile un volet où vous pouvez choisir un style à votre table des matières. 
+	Suite à ce choix, la table apparaitra là où vous aurez placé votre curseur.
+</p>
+
+<p align="justify">
+	<h2>Conseils</h2>
+	<ul>
+		<li>
+			- N'attendez pas la fin pour définir les styles, utilisez les des le debut.
+		</li>
+		<li>
+			- Placer la table des matières en deuxième page. Faire un <b><i>ctrl+Entrer</i></b> pour sauter une page.
+		</li>
+		<li>
+			- N'oubliez pas de mettre à jour la table, en cas de modification ou d'ajout. 
+			Utilisez le bouton <b><i>Mettre à jour la table</i></b>, ou selectionner tout le document avec <b><i>ctrl+A</i></b> et faites 
+			<b><i>F9</i></b>. 
+		</li>
+	</ul>
+</p>
+
+
+{% endblock %}
+
+
+{% block script %}
+
+
+
+{% endblock %}
