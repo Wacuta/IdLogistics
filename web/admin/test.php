@@ -11,7 +11,7 @@
 				VALUES 
 					('00', 'Word', 'Présentation du logiciel', 'cours_word_2.twig', 'Présentation du logiciel Word.'),
 					('01', 'Word', 'Mise en forme du texte', 'cours_word_1.twig', 'Police, Taille, Gras, italic, souligner, sur-ligner, couleur...'), 
-					('02', 'Word', 'Cours Word 3', 'cours_word_3.twig', 'détail'),
+					('02', 'Word', 'Table des matières', 'cours_word_3.twig', 'Table des matières, Plan, Sommaire'),
 					('03', 'Word', 'Cours Word 4', 'cours_word_4.twig', 'détail'),
 					('04', 'Excel', 'Présentation du logiciel', 'cours_excel_2.twig', 'Présentation du logiciel Excel'),
 					('05', 'Excel', 'Les Opérations', 'cours_excel_1.twig', 'Les opérations basiques de Excel: Addition, Soustraction, Multiplication, Division'), 
