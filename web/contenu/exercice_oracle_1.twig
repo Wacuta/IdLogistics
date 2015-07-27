@@ -9,24 +9,6 @@
 		Ici vous pouvez vous exercer aux requêtes SQL.
 	</p>
 	
-	<div class="row">
-		<div class="input-field col s9">
-	        <input id="requet" type="text" class="validate">
-	        <label for="requet">Requête <a class="modal-trigger" href="#modal1"><i class="mdi-action-info-outline"></i></a></label>
-	    </div>
-	    <div class="col s3">
-	    	<button class="btn waves-effect waves-light" type="submit" name="action" onclick="requet()" style="margin-top:20px;">
-	    		Executer
-				<i class="mdi-content-send right"></i>
-			</button>
-	    </div>
-    </div>
-
-
-	<div id="res">
-		<div id="tableauRes"></div>
-	</div>
-
 	<div id="modal1" class="modal">
 	    <div class="modal-content">
 		    <h4>Exemples de requêtes</h4>
@@ -43,33 +25,5 @@
 	 </div>
 
 
-
-
-	<script type="text/javascript">
-
-			 $(document).ready(function(){
-			    $('.modal-trigger').leanModal();
-			  });
-
-
-			function requet() {
-				
-				var rqt = $("#requet").val();
-
-				var data = 'motclef='+rqt;
-
-				$.ajax({
-			        type:"POST",
-			        url:"../contenu/oracle_base_de_donnee/requet.php",
-			        data:data,
-			        success:  function(server_response){
-						$("#tableauRes").html(server_response).show();
-					}
-			    });
-
-			}
-
-
-	</script>
 
 {% endblock %}

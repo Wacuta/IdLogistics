@@ -73,6 +73,10 @@ $app->get('/cours-{id}', function($id) use ($app){
 	$contenuC = $data['contenueC'];
 	$detailC = $data['detailC'];
 
+	if ($typeC == "Oracle") {
+		require_once __DIR__.'/contenu/oracle_base_de_donnee/completeTable.php';
+	}
+
 	return $app['twig']->render('contenu/'.$contenuC, array(
 			'idC' => $idC,
 			'typeC' => $typeC,
