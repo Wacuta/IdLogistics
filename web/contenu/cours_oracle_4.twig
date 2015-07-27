@@ -1,1 +1,48 @@
 {% extends 'contenu/layout_oracle.twig' %}
+
+
+
+{% block contenu %}
+
+
+<h1 class="center-align">{{nomC}}</h1>
+
+<p align="justify">
+	La commande utilisée pour supprimer des données est <b><i>DELETE</i></b>. Sauf dans le cadre de l'application, cette
+	opération est <b>irréversible</b>, soyez très prudents !<br>
+	On utilise la clause <b><i>WHERE</i></b> de la même manière qu'avec la commande <b><i>SELECT</i></b> pour préciser quelle lignes doivent
+	être supprimées.
+</p>
+
+<div class="fonction">
+	<color class="violet">DELETE FROM</color> <i>Table1</i> <color class="violet">WHERE</color> <i>critères</i>
+</div>
+
+<p align="justify">
+	Par exemple, le produit 'pomme' n'existe plus. Nous allons donc le retirer de la base de données.
+</p>
+
+<blockquote>
+	<color class="violet">DELETE FROM</color> Produit <color class="violet">WHERE</color> nomProd='pomme'
+</blockquote>
+
+<p align="justify">
+	Si vous désirez supprimer toutes les lignes d'un table, il suffit de ne pas mettre de clause <b><i>WHERE</i></b>.
+</p>
+
+<div id="modal1" class="modal">
+    <div class="modal-content">
+	    <h4>Exemples de requêtes</h4>
+	    <p>
+	    	DELETE FROM Produit WHERE idProd=1<br>
+	    	DELETE FROM Produit WHERE nomProd='pomme'<br>
+	    	DELETE FROM Produit<br>
+			<small>N'oubliez pas de faire une sélection pour vérifier le contenu</small>
+	    </p>
+    </div>
+    <div class="modal-footer">
+	    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+    </div>
+</div>
+
+{% endblock %}

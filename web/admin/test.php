@@ -25,9 +25,9 @@
 					('13', 'PP', 'Cours Powerpoint 3', 'cours_powerpoint_3.twig', 'détail'),
 					('14', 'PP', 'Cours Powerpoint 4', 'cours_powerpoint_4.twig', 'détail'),
 					('15', 'Oracle', 'Présentation', 'cours_oracle_1.twig', 'Présentation de Oracle'), 
-					('16', 'Oracle', 'Cours Oracle 2', 'cours_oracle_2.twig', 'détail'),
-					('17', 'Oracle', 'Cours Oracle 3', 'cours_oracle_3.twig', 'détail'),
-					('18', 'Oracle', 'Cours Oracle 4', 'cours_oracle_4.twig', 'détail')";
+					('16', 'Oracle', 'La sélection', 'cours_oracle_2.twig', 'Sélectionner avec SELECT, FROM et WHERE pour les critères'),
+					('17', 'Oracle', 'L\'insértion', 'cours_oracle_3.twig', 'Insérer avec INSERT, des valeurs dans les tables'),
+					('18', 'Oracle', 'La suppression', 'cours_oracle_4.twig', 'Supprimer avec DELETE, des valeurs dans les tables')";
 		//echo $sql;
 		$connexion->exec($sql);
 

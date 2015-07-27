@@ -1,28 +1,97 @@
 {% extends 'contenu/contenu.twig' %}
 
-		{% block head %}
+	{% block head %}
 
-		{% endblock %}
+	{% endblock %}
 
-		{% block style %}
-			nav{
-					background-color: #d32f2f;
-				}
-		{% endblock %}
+	{% block style %}
+		nav{
+				background-color: #d32f2f;
+			}
+		.opera{
+			font-size: 20px;
+			text-align: center;
+		}
+		.fonction{
+			font-size: 25px;
+			text-align: center;
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+
+		.violet{
+			color: #ba68c8;
+		}
+
+		.ora{
+			color: #ffb74d;
+		}
+
+		.vert{
+			color: #81c784;
+		}
+	{% endblock %}
+	
+
+	{% block titre %} Oracle {% endblock %}
+
+
+	{% block contenu %}
+
+	{% endblock %}
+
+
+	{% block table %}
+	<div class="container">
 		
+		<div class="row">
+			<div class="input-field col s9">
+		        <input id="requet" type="text" class="validate">
+		        <label for="requet">Requête <a class="modal-trigger" href="#modal1"><i class="mdi-action-info-outline"></i></a></label>
+		    </div>
+		    <div class="col s3">
+		    	<button class="btn waves-effect waves-light" type="submit" name="action" onclick="requet()" style="margin-top:20px;">
+		    		Executer
+					<i class="mdi-content-send right"></i>
+				</button>
+		    </div>
+	    </div>
 
-		{% block titre %} Oracle {% endblock %}
+
+		<div id="res">
+			<div id="tableauRes"></div>
+		</div>
 
 
-		{% block contenu %}
+	</div>
 
-		{% endblock %}
+	<script type="text/javascript">
+
+			 $(document).ready(function(){
+			    $('.modal-trigger').leanModal();
+			  });
+
+			function requet() {
+				
+				var rqt = $("#requet").val();
+
+				var data = 'motclef='+rqt;
+
+				$.ajax({
+			        type:"POST",
+			        url:"../contenu/oracle_base_de_donnee/requet.php",
+			        data:data,
+			        success:  function(server_response){
+						$("#tableauRes").html(server_response).show();
+					}
+			    });
+			}
 
 
-		{% block table %}
-		
-		{% endblock %}
+	</script>
+	
+	{% endblock %}
 
-		{% block script %}
+	{% block script %}
 
-		{% endblock %}
+	{% endblock %}

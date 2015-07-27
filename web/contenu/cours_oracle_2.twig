@@ -3,33 +3,6 @@
 
 {% block contenu %}
 
-<style>
-
-	.opera{
-		font-size: 20px;
-		text-align: center;
-	}
-	.fonction{
-		font-size: 25px;
-		text-align: center;
-		margin-top: 15px;
-		margin-bottom: 15px;
-	}
-
-	.violet{
-		color: #ba68c8;
-	}
-
-	.ora{
-		color: #ffb74d;
-	}
-
-	.vert{
-		color: #81c784;
-	}
-</style>
-
-
 
 <h1 class="center-align">{{nomC}}</h1>
 
@@ -166,5 +139,18 @@
 </p>
 
 
+<div id="modal1" class="modal">
+    <div class="modal-content">
+	    <h4>Exemples de requêtes</h4>
+	    <p>
+	    	SELECT nomProd, nomProd FROM Produit<br>
+	    	SELECT * FROM BaseLivraison<br>
+			SELECT * FROM Produit WHERE quantite > 10<br>
+	    </p>
+    </div>
+    <div class="modal-footer">
+	    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+    </div>
+</div>
 
 {% endblock %}
