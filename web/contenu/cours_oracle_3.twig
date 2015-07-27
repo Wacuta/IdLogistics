@@ -1,1 +1,88 @@
 {% extends 'contenu/layout_oracle.twig' %}
+
+
+{% block contenu %}
+
+
+<h1 class="center-align">{{nomC}}</h1>
+
+<p align="justify">
+	Deux possibilités s'offrent à nous lorsque l'on veut insérer une ligne dans une table : 
+	soit donner une valeur pour chaque colonne de la ligne, soit ne donner les valeurs que de certaines colonnes, 
+	auquel cas il faut bien sûr préciser de quelles colonnes il s'agit.<br>
+</p>
+
+<div class="fonction">
+	<color class="violet">INSERT INTO</color>  <i>Table1</i> <color class="violet">VALUES</color> <i>('val1', 'val2', 'val3', 'val4')</i>
+</div>
+
+<p align="justify">
+	<h2>Insertion sans préciser les colonnes</h2>
+	Voici donc la syntaxe à utiliser pour insérer une ligne dans <b><i>Table1</i></b>, 
+	sans renseigner les colonnes pour lesquelles on donne une valeur. Il faut autant de valeur que de colonne, et dans le même ordre, 
+	si l'on veut pas en mettre on met la valeur <b><i>NULL</i></b>.
+</p>
+
+<blockquote>
+	<color class="violet">INSERT INTO</color> Produit <color class="violet">VALUES</color> (01, 01, 'Xperia Z3', 3)<br>
+	<color class="violet">INSERT INTO</color> Produit <color class="violet">VALUES</color> (10, NULL, 'Laptop', 5)
+</blockquote>
+
+<p align="justify">
+	Il est impossible de mettre <b><i>NULL</i></b> a l'id, car c'est la clé de l'objet. Il faut qu'il soit unique dans la table.
+</p>
+
+<p align="justify">
+	<h2>Insertion en précisant les colonnes</h2>
+
+	Dans la requête, nous allons donc écrire explicitement à quelle(s) colonne(s) nous donnons une valeur. 
+	Ceci va permettre deux choses:<br>
+
+	- On ne doit plus donner les valeurs dans l'ordre de création des colonnes, mais dans l'ordre précisé par la requête.<br>
+	- On n'est plus obligé de donner une valeur à chaque colonne ; plus besoin de NULL lorsqu'on n'a pas de valeur à mettre.<br>
+</p>
+
+<blockquote>
+	<color class="violet">INSERT INTO</color> Produit (idProd, nomProd, quantite) <color class="violet">VALUES</color> (18, 'Porte', 7)<br>
+	<small>(Il manque le <i>numCom</i> donc il sera <i>NULL</i>)</small>
+</blockquote>
+
+<p align="justify">
+	<h2>Insertion multiple</h2>
+	Si vous avez plusieurs lignes à introduire, il est possible de le faire en une seule requête de la manière suivante :
+</p>
+
+<blockquote>
+	<color class="violet">INSERT INTO</color> Produit (idProd, numCom, nomProd, quantite)  <br>
+	<color class="violet">VALUES</color> (19, 1, 'Fourchette', 40), <br>
+					(20, 3, 'Couteau', 40), <br>
+					(21, 2, 'Cuillère', 40), <br>
+					(22, 2, 'Verre', 40) <br>
+</blockquote>
+
+<p align="justify">
+	Bien entendu, vous êtes alors obligés de préciser les mêmes colonnes pour chaque entrée, 
+	quitte à mettre <i>NULL</i> pour certaines. Mais avouez que ça fait quand même moins à écrire !
+</p>
+
+
+<div id="modal1" class="modal">
+    <div class="modal-content">
+	    <h4>Exemples de requêtes</h4>
+	    <p>
+	    	INSERT INTO Produit VALUES (10, NULL, 'Laptop', 5)<br>
+	    	INSERT INTO Produit (idProd, nomProd, quantite) VALUES (18, 'Porte', 7)<br>
+			INSERT INTO Produit (idProd, numCom, nomProd, quantite) 
+			VALUES (19, 1, 'Fourchette', 40), 
+			(20, 3, 'Couteau', 40), 
+			(21, 2, 'Cuillère', 40), 
+			(22, 2, 'Verre', 40) <br>
+			<small>N'oubliez pas de faire une sélection pour vérifier le contenu</small>
+	    </p>
+    </div>
+    <div class="modal-footer">
+	    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+    </div>
+</div>
+
+{% endblock %}

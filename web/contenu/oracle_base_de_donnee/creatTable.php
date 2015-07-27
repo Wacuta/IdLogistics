@@ -7,6 +7,11 @@
 
 		$connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
+		$connexion->exec("DROP TABLES Produit");
+		$connexion->exec("DROP TABLES Commande");
+		$connexion->exec("DROP TABLES BaseLivraison");
+		$connexion->exec("DROP TABLES PointDeVente");
+
 		
 		// create table PointDeVente
 		$sql = "CREATE TABLE PointDeVente (
@@ -53,6 +58,7 @@
 		idProd INT(6), 
 		numCom INT(6) NOT NULL,
 		nomProd VARCHAR(250) NOT NULL,
+		quantite INT(6) NOT NULL,
 		PRIMARY KEY (idProd),
 		foreign  key (numCom) references Commande(numCom)
 		)";
