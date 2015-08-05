@@ -1,1 +1,72 @@
 {% extends 'contenu/layout_powerpoint.twig' %}
+
+
+{% block contenu %}
+
+<style>
+
+	#btn-footer{
+		margin-top: 100px;
+	}
+
+</style>
+
+<h1 class="center-align">{{nomC}}</h1>
+
+<p align="justify">
+	Pour comprendre le fonctionnement de PowerPoint, nous allons crée étape par étape un simple diaporama.
+</p>
+
+<p align="justify">
+	<h2>Les diapositives</h2>
+	Pour qu'une diapositive soit agréable à regarder, il ne faut pas trop la surcharger en contenu. 
+	Pour respecter cette règle, nous allons utiliser les modèles de diapo, de PowerPoint. 
+	Vous les trouverez dans le volet de <b><i>Nouvelle diapositive</i></b> de l'onglet <b><i>Acceuil</i></b>.
+</p>
+
+<div class="center-align image">
+	<img class="materialboxed" width="400" src="../images/contenu/cours_powerpoint_2/01.png"/>
+</div>
+
+<p align="justify">
+	<h2>La première diapo</h2>
+	Pour commencer nous allons faire notre diaporama par une diapo Titre<br>
+	La première diapo doit contenir au minimum, le titre de la présentation 
+	le sujet, la date et le ou les logos de la société réprésenté.
+</p>
+
+<div class="row">
+	<div class="col s6">
+		<div class="center-align image">
+			<img class="materialboxed" width="300" src="../images/contenu/cours_powerpoint_2/02.png"/>
+			<br/>
+			<label> Etape 1</label>
+		</div>
+	</div>
+	<div class="col s6">
+		<div class="center-align image">
+			<img class="materialboxed" width="300" src="../images/contenu/cours_powerpoint_2/03.png"/>
+			<br/>
+			<label> Etape 2</label>
+		</div>
+	</div>
+</div>
+
+
+<p align="justify">
+	Pour passer de l'étape 1 à l'étape 2, il suffit d'aller dans l'onglet <b><i>Création</i></b> et de 
+	choisir un thème et une variante.<br>
+	Suite à cela, tout le diaporama respectera le thème, ce qui rend la création plus rapide et plus jolie.<br>
+</p>
+
+<div class="row" id="btn-footer">
+
+	<div class="col s12">
+		<a 
+			class="waves-effect waves-light btn right"
+			href="cours-13">Suivant</a>
+	</div>
+
+</div>
+
+{% endblock %}

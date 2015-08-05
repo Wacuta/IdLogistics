@@ -1,1 +1,127 @@
 {% extends 'contenu/layout_powerpoint.twig' %}
+
+
+
+{% block contenu %}
+
+<style>
+
+	#btn-footer {
+		margin-top: 100px;
+	}
+
+	.rouge {
+		color: red;
+	}
+
+</style>
+
+<h1 class="center-align">{{nomC}}</h1>
+
+<p align="justify">
+	<h2>Le contenu</h2>
+	Vous pouvez maintenant ajouter du contenus.<br>
+	Favorisez les illustration, les images et les graphiques sont plus explicites que des mots.
+</p>
+
+<div class="center-align image">
+	<img class="materialboxed" width="300" src="../images/contenu/cours_powerpoint_4/01.png"/>
+</div>
+
+<p align="justify">
+	Ici nous avons ajouté un graphique. Pour cela, aller dans l'onglet <b><i>Insertion</i></b>, 
+	vous y trouverez le bouton <b><i>Graphique</i></b>.
+	Suite à ça, vous verrez apparaître une petite fenêtre Excel. 
+	C'est les données de ce tableau qui seront représenté sur la diapo.<br>
+	Le bouton <img width="100" src="../images/contenu/cours_powerpoint_4/02.png"/> qui se trouve en bas, permet de faire 
+	apparaitre une zone de commentaire. Cela permet de faire un commentaire sur la diapo, sans que celui-ci soit visible dessu.
+	Cette option est très pratique pour la partie <b><i>Présentation</i></b>.
+</p>
+
+
+<p align="justify">
+	<h2>La présentation</h2>
+	Une fois le diaporama fini, vient la présentation. PowerPoint offre une fonctionnalité qui permet de d'avoir une vue d'ensemble.
+</p>
+
+<div class="center-align image">
+	<img class="materialboxed" width="500" src="../images/contenu/cours_powerpoint_4/03.png"/>
+</div>
+	
+<p align="justify">
+	L'image du dessu est divisé en deux parties.<br>
+	À gauche, nous avons ce que votre auditoire voit, via le projecteur. À droite, c'est ce que votre ordinateur vous montre montre.<br>
+	Comme vous pouvez le voir, la partie de droite vous présente ce que vous projetez, ainsi que ce qui va suivre. 
+	Il y a aussi un chronomètre, pour ne pas perdre la notion du temps, ainsi que les commentaires, précédemment énoncé. 
+	Cela peut vous servir de prompteur.<br>
+</p>
+
+
+<p align="justify">
+	Pour finir, le mode présentation vous proposé quelque "gadget" qui pourront vous être utile.
+</p>
+
+
+
+<div class="row">
+	<div class="col s6">
+		<div class="center-align image">
+			<img class="materialboxed" width="300" src="../images/contenu/cours_powerpoint_4/04.png"/><br/>
+			<label> le laser</label>
+		</div>
+	</div>
+	<div class="col s6">
+		<div class="center-align image">
+			<img class="materialboxed" width="300" src="../images/contenu/cours_powerpoint_4/05.png"/><br/>
+			<label> la mosaïque</label>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col s6">
+		<div class="center-align image">
+			<img class="materialboxed" width="300" src="../images/contenu/cours_powerpoint_4/06.png"/><br/>
+			<label> le zoom</label>
+		</div>
+	</div>
+	<div class="col s6">
+		<div class="center-align image">
+			<img class="materialboxed" width="300" src="../images/contenu/cours_powerpoint_4/07.png"/><br/>
+			<label> arréter l'affichage</label>
+		</div>
+	</div>
+</div>
+
+<p align="justify">
+	- Au cas où vous en aurez pas, le pointeur de votre sourie peux devenir un <b><i>laser</i></b>. 
+	Activable/Désactivable rapidement avec <i>ctrl+L</i>, il vous suffi de pointer sur votre écran, et cela le fera sur présentation.
+	<br><small>(Vous trouverez d'autre outils dans les options, ou avec <i>ctrl+I</i> ou <i>ctrl+P</i> )</small><br>
+	
+	- Vous pouvez afficher une <b><i>mosaïque</i></b> de toute vos diapo, pour switcher rapidement.<br>
+
+	- Vous pouvez <b><i>zommer</i></b> en définissant un zone ou avec les toutches <i>+</i> et <i>-</i>.<br>
+	
+	- Vous pouvez aussi <b><i>arréter d'afficher</i></b> sur le diapo, sans pour autant tout étaindre, au cas où vous avez besoin 
+	de faire une manique externe.
+</p>
+
+
+<p align="justify">
+	Vous avez maintenant toute les outils pour faire une belle présentation.<br>
+	Je n'ais plus qu'à vous souhaiter une bonne présentation.
+</p>
+
+
+
+<div class="row" id="btn-footer">
+	<div class="col s6">
+		<a 
+			class="waves-effect waves-light btn left"
+			href="cours-13">Précédent
+		</a>
+	</div>
+</div>
+
+
+{% endblock %}

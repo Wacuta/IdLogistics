@@ -1,1 +1,78 @@
 {% extends 'contenu/layout_powerpoint.twig' %}
+
+
+{% block contenu %}
+
+<style>
+
+	#btn-footer {
+		margin-top: 100px;
+	}
+
+	.rouge {
+		color: red;
+	}
+
+</style>
+
+<h1 class="center-align">{{nomC}}</h1>
+
+<p align="justify">
+	Votre première diapositive créée, vous pouvez poursuivre la conception de votre présentation en ajoutant 
+	des nouvelles diapos avec le bouton <b><i>Nouvelle diapositive</i></b> de l'onglet <b><i>Acceuil</i></b>.<br>
+	Bien qu'il faut éviter de surcharger les dipositives, il ne faut pas non plus mettre une diapo par phrase. 
+	Le diaporama doit vous servir de support pour appuyer vos paroles et non l'inverse. 
+	Il faut que vous captez l'attention de votre auditoire.
+</p>
+
+<h2>En-tête et Pied de page</h2>
+
+<p align="justify">
+	Pour ajouter une mise en page à votre présentation, vous pouvez ajouter un en-tête et un pied 
+	qui seront commun à toute les diapos.<br>
+	Vous trouverez le bonton dans l'onglet <b><i>Insertion</i></b>, partie <b><i>Texte</i></b>
+</p>
+
+<div class="center-align image">
+	<img class="materialboxed" width="300" src="../images/contenu/cours_powerpoint_3/01.png"/>
+</div>
+
+<p align="justify">
+	Une fenêtre apparait et vous propose plusieur élément que vous pouvez ajouter: <br>	
+	 - La date, celle du jours ou une date fixe,<br>
+	 - Le numéro de la diapo, qui change automatiquement<br>
+	 - Le pied de page, ou l'on peut mettre un message fixe<br>
+</p>
+
+<div class="center-align image">
+	<img class="materialboxed" width="300" src="../images/contenu/cours_powerpoint_3/02.png"/>
+</div>
+
+<p align="justify">
+	Ici nous avons ajouté le numéro de page et la date du jours, appliqué partout sauf à la première.<br>
+	Comme vous pouvez le voir, en <color class="rouge">1</color>, nous avons le numéro de page. 
+	Il se positionne en fonction du theme (choisi précédemment), pour gardé une certaine harmonie.<br>
+	La date, en <color class="rouge">2</color> à une particularité, elle se met à jours à chaque ouverture du fichier.
+</p>
+
+
+<div class="row" id="btn-footer">
+	
+	<div class="col s6">
+		<a 
+			class="waves-effect waves-light btn left"
+			href="cours-12">Précédent
+		</a>
+	</div>
+
+	<div class="col s6">
+		<a 
+			class="waves-effect waves-light btn right"
+			href="cours-14">Suivant
+		</a>
+	</div>
+
+</div>
+
+
+{% endblock %}
