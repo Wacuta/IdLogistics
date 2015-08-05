@@ -21,7 +21,7 @@
 					('09', 'Excel', 'Les arrondis', 'cours_excel_6.twig', 'Arrondire les valeurs au supérieur, à l\'inférieur ou les tronqueées'),
 					('10', 'Excel', 'Compter les cellules', 'cours_excel_7.twig', 'Compter les cellules en fonction de différents critère (vide, valeur, ensemble, condition...)'),
 					('11', 'PP', 'Présentation du logiciel', 'cours_powerpoint_1.twig', 'Présentation du logiciel PowerPoint'), 
-					('12', 'PP', 'Faire un diaporama 1', 'cours_powerpoint_2.twig', 'Les diapositives, la première diapo, Thème'),
+					('12', 'PP', 'Faire un diaporama 1', 'cours_powerpoint_2.twig', 'Les diapositives, la première diapo, les thèmes'),
 					('13', 'PP', 'Faire un diaporama 2', 'cours_powerpoint_3.twig', 'En-tête et Pied de page'),
 					('14', 'PP', 'Faire un diaporama 3', 'cours_powerpoint_4.twig', 'Le contenu, la présentation'),
 					('15', 'Oracle', 'Présentation', 'cours_oracle_1.twig', 'Présentation de Oracle'), 
