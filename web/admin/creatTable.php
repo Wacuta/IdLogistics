@@ -8,8 +8,8 @@
 		$connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
 		
-		$connexion->exec("DELETE FROM Cours");
-		$connexion->exec("DELETE FROM Exercice");
+		$connexion->exec("DROP TABLES Cours");
+		$connexion->exec("DROP TABLES Exercice");
 		
 		// create table Cours
 		$sql = "CREATE TABLE Cours (

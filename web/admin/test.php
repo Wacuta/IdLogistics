@@ -24,10 +24,12 @@
 					('12', 'PP', 'Faire un diaporama 1', 'cours_powerpoint_2.twig', 'Les diapositives, la première diapo, les thèmes'),
 					('13', 'PP', 'Faire un diaporama 2', 'cours_powerpoint_3.twig', 'En-tête et Pied de page'),
 					('14', 'PP', 'Faire un diaporama 3', 'cours_powerpoint_4.twig', 'Le contenu, la présentation'),
-					('15', 'Oracle', 'Présentation', 'cours_oracle_1.twig', 'Présentation de Oracle'), 
-					('16', 'Oracle', 'La sélection', 'cours_oracle_2.twig', 'Sélectionner avec SELECT, FROM et WHERE pour les critères'),
-					('17', 'Oracle', 'L\'insértion', 'cours_oracle_3.twig', 'Insérer avec INSERT, des valeurs dans les tables'),
-					('18', 'Oracle', 'La suppression', 'cours_oracle_4.twig', 'Supprimer avec DELETE, des valeurs dans les tables')";
+					('15', 'PP', 'Les Transitions', 'cours_powerpoint_5.twig', 'Les effets de transitions entre les diapositives'),
+					('16', 'PP', 'Les Animations', 'cours_powerpoint_6.twig', 'Les effets d\'animation pour les éléments'),
+					('17', 'Oracle', 'Présentation', 'cours_oracle_1.twig', 'Présentation de Oracle'), 
+					('18', 'Oracle', 'La sélection', 'cours_oracle_2.twig', 'Sélectionner avec SELECT, FROM et WHERE pour les critères'),
+					('19', 'Oracle', 'L\'insertion', 'cours_oracle_3.twig', 'Insérer avec INSERT, des valeurs dans les tables'),
+					('20', 'Oracle', 'La suppression', 'cours_oracle_4.twig', 'Supprimer avec DELETE, des valeurs dans les tables')";
 		//echo $sql;
 		$connexion->exec($sql);
 
