@@ -12,7 +12,7 @@
 					('00', 'Word', 'Présentation du logiciel', 'cours_word_2.twig', 'Présentation du logiciel Word.'),
 					('01', 'Word', 'Mise en forme du texte', 'cours_word_1.twig', 'Police, Taille, Gras, italic, souligner, sur-ligner, couleur...'), 
 					('02', 'Word', 'Table des matières', 'cours_word_3.twig', 'Table des matières, Plan, Sommaire'),
-					('03', 'Word', 'Cours Word 4', 'cours_word_4.twig', 'détail'),
+					('03', 'Word', 'Les lettres à caractères spéciaux', 'cours_word_4.twig', 'les lettres à caractères spéciaux avec les alt codes'),
 					('04', 'Excel', 'Présentation du logiciel', 'cours_excel_2.twig', 'Présentation du logiciel Excel'),
 					('05', 'Excel', 'Les Opérations', 'cours_excel_1.twig', 'Les opérations basiques de Excel: Addition, Soustraction, Multiplication, Division'), 
 					('06', 'Excel', 'Les références absolues', 'cours_excel_3.twig', 'Faire référence à une cellule ou une plage avec le sympole $'),
@@ -35,22 +35,8 @@
 
 		$sql = "INSERT INTO Exercice (idE, coursE, nomE, typeE, contenueE, detailE)
 				VALUES
-					('00', '0', 'Exercice Word 1', 'Word', 'exercice_word_1.twig', 'détail'),
-					('01', '0', 'Exercice Word 2', 'Word', 'exercice_word_2.twig', 'détail'),
-					('02', '2', 'Exercice Word 3', 'Word', 'exercice_word_3.twig', 'détail'),
-					('03', '3', 'Exercice Word 4', 'Word', 'exercice_word_4.twig', 'détail'),
-					('04', '0', 'Les Opérations', 'Excel', 'exercice_excel_1.twig', 'Exercice sur les Opérations possibles sur Excel.'),
-					('05', '05', 'Exercice Excel 2', 'Excel', 'exercice_excel_2.twig', 'détail'),
-					('06', '2', 'Exercice Excel 3', 'Excel', 'exercice_excel_3.twig', 'détail'),
-					('07', '3', 'Exercice Excel 4', 'Excel', 'exercice_excel_4.twig', 'détail'),
-					('08', '0', 'Exercice Powerpoint 1', 'PP', 'exercice_powerpoint_1.twig', 'détail'),
-					('09', '0', 'Exercice Powerpoint 2', 'PP', 'exercice_powerpoint_2.twig', 'détail'),
-					('10', '2', 'Exercice Powerpoint 3', 'PP', 'exercice_powerpoint_3.twig', 'détail'),
-					('11', '3', 'Exercice Powerpoint 4', 'PP', 'exercice_powerpoint_4.twig', 'détail'),
-					('12', '0', 'Pratique libre', 'Oracle', 'exercice_oracle_1.twig', 'Pratiquer toutes les opérations que vous voulez, librement, sur la base de données local'),
-					('13', '0', 'Exercice Oracle 2', 'Oracle', 'exercice_oracle_2.twig', 'détail'),
-					('14', '2', 'Exercice Oracle 3', 'Oracle', 'exercice_oracle_3.twig', 'détail'),
-					('15', '3', 'Exercice Oracle 4', 'Oracle', 'exercice_oracle_4.twig', 'détail')";
+					('01', '0', 'Les Opérations', 'Excel', 'exercice_excel_1.twig', 'Exercice sur les Opérations possibles sur Excel.'),
+					('02', '0', 'Pratique libre', 'Oracle', 'exercice_oracle_1.twig', 'Pratiquer toutes les opérations que vous voulez, librement, sur la base de données local')";
 		//echo "<br/>" . $sql;
 		$connexion->exec($sql);
 		

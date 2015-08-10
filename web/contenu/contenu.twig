@@ -33,8 +33,6 @@
 	</head>
 
 
-
-
 	<body>
 		<style type="text/css">
 			#contenu,
@@ -63,7 +61,9 @@
 		    			<img class="brand-logo" src="../images/Id_Logistics_Logo_Blanc.png" id="logo"></img>
 			    	</li>
 		    	</ul>
-		    	<div class="brand-logo center">{% block titre %}{% endblock %}</div>
+		    	<div class="brand-logo center">
+		    			{% block titre %}{% endblock %}
+		    	</div>
 		    	<ul class="right hide-on-med-and-down">
 			    	<li>
 			    		<a onclick="location.reload()" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Refresh">
