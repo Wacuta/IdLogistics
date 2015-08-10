@@ -1,0 +1,564 @@
+{% extends 'contenu/layout_word.twig' %}
+
+{% block contenu %}
+
+<style>
+
+	
+</style>
+
+<h1 class="center-align">{{nomC}}</h1>
+
+<p align="justify">
+	En informatique, les raccourcis clavier sont des combinaisons 
+	de touches frappées au clavier de l'ordinateur pour exécuter certaines fonctions (actions) 
+	qui ont été programmées dans un logiciel.<br>
+	Tout les raccourcis ne sont pas présenté ici, chaque logiciel ont leur propres raccourcis et pour les mêmes actions 
+	on peut retrouver différentes manipulations.<br>
+	Si vous connaissez tout les raccourcis, vous n'aurez plus besoin de souris d'ordinateur. Bonne chance !
+</p>
+
+<div>
+	<ul class="tabs">
+		<li class="tab"><a href="#bureau" class="active">Bureau</a></li>
+		<li class="tab"><a href="#edit" >Édition</a></li>
+		<li class="tab"><a href="#form" >Texte</a></li>
+		<li class="tab"><a href="#fenetre" >Fenêtre</a></li>
+		<li class="tab"><a href="#win" >Windows</a></li>
+	</ul>
+		
+	<div>
+
+		<!-- Bureau -->
+		<div id="bureau">
+			<h2>Raccourcis Bureau/Explorateur</h2>
+			<div class="row">
+				<div class="col s3"><h3>Effet</h3></div>
+				<div class="col s3"><h3>Raccourcis</h3></div>
+				<div class="col s6"><h3>Description</h3></div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Activer la Barre de menus
+				</div>
+				<div class="col s3">
+					<b><i>Alt, [F/E/A]</i></b>
+				</div>
+				<div class="col s6">
+					Dans la fenêtre Explorateur de Windows, vous pouvez faire apparaître la barre de menus avec <b><i>Alt</i></b>.
+					Vous remarquerez qu'une lettre de chaque menu de la barre est souligné. 
+					Si vous appuyez ensuite sur une des lettres correspondant, vous ouvrirez le menu.
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Annuler la dernière opération
+				</div>
+				<div class="col s3">
+					<b><i>Ctrl + Z</i></b>
+				</div>
+				<div class="col s6">
+					Il faut imaginer nos actions comme les mayons d'une chaine. 
+					Pour chaque action que l'on fait, on ajoute un mayon à la chaine. Le raccourci retire le derniere mayon ajouté.
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Rétablir la dernière opération
+				</div>
+				<div class="col s3">
+					<b><i>Ctrl + Y</i></b>
+				</div>
+				<div class="col s6">
+					Pour revenir à notre image du mayon, si l'on a retiré un mayon, on peut le remettre avec le raccourci.
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Copier une sélection
+				</div>
+				<div class="col s3">
+					<b><i>Ctrl + C</i></b>
+				</div>
+				<div class="col s6">
+					Selon la sélection, vous pouvez là copier...
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Coller une sélection
+				</div>
+				<div class="col s3">
+					<b><i>Ctrl + V</i></b>
+				</div>
+				<div class="col s6">
+					... pour en suite là coller.
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Couper une sélection
+				</div>
+				<div class="col s3">
+					<b><i>Ctrl + X</i></b>
+				</div>
+				<div class="col s6">
+					Si au lieu de faire une copie, vous préférez déplacer une selection, 
+					il faut couper au lieu de coller.
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Tout sélectionner
+				</div>
+				<div class="col s3">
+					<b><i>Ctrl + A</i></b>
+				</div>
+				<div class="col s6">
+					Tout sélectionner les contenus
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Sélectionner plusieur a la suite.
+				</div>
+				<div class="col s3">
+					<b><i>Ctrl + Shift + [↑/↓/←/→]</i></b>
+				</div>
+				<div class="col s6">
+					Selon où vous vous trouvez, si vous vous déplacez avec les directions toute en maintenant <b><i>Ctrl + Shift</i></b> 
+					cela sélectionnera tout ce qui se trouvera entre la première et la dernière sélection.
+				</div>
+			</div>
+		</div>
+
+		<!-- Édition -->
+		<div id="edit">
+			<h2>Édition de texte</h2>
+			<blockquote>
+				Ces raccourcis fonctionne des lors qu'il faut éditer un texte (Word/bloc note/Doc...). 
+				Ce qui comprend aussi les moments où vous tappez sur une barre de recherche ou un mail.
+			</blockquote>
+			<div class="row">
+				<div class="col s3"><h3>Effet</h3></div>
+				<div class="col s3"><h3>Raccourcis</h3></div>
+				<div class="col s6"><h3>Description</h3></div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Supprimer le caractère à droite du curseur
+				</div>
+				<div class="col s3">
+					<b><i>Suppr</i></b>
+				</div>
+				<div class="col s6">
+					Selon où il est positionné, le raccourci supprimera le caractère juste dernière le curseur.
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Début de la ligne
+				</div>
+				<div class="col s3">
+					<b><i>Début</i></b>
+				</div>
+				<div class="col s6">
+					Selon où il est positionné, le raccourci placera votre curseur au début de la ligne.
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Fin de la ligne
+				</div>
+				<div class="col s3">
+					<b><i>Fin</i></b>
+				</div>
+				<div class="col s6">
+					Selon où il est positionné, le raccourci placera votre curseur à la fin de la ligne.
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Début du document
+				</div>
+				<div class="col s3">
+					<b><i>Ctrl + Début</i></b>
+				</div>
+				<div class="col s6">
+					Le curseur se placera tout en début de votre document.
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Fin du document
+				</div>
+				<div class="col s3">
+					<b><i>Ctrl + Fin</i></b>
+				</div>
+
+				<div class="col s6">
+					Le curseur se placera tout à la fin de votre document.
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Mot précédent - Mot suivant
+				</div>
+				<div class="col s3">
+					<b><i>Ctrl + [←/→]</i></b>
+				</div>
+
+				<div class="col s6">
+					À gauche, le curseur se placera au début du mot précédent.<br>
+					À droite, le curseur se placera à la fin du mot suivant.<br>
+					Si en plus de <b><i>Ctrl</i></b>, vous maintenez <b><i>Shift</i></b>, cela sélectionnera.
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Paragraphe précédent - Paragraphe suivant
+				</div>
+				<div class="col s3">
+					<b><i>Ctrl + [↑/↓]</i></b>
+				</div>
+
+				<div class="col s6">
+					Le curseur se placera au début du paragraphe précédent/suivant.<br>
+					Si en plus de <b><i>Ctrl</i></b>, vous maintenez <b><i>Shift</i></b>, cela sélectionnera.
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Recherche
+				</div>
+				<div class="col s3">
+					<b><i>Ctrl + F</i></b>
+				</div>
+
+				<div class="col s6">
+					Affiche une barre de recherche, pour chercher tous les mots ou groupe de mots égaux à votre demande.
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Recherche
+				</div>
+				<div class="col s3">
+					<b><i>Ctrl + H</i></b>
+				</div>
+
+				<div class="col s6">
+					En plus de rechercher, vous pouvez remplacer les mots ou groupe de mots égaux à votre demande par 
+					une autre chaîne de caractère.
+				</div>
+			</div>		
+
+		</div>
+
+		<!-- Mise en forme de text -->
+		<div id="form">
+			<h2>Mise en forme de text</h2>
+
+			<div class="row">
+				<div class="col s3"><h3>Effet</h3></div>
+				<div class="col s3"><h3>Raccourcis</h3></div>
+				<div class="col s6"><h3>Description</h3></div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Mettre en gras
+				</div>
+				<div class="col s3">
+					<b><i>Ctrl + G</i></b>
+				</div>
+
+				<div class="col s6">
+					Mettre en gras le text séléctionné, ou le défaire.<br>
+					<small>Sur certain logicel, ce n'est pas <b>G</b> mais <b>B</b> (comme Bold, Gras en anglais ) </small>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Souligner
+				</div>
+				<div class="col s3">
+					<b><i>Ctrl + U</i></b>
+				</div>
+
+				<div class="col s6">
+					Souligner le text séléctionné, ou le défaire.
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Mettre en italique
+				</div>
+				<div class="col s3">
+					<b><i>Ctrl + I</i></b>
+				</div>
+
+				<div class="col s6">
+					Souligner le text séléctionné, ou le défaire.
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Mettre des majuscules
+				</div>
+				<div class="col s3">
+					<b><i>Shift + F3</i></b>
+				</div>
+
+				<div class="col s6">
+					Ce raccourci met toute les lettres sélectionné en majuscule, ou en minuscule.<br>
+					Si plusieur mot sont séléctionné, un troisième résultat apparaît dans la boucle. 
+					Le raccourci met des majuscules à chaque début de mot.
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Fenêtre -->
+		<div id="fenetre">
+			<h2>Navigation dans les fenêtres</h2>
+
+			<div class="row">
+				<div class="col s3"><h3>Effet</h3></div>
+				<div class="col s3"><h3>Raccourcis</h3></div>
+				<div class="col s6"><h3>Description</h3></div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Passer à la fenêtre suivante
+				</div>
+				<div class="col s3">
+					<b><i>Alt + echap</i></b><br>
+					<b><i>Alt + Tab</i></b><br>
+					<b><i>Win + Tab</i></b><br>
+				</div>
+				<div class="col s6">
+					Selon votre préférence "visuel", ces raccourcis on le même effet: Passer à la fenêtre suivante. 
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Passer à la fenêtre précédente
+				</div>
+				<div class="col s3">
+					<b><i>Alt + Shift + echap</i></b><br>
+					<b><i>Alt + Shift + Tab</i></b><br>
+					<b><i>Win + Shift + Tab</i></b><br>
+				</div>
+				<div class="col s6">
+					Selon votre préférence "visuel", ces raccourcis on le même effet: Passer à la fenêtre précédente. 
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Passer à l'onglet suivant - Passer à l'onglet précédent
+				</div>
+				<div class="col s3">
+					<b><i>Ctrl + Tab</i></b>
+				</div>
+				<div class="col s6">
+					Pour les fenêtres pouvant gérer les onglets, comme les navigateurs, vous pouvez changer l'onglet
+					actif, avec ce raccourci.<br>
+					Ce raccourci va a l'onglet suivant, mais vous pouvez aller au précédent en ajoutant <b><i>Shift</i></b>.
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Fermer la fenêtre
+				</div>
+				<div class="col s3">
+					<b><i>Alt + Espace, F</i></b>
+				</div>
+				<div class="col s6">
+					Fermer la fenêtre actif.
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Déplacer la fenêtre
+				</div>
+				<div class="col s3">
+					<b><i>Alt + Espace, L, [↑/↓/←/→], Entrée</i></b>
+				</div>
+				<div class="col s6">
+					Ce raccourci ne fonctionne que si la fenêtre n'est pas en pleine écran.<br>
+					Les directions peuvent être appuyé autant de fois que voulu, la touche <b><i>Entrée</i></b> valide.
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Redimensionner la fenêtre
+				</div>
+				<div class="col s3">
+					<b><i>Alt + Espace, T, [↑/↓/←/→], Entrée</i></b>
+				</div>
+				<div class="col s6">
+					Ce raccourci ne fonctionne que si la fenêtre n'est pas en pleine écran.<br>
+					Les directions peuvent être appuyé autant de fois que voulu, la touche <b><i>Entrée</i></b> valide.
+				</div>
+			</div>
+		</div>
+
+		<!-- Windows -->
+		<div id="win">
+			<h2>Raccourcis avec la touche Windows</h2>
+
+			<blockquote>
+				La plupart des raccourcis ne sont valable qu'à partir de Windows 7.
+			</blockquote>
+
+			<div class="row">
+				<div class="col s3"><h3>Effet</h3></div>
+				<div class="col s3"><h3>Raccourcis</h3></div>
+				<div class="col s6"><h3>Description</h3></div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Réduire la fenêtre
+				</div>
+				<div class="col s3">
+					<b><i>Win + ↓</i></b>
+				</div>
+				<div class="col s6">
+					Si la fenêtre est en pleine écran, cela la réduit en simple fenêtre, sinon cela la réduit.
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Agrandir la fenêtre
+				</div>
+				<div class="col s3">
+					<b><i>Win + ↑</i></b>
+				</div>
+				<div class="col s6">
+					Seulement si c'est une simple fenêtre, cela là met en pleine écran.
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Déplacer la fenêtre
+				</div>
+				<div class="col s3">
+					<b><i>Win + [←/→]</i></b>
+				</div>
+				<div class="col s6">
+					La fenêtre se placera soit au milieux soir sur une moitier de l'écrans.<br>
+					Déplacer la fenêtre d'un écran à l'autre (si vous avez plusieur moniteur).
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Tout réduire
+				</div>
+				<div class="col s3">
+					<b><i>Win + D</i></b>
+				</div>
+				<div class="col s6">
+					Réduire toutes les fenêtres et afficher le Bureau, ou tous réafficher.
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Exécuter
+				</div>
+				<div class="col s3">
+					<b><i>Win + R</i></b>
+				</div>
+				<div class="col s6">
+					Ouvrir la boîte de dialogue Exécuter.
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s3">
+					Recherche
+				</div>
+				<div class="col s3">
+					<b><i>Win + F</i></b>
+				</div>
+				<div class="col s6">
+					Ouvrir la boîte de dialogue Recherche.
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large blue modal-trigger" href="#modal1">
+	<!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
+      <i class="mdi-action-info-outline"></i>
+	</a>
+</div>
+
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+
+		<h4>Remarque:</h4>
+		<p>	
+			Les touche suivies d'un "<b><i>+</i></b>" doivent être maintenus, 
+			alors qu'avec une "<b><i>,</i></b>" cela sépare une étape du raccourci.
+		</p>
+		
+      	<h4>A savoir sur les touches:</h4>
+      	<p>
+			<b><i>Début</i></b> est représenté par la touche <b style="font-size: 20px">&#8598</b><br>
+			<b><i>Espace</i></b> est la plus longue touche du clavier<br>
+			<b><i>Shift</i></b> est la touche <b><i>Maj</i></b> représenté par <b style="font-size: 20px">&#x21E7</b><br>
+			<b><i>Tab</i></b> est la touche représenté par les symboles <b style="font-size: 20px">&#x21E4</b> et <b style="font-size: 20px">&#x21E5</b><br>
+			<b><i>Win</i></b> est la touche <b><i>Windows</i></b> représenté par le logo de la firme<br>
+      	</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+    </div>
+  </div>
+
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+	    $('.modal-trigger').leanModal();
+	});
+
+</script>
+
+{% endblock %}

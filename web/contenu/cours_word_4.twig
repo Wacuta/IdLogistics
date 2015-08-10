@@ -1,1 +1,166 @@
 {% extends 'contenu/layout_word.twig' %}
+
+{% block contenu %}
+
+<style>
+	.row div {
+		text-align: center;
+		font-size: 12px;
+	}
+
+	.row div b {
+		font-size: 25px;
+	}
+	.row {
+		margin-top: 25px;
+	}
+</style>
+
+<h1 class="center-align">{{nomC}}</h1>
+
+<p align="justify">
+	Dans les systèmes d'exploitation Microsoft Windows, 
+	les symboles et caractères accentués non dessinés sur le clavier peuvent être insérés dans un texte en combinant 
+	la touche <b><i>Alt</i></b> maintenue, pendant que l'on saisit un numéro sur le pavé numérique du clavier. <br>
+	Pour certains claviers sans pavé numérique, il faut maintenir les touches <b><i>Fn + Alt</i></b> et entrer le numéro. 
+	Le numéro correspond au symbole ou caractère voulu. <br>
+	Il y a en tout 255 caractères encodé, voici les plus utiles, non disponible sur le clavier:
+</p>
+
+<blockquote>
+	<b>Remarque:</b><br>
+	La lettre n'apparaît que lorsque l'on lâche la touche <b><i>Alt</i></b>.
+</blockquote>
+
+<div class="row">
+	<div class="col s3">
+		<b>Á</b><br>Alt + 181
+	</div>
+	<div class="col s3">
+		<b>À</b><br>Alt + 183
+	</div>
+	<div class="col s3">
+		<b>Â</b><br>Alt + 182
+	</div>
+	<div class="col s3">
+		<b>Ä</b><br>Alt + 142
+	</div>
+</div>
+
+<div class="row">
+	<div class="col s3">
+		<b>É</b><br>Alt + 144
+	</div>
+	<div class="col s3">
+		<b>È</b><br>Alt + 212
+	</div>
+	<div class="col s3">
+		<b>Ê</b><br>Alt + 210
+	</div>
+	<div class="col s3">
+		<b>Ë</b><br>Alt + 211
+	</div>
+</div>
+
+<div class="row">
+	<div class="col s3">
+		<b>Í</b><br>Alt + 214
+	</div>
+	<div class="col s3">
+		<b>Ì</b><br>Alt + 222
+	</div>
+	<div class="col s3">
+		<b>Î</b><br>Alt + 215
+	</div>
+	<div class="col s3">
+		<b>Ï</b><br>Alt + 216
+	</div>
+</div>
+
+<div class="row">
+	<div class="col s3">
+		<b>Ó</b><br>Alt + 224
+	</div>
+	<div class="col s3">
+		<b>Ò</b><br>Alt + 227
+	</div>
+	<div class="col s3">
+		<b>Ô</b><br>Alt + 226
+	</div>
+	<div class="col s3">
+		<b>Ö</b><br>Alt + 153
+	</div>
+</div>
+
+<div class="row">
+	<div class="col s3">
+		<b>Ú</b><br>Alt + 233
+	</div>
+	<div class="col s3">
+		<b>Ù</b><br>Alt + 235
+	</div>
+	<div class="col s3">
+		<b>Û</b><br>Alt + 234
+	</div>
+	<div class="col s3">
+		<b>Ü</b><br>Alt + 154
+	</div>
+</div>
+
+<blockquote>
+	Pour les prochaines lettres, les numéros commence par <b>0</b>. 
+	Il est important car Windows utilisera une autre plage de code.
+</blockquote>
+
+<div class="row">
+	<div class="col s3">
+		<b>œ</b><br>Alt + 0156
+	</div>
+	<div class="col s3">
+		<b>Œ</b><br>Alt + 0140
+	</div>
+	<div class="col s3">
+		<b>ø</b><br>Alt + 0248
+	</div>
+	<div class="col s3">
+		<b>Ø</b><br>Alt + 0216
+	</div>
+</div>
+
+<div class="row">
+	<div class="col s4">
+		<b>$</b><br>
+		Dollar<br>
+		Alt + 036
+	</div>
+	<div class="col s4">
+		<b>€</b><br>
+		Euro<br>
+		Alt + 0128
+	</div>
+	<div class="col s4">
+		<b>£</b><br>
+		Pound<br>
+		Alt + 0163
+	</div>
+</div>
+
+<div class="row">
+	<div class="col s4">
+		<b>¢</b><br>
+		Cent<br>
+		Alt + 0162
+	</div>
+	<div class="col s4">
+		<b>¥</b><br>
+		Yen<br>
+		Alt + 0165
+	</div>
+	<div class="col s4">
+		<b>ƒ</b><br>
+		Florin<br>
+		Alt + 0131
+	</div>
+</div>
+
+{% endblock %}
