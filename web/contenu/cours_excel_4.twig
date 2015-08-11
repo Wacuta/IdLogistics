@@ -14,7 +14,7 @@
 <h1 class="center-align">{{nomC}}</h1>
 
 <p align="justify">
-	Les erreurs dans les formules Excel se manifestent par l'apparition d'un petit triangle vert 
+	Les erreurs dans les formules Excel se manifestent par l'apparition d'un petit triangle vert, 
 	dans l'angle supérieur gauche de la cellule, 
 	ainsi que par un nom d'erreur précédé du symbole dièse (#).<br>
 	Voici une liste d'erreurs que vous pouvez rencontrer :
@@ -36,7 +36,7 @@
 <div id="zero">
 	<h3>#DIV/0!</h3>
 	<b>Erreur de division par 0 : </b>En arithmétique la division par zéro n'existe pas.<br>
-	Cela peut arriver si, comme diviseur, vous faites référence à une cellule vide ou à cellule contenant 0.
+	Cela peut arriver si, comme diviseur, vous faites référence à une cellule vide ou à une cellule contenant 0.
 	<blockquote>
 		<h4>Exemple d'erreurs : </h4>
 		<ul>
@@ -52,11 +52,11 @@
 	<h3>#NUL!</h3>
 	<b>Erreur de valeur nulle : </b>Cette erreur apparaît lorsque vous utilisez un opérateur de plage 
 	incorrect dans une formule, ou lorsque vous utilisez un opérateur d’intersection (espace) entre des 
-	références de plage pour spécifier une intersection de deux plages qui ne se coupent pas.<br>
+	références de plages pour spécifier une intersection de deux plages qui ne se coupent pas.<br>
 	<blockquote>
 		<h4>Exemple d'erreurs :</h4>
 		=SOMME(A1 A10) il y a deux solution : <br>
-		 - il manque les deux point (:) entre les deux références pour indiquer la plage "de A1 à A10".<br>
+		 - il manque les deux points (:) entre les deux références pour indiquer la plage "de A1 à A10".<br>
 		 - il manque le point-virgule (;) entre les deux références pour indiquer la référence "A1 et A10".
 	</blockquote>
 </div>
@@ -86,7 +86,7 @@
     <h3>#REF!</h3>
 	<b>Erreur de référence de cellule non valide : </b>Cette erreur survient lorsque les coordonnées d'une cellule ne sont pas valides.<br>
 	 - Vous avez supprimé ou collé des cellules auxquelles d’autres formules faisaient référence.<br>
-	 - Vous avez utilisé une liaison de cellule non valide.
+	 - Vous avez utilisé une liaison de cellules non valide.
 
 </div>
 
@@ -96,7 +96,7 @@
 
     <h3>#NOM?</h3>
 	<b>Erreur due à un nom non valide : </b>Cette erreur survient lorsque l'application ne reconnaît pas le texte contenu dans une formule.<br>
-	 - Vous avez utilisé un nom de cellule ou de plage de cellules qui n'existe pas.<br>
+	 - Vous avez utilisé un nom de cellule ou de plage de cellules qui n'existent pas.<br>
 	 - Un nom a été mal orthographié.<br>
 	 - Du texte a été saisi dans une formule sans être placé entre guillemets.<br>
 	 - Une fonction a été mal orthographiée.
