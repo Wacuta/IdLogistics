@@ -18,19 +18,20 @@
 					('06', 'Excel', 'Les Opérations', 'cours_excel_1.twig', 'Les opérations basiques de Excel: Addition, Soustraction, Multiplication, Division'), 
 					('07', 'Excel', 'Les références absolues', 'cours_excel_3.twig', 'Faire référence à une cellule ou une plage avec le sympole $'),
 					('08', 'Excel', 'Les messages d\'erreurs', 'cours_excel_4.twig', '\#DIV/0!, \#NUL!, \#VALEUR!, \#REF!, \#NOM?, \#NOMBRE!, \#N/A, \#\#\#\#\#\#\#\#\#\#\#'),
-					('09', 'Excel', 'Les fonctions logiques', 'cours_excel_5.twig', 'Les opérateurs (\<, \>, \=, \<\=, \>\=, \<\>), le ET, le OU, le NON, le SI'),
-					('10', 'Excel', 'Les arrondis', 'cours_excel_6.twig', 'Arrondire les valeurs au supérieur, à l\'inférieur ou les tronqueées'),
-					('11', 'Excel', 'Compter les cellules', 'cours_excel_7.twig', 'Compter les cellules en fonction de différents critère (vide, valeur, ensemble, condition...)'),
-					('12', 'PP', 'Présentation du logiciel', 'cours_powerpoint_1.twig', 'Présentation du logiciel PowerPoint'), 
-					('13', 'PP', 'Faire un diaporama 1', 'cours_powerpoint_2.twig', 'Les diapositives, la première diapo, les thèmes'),
-					('14', 'PP', 'Faire un diaporama 2', 'cours_powerpoint_3.twig', 'En-tête et Pied de page'),
-					('15', 'PP', 'Faire un diaporama 3', 'cours_powerpoint_4.twig', 'Le contenu, la présentation'),
-					('16', 'PP', 'Les Transitions', 'cours_powerpoint_5.twig', 'Les effets de transitions entre les diapositives'),
-					('17', 'PP', 'Les Animations', 'cours_powerpoint_6.twig', 'Les effets d\'animation pour les éléments'),
-					('18', 'Oracle', 'Présentation', 'cours_oracle_1.twig', 'Présentation de Oracle'), 
-					('19', 'Oracle', 'La sélection', 'cours_oracle_2.twig', 'Sélectionner avec SELECT, FROM et WHERE pour les critères'),
-					('20', 'Oracle', 'L\'insertion', 'cours_oracle_3.twig', 'Insérer avec INSERT, des valeurs dans les tables'),
-					('21', 'Oracle', 'La suppression', 'cours_oracle_4.twig', 'Supprimer avec DELETE, des valeurs dans les tables')";
+					('09', 'Excel', 'Activer les contenus', 'cours_excel_8.twig', 'Activer les Macros et les fonctions'),
+					('10', 'Excel', 'Les fonctions logiques', 'cours_excel_5.twig', 'Les opérateurs (\<, \>, \=, \<\=, \>\=, \<\>), le ET, le OU, le NON, le SI'),
+					('11', 'Excel', 'Les arrondis', 'cours_excel_6.twig', 'Arrondire les valeurs au supérieur, à l\'inférieur ou les tronqueées'),
+					('12', 'Excel', 'Compter les cellules', 'cours_excel_7.twig', 'Compter les cellules en fonction de différents critère (vide, valeur, ensemble, condition...)'),
+					('13', 'PP', 'Présentation du logiciel', 'cours_powerpoint_1.twig', 'Présentation du logiciel PowerPoint'), 
+					('14', 'PP', 'Faire un diaporama 1', 'cours_powerpoint_2.twig', 'Les diapositives, la première diapo, les thèmes'),
+					('15', 'PP', 'Faire un diaporama 2', 'cours_powerpoint_3.twig', 'En-tête et Pied de page'),
+					('16', 'PP', 'Faire un diaporama 3', 'cours_powerpoint_4.twig', 'Le contenu, la présentation'),
+					('17', 'PP', 'Les Transitions', 'cours_powerpoint_5.twig', 'Les effets de transitions entre les diapositives'),
+					('18', 'PP', 'Les Animations', 'cours_powerpoint_6.twig', 'Les effets d\'animation pour les éléments'),
+					('19', 'Oracle', 'Présentation', 'cours_oracle_1.twig', 'Présentation de Oracle'), 
+					('20', 'Oracle', 'La sélection', 'cours_oracle_2.twig', 'Sélectionner avec SELECT, FROM et WHERE pour les critères'),
+					('21', 'Oracle', 'L\'insertion', 'cours_oracle_3.twig', 'Insérer avec INSERT, des valeurs dans les tables'),
+					('22', 'Oracle', 'La suppression', 'cours_oracle_4.twig', 'Supprimer avec DELETE, des valeurs dans les tables')";
 		//echo $sql;
 		$connexion->exec($sql);
 
