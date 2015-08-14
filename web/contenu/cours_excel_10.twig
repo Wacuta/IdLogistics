@@ -1,0 +1,242 @@
+{% extends 'contenu/layout_excel.twig' %}
+
+
+{% block contenu %}
+
+<style type="text/css">
+	.fonction{
+		font-size: 25px;
+		text-align: center;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+
+	.violet{
+		color: #ba68c8;
+	}
+
+	.ora{
+		color: #ffb74d;
+	}
+
+	.vert{
+		color: #81c784;
+	}
+</style>
+
+<h1 class="center-align">{{nomC}}</h1>
+
+<p align="justify">
+	Avec une date, il est possible de récuperer différentes informations sur celle-ci.
+</p>
+
+<div>
+	<ul class="tabs">
+		<li class="tab"><a href="#jour" class="active">Jour</a></li>
+		<li class="tab"><a href="#mois" >Mois</a></li>
+		<li class="tab"><a href="#annee" >Annee</a></li>
+		<li class="tab"><a href="#sec">Seconde</a></li>
+		<li class="tab"><a href="#min">Minute</a></li>
+		<li class="tab"><a href="#heu">Heure</a></li>
+		<li class="tab"><a href="#jourS">JourSem</a></li>
+	</ul>
+		
+	<div>
+		<div id="jour">
+			<div class="fonction">
+				JOUR(<color class="violet">date</color>)
+			</div>
+			<p align="justify">
+				Cette fonction retourne le jour du mois, de la date <i> <color class="violet">date</color></i>.<br>
+				Le paramètre de la fonction peut-être une chaine de caractère, une référence à une cellule DATE, 
+				ou même une fonction comme AUJOURDHUI( ).
+			</p>
+			<blockquote>
+				<b>Exemple:</b><br>
+				=JOUR("01/11/1994") --> 1<br>
+				=JOUR(AUJOURDHUI( )) --> <span class="jour"></span><br>
+			</blockquote>
+		</div>
+
+		<div id="mois">
+			<div class="fonction">
+				MOIS(<color class="vert">date</color>)
+			</div>
+			<p align="justify">
+				Cette fonction retourne le numéro du mois de l'année, de la date <i> <color class="vert">date</color></i>.<br>
+				Le paramètre de la fonction peut-être une chaine de caractère, une référence à une cellule DATE, 
+				ou même une fonction comme AUJOURDHUI( ).
+			</p>
+			<blockquote>
+				<b>Exemple:</b><br>
+				=MOIS("01/11/1994") --> 11<br>
+				=MOIS(AUJOURDHUI( )) --> <span class="mois"></span><br>
+			</blockquote>
+		</div>
+
+		<div id="annee">
+			<div class="fonction">
+				ANNEE(<color class="ora">date</color>)
+			</div>
+			<p align="justify">
+				Cette fonction retourne l'année, de la date <i> <color class="ora">date</color></i>.<br>
+				Le paramètre de la fonction peut-être une chaine de caractère, une référence à une cellule DATE, 
+				ou même une fonction comme AUJOURDHUI( ).
+			</p>
+			<blockquote>
+				<b>Exemple:</b><br>
+				=ANNEE("01/11/1994") --> 1994<br>
+				=ANNEE(AUJOURDHUI( )) --> <span class="annee"></span><br>
+			</blockquote>
+		</div>
+
+		<div id="sec">
+			<div class="fonction">
+				SECONDE(<color class="violet">date</color>)
+			</div>
+			<p align="justify">
+				Cette fonction retourne les secondes, de l'heure de la date <i> <color class="violet">date</color></i>.<br>
+				Le paramètre de la fonction peut-être une chaine de caractère, une référence à une cellule DATE, 
+				ou même une fonction comme AUJOURDHUI( ).
+			</p>
+			<blockquote>
+				<b>Exemple:</b><br>
+				=SECONDE("01/11/1994 21:05:30") --> 30<br>
+				=SECONDE(AUJOURDHUI( )) --> <span class="sec"></span><br>
+			</blockquote>
+		</div>
+
+		<div id="min">
+			<div class="fonction">
+				MINUTE(<color class="vert">date</color>)
+			</div>
+			<p align="justify">
+				Cette fonction retourne les minutes, de l'heure de la date <i> <color class="vert">date</color></i>.<br>
+				Le paramètre de la fonction peut-être une chaine de caractère, une référence à une cellule DATE, 
+				ou même une fonction comme AUJOURDHUI( ).
+			</p>
+			<blockquote>
+				<b>Exemple:</b><br>
+				=MINUTE("01/11/1994 21:05:30") --> 5<br>
+				=MINUTE(AUJOURDHUI( )) --> <span class="min"></span><br>
+			</blockquote>
+		</div>
+
+		<div id="heu">
+			<div class="fonction">
+				HEURE(<color class="ora">date</color>)
+			</div>
+			<p align="justify">
+				Cette fonction retourne les heures, de l'heure de la date <i> <color class="ora">date</color></i>.<br>
+				Le paramètre de la fonction peut-être une chaine de caractère, une référence à une cellule DATE, 
+				ou même une fonction comme AUJOURDHUI( ).
+			</p>
+			<blockquote>
+				<b>Exemple:</b><br>
+				=HEURE("01/11/1994 21:05:30") --> 21<br>
+				=HEURE(AUJOURDHUI( )) --> <span class="heure"></span><br>
+			</blockquote>
+		</div>
+
+		<div id="jourS">
+			<div class="fonction">
+				JOURSEM(<color class="violet">date</color>, <color class="vert">[type_retour]</color>)
+			</div>
+			<p align="justify">
+				Cette fonction retourne le numéro du jour de la semaine, de la date <i> <color class="ora">date</color></i>,
+				 en fonction du paramètre <i><color class="vert">type_retour</color></i>.<br>
+				Le paramètre de la fonction peut-être une chaine de caractère, une référence à une cellule DATE, 
+				ou même une fonction comme AUJOURDHUI( ).
+			</p>
+			<table>
+		        <thead>
+		          	<tr>
+		          		<th data-field='type_retour'>type_retour</th>
+		          		<th data-field='chiffre'>Chiffre éenvoyé</th>
+		          	</tr>
+		        </thead>
+		        <tbody>
+		        	<tr>
+		          		<td>1 ou omis</th>
+		          		<td>Chiffre compris entre 1 (dimanche) et 7 (samedi), conformément à la version précédente de Microsoft Excel.</th>
+		          	</tr>
+		          	<tr>
+		          		<td>2</td>
+		          		<td>Chiffre compris entre 1 (lundi) et 7 (dimanche).</td>
+		          	</tr>
+		          	<tr>
+		          		<td>3</td>
+		          		<td>Chiffre compris entre 0 (lundi) et 6 (dimanche).</td>
+		          	</tr>
+		          	<tr>
+		          		<td>11</td>
+		          		<td>Chiffre compris entre 1 (lundi) et 7 (dimanche).</td>
+		          	</tr>
+		          	<tr>
+		          		<td>12</td>
+		          		<td>Chiffre compris entre 1 (mardi) et 7 (lundi).</td>
+		          	</tr>
+		          	<tr>
+		          		<td>13</td>
+		          		<td>Chiffre compris entre 1 (mercredi) et 7 (mardi).</td>
+		          	</tr>
+		          	<tr>
+		          		<td>14</td>
+		          		<td>Chiffre compris entre 1 (jeudi) et 7 (mercredi).</td>
+		          	</tr>
+		          	<tr>
+		          		<td>15</td>
+		          		<td>Chiffre compris entre 1 (vendredi) et 7 (jeudi).</td>
+		          	</tr>
+		          	<tr>
+		          		<td>16</td>
+		          		<td>Chiffre compris entre 1 (samedi) et 7 (vendredi).</td>
+		          	</tr>
+		          	<tr>
+		          		<td>17</td>
+		          		<td>Chiffre compris entre 1 (dimanche) et 7 (samedi).</td>
+		          	</tr>
+		        </tbody>
+			</table>
+			<blockquote>
+				<b>Exemple:</b><br>
+				=JOURSEM("01/11/1994", 2) --> 2 <small>(c'était un mardi)</small><br>
+				=JOURSEM(AUJOURDHUI( ), 2) --> <span class="joursem"></span> 
+				<small>(on est <span class="day"></span>)</small><br>
+			</blockquote>
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript">		
+		var dates = new Date();
+		var heure = dates.getHours();
+		var minute = dates.getMinutes();
+		var sec = dates.getSeconds();
+		var jours = dates.getDate();
+		var mois = dates.getMonth() + 1;
+		var annee = dates.getFullYear();
+		var jsem = dates.getDay();
+		var semaine = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"];
+
+		var auj = jours +"/"+mois+"/"+annee;
+		var now = jours +"/"+mois+"/"+annee+" "+ heure+":"+minute;
+		console.log(auj);
+		console.log(now);
+
+		$(".jour").html(jours);
+		$(".mois").html(mois);
+		$(".annee").html(annee);
+		$(".sec").html(sec);
+		$(".min").html(minute);
+		$(".heure").html(heure);
+		$(".joursem").html(jsem);
+		$(".day").html(semaine[jsem -1]);
+
+
+	</script>
+</div>
+
+
+{% endblock %}
