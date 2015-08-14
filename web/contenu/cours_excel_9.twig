@@ -1,0 +1,109 @@
+{% extends 'contenu/layout_excel.twig' %}
+
+
+{% block contenu %}
+
+<style type="text/css">
+	.fonction{
+		font-size: 25px;
+		text-align: center;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+
+	.violet{
+		color: #ba68c8;
+	}
+
+	.ora{
+		color: #ffb74d;
+	}
+
+	.vert{
+		color: #81c784;
+	}
+</style>
+
+<h1 class="center-align">{{nomC}}</h1>
+
+<p align="justify">
+	Nous allons voir qu'il y a plusieur methode pour créer une date.
+</p>
+  
+<p align="justify">
+	<h2>La reconnaissance automatique</h2>
+	En entrant dans une cellule une date bien écrite, elle sera automatiquement reconnu comme <b><i>DATE</i></b>.
+</p>
+
+<blockquote>
+	01/11/1994<br>
+	01-nov-94<br>
+</blockquote>
+
+<p align="justify">
+	<h2>La fonction DATE</h2>
+	Avec cette fonction, vous est sur de créer une date.
+</p>
+
+<div class="fonction">
+	DATE(<color class="violet">annee</color>; <color class="vert">mois</color>; <color class="ora">jours</color>)
+</div>
+
+<blockquote>
+	=DATE(1994;11;01)<br>
+	=DATE(A1;A2;A3) <small>(A1,A2 et A3 sont des cellules numériques)</small>
+</blockquote>
+
+<p align="justify">
+	<h2>La fonction DATEVAL</h2>
+	Avec cette fonction, si elle reconnait, une chaine de caractère en date.
+</p>
+
+<div class="fonction">
+	DATEVAL(<color class="ora">"date_texte"</color>)
+</div>
+
+<blockquote>
+	=DATEVAL("01/11/1994")<br>
+	=DATEVAL("01-nov-94")<br>
+	=DATEVAL(A4) <small>(A4 est une chaine de caractère)</small>
+</blockquote>
+
+<p align="justify">
+	<h2>Les fonctions AUJOURDHUI et MAINTENANT</h2>
+	Avec ces fonctions, vous aurez la date du jour. Elle se réactualise à chaque ouverture et  modification du document.
+</p>
+
+<div class="fonction">
+	<color class="ora">AUJOURDHUI( )</color> &ne; <color class="vert">MAINTENANT( )</color>
+</div>
+
+<p align="justify">
+	Dans les 2 cas, vous aurez la date du jours, la seul différence est que <b><i>MAINTENANT( )</i></b> aussi l'heure.
+</p>
+
+<blockquote>
+	=AUJOURDHUI( ) --> <span id="auj"></span><br>
+	=MAINTENANT( ) --> <span id="now"></span><br>
+</blockquote>
+
+<script type="text/javascript">		
+	var dates = new Date();
+	var heure = dates.getHours();
+	var minute = dates.getMinutes();
+	var jours = dates.getDate();
+	var mois = dates.getMonth() + 1;
+	var annee = dates.getFullYear();
+
+	var auj = jours +"/"+mois+"/"+annee;
+	var now = jours +"/"+mois+"/"+annee+" "+ heure+":"+minute;
+	console.log(auj);
+	console.log(now);
+
+	$("#auj").html(auj);
+	$("#now").html(now);
+
+</script>
+
+
+{% endblock %}

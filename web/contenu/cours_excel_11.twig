@@ -1,0 +1,183 @@
+{% extends 'contenu/layout_excel.twig' %}
+
+
+{% block contenu %}
+
+<style type="text/css">
+	.fonction{
+		font-size: 25px;
+		text-align: center;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+
+	.violet{
+		color: #ba68c8;
+	}
+
+	.ora{
+		color: #ffb74d;
+	}
+
+	.vert{
+		color: #81c784;
+	}
+</style>
+
+<h1 class="center-align">{{nomC}}</h1>
+
+<p align="justify">
+	Il est possible de d'effectuer des opérations sur les dates, comme ajouter des mois ou calculer la différence de jours entre 2 dates.
+</p>
+
+<div>
+	<ul class="tabs">
+		<li class="tab"><a href="#ope" class="active">Opérateur +/-</a></li>
+		<li class="tab"><a href="#jour" >Jours</a></li>
+		<li class="tab"><a href="#j360" >Jours360</a></li>
+		<li class="tab"><a href="#mois" >Mois.Decale</a></li>
+	</ul>
+		
+	<div>
+
+		<div id="ope">
+			<p align="justify">
+				Comme pour des calculs élémentaires, il est possible d'ajouter ou de soustraire une date à un nombre.<br>
+				Pour ne pas avoir de problème de format de cellule, la date en question doit-être dans une cellule à part.
+			</p>
+			<blockquote>
+				<b>Exemple:</b> <br>
+				<i>A1 = 01/11/1994</i><br>
+
+				=A1 + 10 --> 11/11/1994<br>
+			</blockquote>
+		</div>
+
+		<div id="jour">
+			<div class="fonction">
+				JOURS(<color class="violet">date_fin</color>; <color class="vert">date_début</color>)
+			</div>
+			<p align="justify">
+				Cette fonction renvoie le nombre de jour entre la date 
+				<color class="vert">date_début</color> et la date <color class="violet">date_fin</color>. 
+			</p>
+			<blockquote>
+				<b>Exemple:</b><br>
+				<i>
+					A1= 1/11/1994<br>
+					A2 = 14/08/2015<br>
+				</i>
+				=JOURS(A2;A1) --> 7591<br>
+				=JOURS(AUJOURDHUI( ); A2) --> <span class="duree"></span>
+				<small>(GuidOffice à aujourd'hui <span class="duree"></span> jours d'existence)</small><br>
+			</blockquote>
+		</div>
+
+		<div id="j360">
+			<div class="fonction">
+				JOURS360(<color class="violet">date_début</color>; <color class="vert">date_fin</color>; <color class="ora">[méthode]</color>)
+			</div>
+			<p align="justify">
+				La fonction renvoie le nombre de jours compris entre la date 
+				<color class="vert">date_début</color> et la date <color class="violet">date_fin</color>, sur la base d’une année 
+				de 360 jours (12 mois de 30 jours), qui est utilisée dans certains calculs comptables. 
+				Utilisez cette fonction pour le calcul des paiements si votre système comptable est basé sur 
+				12 mois de 30 jours.<br>
+				La <color class="ora">[méthode]</color> est une valeur logique qui détermine l’utilisation de la méthode américaine ou européenne dans le mode de calcul.
+			</p>
+			<table>
+		        <thead>
+		          	<tr>
+		          		<th data-field='type_retour'>type_retour</th>
+		          		<th data-field='chiffre'>Chiffre éenvoyé</th>
+		          	</tr>
+		        </thead>
+		        <tbody>
+		        	<tr>
+		          		<td>FAUX ou omis</td>
+		          		<td>Méthode États-Unis (NASD). Si la date de début est le dernier jour du mois, 
+		          			la date de début devient le 30 du même mois. 
+		          			Si la date de fin est le dernier jour du mois et que la date de début est avant le 30 du mois, 
+		          			la date de fin devient le 1er du mois suivant ; sinon, la date de fin devient le 30 du même mois.
+		          		</td>
+		          	</tr>
+		          	<tr>
+		          		<td>VRAI</td>
+		          		<td>Méthode européenne. Les dates de début et de fin correspondant au 31 du mois deviennent le 30 du même mois.</td>
+		          	</tr>
+		        </tbody>
+		    </table>
+			<blockquote>
+				<b>Exemple:</b><br>
+				<i>
+					A1= 1/11/1994<br>
+					A2 = 14/08/2015<br>
+				</i>
+				=JOURS360(A2;A1) --> 7483<br>
+			</blockquote>
+		</div>
+
+		<div id="mois">
+			<div class="fonction">
+				MOIS.DECALER(<color class="vert">date_départ</color>; <color class="ora">mois</color>)
+			</div>
+			<p align="justify">
+				Cette fonction renvoie la date <i> <color class="vert">date</color></i> en lui ajoutant un nombre de <color class="ora">mois</color>.<br>
+				Le <color class="ora">mois</color> peut-être aussi négatif.
+			<blockquote>
+				<b>Exemple:</b><br>
+				<i>
+					A1= 1/11/1994
+				</i><br>
+
+				=MOIS.DECALER(A1; 5) --> 1/4/1995<br>
+				=MOIS.DECALER(AUJOURDHUI( ); -1) --> <span class="mois"></span><br>
+			</blockquote>
+		</div>
+
+
+
+	</div>
+
+
+
+
+
+	<script type="text/javascript">
+
+
+
+		var DateDiff = {
+
+		    inDays: function(d1, d2) {
+		        var t2 = d2.getTime();
+		        var t1 = d1.getTime();
+
+		        return parseInt((t2-t1)/(24*3600*1000));
+		    }
+		}
+
+		var dates = new Date();
+		var aniv = new Date(2015,7,14);
+		var d = new Date(1994,10,1);
+		var jours = dates.getDate();
+		var mois = dates.getMonth() + 1;
+		var annee = dates.getFullYear();
+		var auj = jours +"/"+mois+"/"+annee;
+
+		// exemple 1
+		$(".duree").html(DateDiff.inDays(aniv, dates)); // aniv de GuidOffice
+
+		mois-=1;
+		if (mois == 0) {
+			mois = 12;
+			annee -=1;
+		};
+		var ex2 = jours +"/"+mois+"/"+annee;
+		$(".mois").html(ex2); // aniv de GuidOffice
+
+	</script>
+
+</div>
+
+{% endblock %}
